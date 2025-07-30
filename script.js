@@ -335,30 +335,6 @@ function requestNotificationPermission() {
     }
 }
 
-// Social media link functionality
-const socialLinks = document.querySelectorAll('.social-icon');
-socialLinks.forEach(link => {
-    link.addEventListener('click', (e) => {
-        e.preventDefault();
-        
-        const platform = link.getAttribute('aria-label').toLowerCase();
-        
-        // In a real app, these would be actual social media URLs
-        const socialUrls = {
-            facebook: 'https://facebook.com/yourprofile',
-            twitter: 'https://twitter.com/yourprofile',
-            linkedin: 'https://linkedin.com/in/yourprofile',
-            instagram: 'https://instagram.com/yourprofile',
-            dribbble: 'https://dribbble.com/yourprofile'
-        };
-        
-        if (socialUrls[platform]) {
-            // Open in new tab
-            window.open(socialUrls[platform], '_blank');
-        }
-    });
-});
-
 // Keyboard navigation
 document.addEventListener('keydown', (e) => {
     // Close menu with Escape key
