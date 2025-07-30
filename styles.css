@@ -235,6 +235,30 @@ body {
     z-index: 3;
 }
 
+/* Force social icons to bottom on mobile */
+@media (max-width: 768px) {
+    .social-icons {
+        position: fixed !important;
+        bottom: 10px !important;
+        right: auto !important;
+        top: auto !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        flex-direction: row !important;
+        gap: 16px !important;
+        background: rgba(255, 255, 255, 0.25) !important;
+        backdrop-filter: blur(25px) !important;
+        padding: 14px 20px !important;
+        border-radius: 30px !important;
+        border: 2px solid rgba(255, 255, 255, 0.3) !important;
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15) !important;
+        z-index: 99999 !important;
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+}
+
 .social-icon {
     display: flex;
     justify-content: center;
@@ -496,24 +520,6 @@ body {
         background: linear-gradient(135deg, #26a69a, #64ffda);
     }
 
-    /* Enhanced Social Icons */
-    .social-icons {
-        position: fixed !important;
-        bottom: 15px !important;
-        left: 50% !important;
-        transform: translateX(-50%) !important;
-        flex-direction: row !important;
-        gap: 16px;
-        background: rgba(255, 255, 255, 0.25);
-        backdrop-filter: blur(25px);
-        padding: 14px 20px;
-        border-radius: 30px;
-        border: 2px solid rgba(255, 255, 255, 0.3);
-        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
-        z-index: 9999 !important;
-        animation: slideUp 0.8s ease-out 1s both;
-    }
-
     .social-icon {
         width: 48px;
         height: 48px;
@@ -616,19 +622,6 @@ body {
         padding: 14px 20px;
         font-size: 15px;
     }
-
-    .social-icons {
-        bottom: 15px !important;
-        gap: 14px;
-        padding: 14px 20px;
-        border-radius: 28px;
-    }
-
-    .social-icon {
-        width: 44px;
-        height: 44px;
-        font-size: 17px;
-    }
 }
 
 @media (max-width: 480px) {
@@ -700,31 +693,6 @@ body {
         padding: 13px 22px;
         font-size: 14px;
         font-weight: 600;
-    }
-
-    .social-icons {
-        position: fixed !important;
-        bottom: 12px !important;
-        left: 50% !important;
-        transform: translateX(-50%) !important;
-        flex-direction: row !important;
-        gap: 12px;
-        background: rgba(255, 255, 255, 0.25);
-        backdrop-filter: blur(20px);
-        padding: 12px 18px;
-        border-radius: 25px;
-        border: 2px solid rgba(255, 255, 255, 0.4);
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-        z-index: 1000;
-    }
-
-    .social-icon {
-        width: 40px;
-        height: 40px;
-        font-size: 15px;
-        background: rgba(255, 255, 255, 0.25);
-        border: 2px solid rgba(255, 255, 255, 0.4);
-        border-radius: 50%;
     }
 
     .menu-toggle {
@@ -838,19 +806,6 @@ body {
         padding: 12px 20px;
         font-size: 13px;
         border-radius: 20px;
-    }
-
-    .social-icons {
-        bottom: 8px !important;
-        gap: 10px;
-        padding: 10px 14px;
-        border-radius: 22px;
-    }
-
-    .social-icon {
-        width: 36px;
-        height: 36px;
-        font-size: 13px;
     }
 
     .menu-toggle {
