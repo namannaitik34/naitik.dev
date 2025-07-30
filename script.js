@@ -14,10 +14,21 @@ const secondsElement = document.getElementById('seconds');
 // Debug: Check if elements are found
 console.log('Timer elements:', { daysElement, hoursElement, minutesElement, secondsElement });
 
-// Set launch date (30 days from now)
-const launchDate = new Date();
-launchDate.setDate(launchDate.getDate() + 30);
-console.log('Launch date set to:', launchDate.toLocaleString());
+// Set launch date (30 days from now) - Only set once, then persist
+let launchDate;
+const storedLaunchDate = localStorage.getItem('portfolioLaunchDate');
+
+if (storedLaunchDate) {
+    // Use existing launch date from localStorage
+    launchDate = new Date(storedLaunchDate);
+    console.log('Using stored launch date:', launchDate.toLocaleString());
+} else {
+    // Set new launch date and store it
+    launchDate = new Date();
+    launchDate.setDate(launchDate.getDate() + 30);
+    localStorage.setItem('portfolioLaunchDate', launchDate.toISOString());
+    console.log('New launch date set and stored:', launchDate.toLocaleString());
+}
 
 // Mobile Menu Toggle
 menuToggle.addEventListener('click', () => {
@@ -130,6 +141,40 @@ function initializeEmailJS() {
         // Sign up at https://www.emailjs.com/ to get these credentials
         emailjs.init('YOUR_PUBLIC_KEY');
     }
+}
+
+// Function to reset the launch date (for development/testing)
+function resetLaunchDate(daysFromNow = 30) {
+    const newLaunchDate = new Date();
+    newLaunchDate.setDate(newLaunchDate.getDate() + daysFromNow);
+    localStorage.setItem('portfolioLaunchDate', newLaunchDate.toISOString());
+    
+    // Update the global variable
+    launchDate = newLaunchDate;
+    
+    console.log(`Launch date reset to ${daysFromNow} days from now:`, newLaunchDate.toLocaleString());
+    
+    // Force an immediate update
+    updateCountdown();
+    
+    return newLaunchDate;
+}
+
+// Function to get time remaining in a readable format
+function getTimeRemaining() {
+    const now = new Date().getTime();
+    const distance = launchDate.getTime() - now;
+    
+    if (distance <= 0) {
+        return 'Launch time has passed!';
+    }
+    
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+    return `${days} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds`;
 }
 
 // Function to view stored subscription emails (for development/testing)
@@ -480,6 +525,7 @@ console.log('Portfolio website loaded successfully! 🚀');
 
 // Developer tools - accessible via browser console
 window.portfolioAdmin = {
+    // Email management
     viewEmails: viewStoredEmails,
     exportEmails: exportEmailsToCSV,
     clearEmails: () => {
@@ -490,12 +536,30 @@ window.portfolioAdmin = {
         const emails = JSON.parse(localStorage.getItem('subscriptionEmails') || '[]');
         return emails.length;
     },
-    notificationEmail: NOTIFICATION_EMAIL
+    notificationEmail: NOTIFICATION_EMAIL,
+    
+    // Timer management
+    resetTimer: resetLaunchDate,
+    getLaunchDate: () => {
+        console.log('Current launch date:', launchDate.toLocaleString());
+        return launchDate;
+    },
+    getTimeRemaining: getTimeRemaining,
+    clearLaunchDate: () => {
+        localStorage.removeItem('portfolioLaunchDate');
+        console.log('Launch date cleared! Refresh page to set new date.');
+    }
 };
 
 console.log('💡 Developer Tools Available:');
-console.log('📧 portfolioAdmin.viewEmails() - View all subscription emails');
-console.log('📊 portfolioAdmin.exportEmails() - Export emails to CSV');
-console.log('🗑️ portfolioAdmin.clearEmails() - Clear all stored emails');
-console.log('📈 portfolioAdmin.getEmailCount() - Get total subscription count');
+console.log('📧 Email Management:');
+console.log('  portfolioAdmin.viewEmails() - View all subscription emails');
+console.log('  portfolioAdmin.exportEmails() - Export emails to CSV');
+console.log('  portfolioAdmin.clearEmails() - Clear all stored emails');
+console.log('  portfolioAdmin.getEmailCount() - Get total subscription count');
+console.log('⏰ Timer Management:');
+console.log('  portfolioAdmin.resetTimer(days) - Reset countdown (default: 30 days)');
+console.log('  portfolioAdmin.getLaunchDate() - View current launch date');
+console.log('  portfolioAdmin.getTimeRemaining() - Get readable time remaining');
+console.log('  portfolioAdmin.clearLaunchDate() - Clear stored launch date');
 console.log(`📮 Notifications sent to: ${NOTIFICATION_EMAIL}`);
