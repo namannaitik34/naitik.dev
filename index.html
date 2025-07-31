@@ -93,6 +93,170 @@
                 </form>
                 <div class="form-message" id="formMessage"></div>
             </div>
+
+            <!-- Fun Games Section -->
+            <div class="games-section">
+                <h2 class="games-title">🎮 Fun Games While You Wait</h2>
+                <p class="games-subtitle">Pass the time with these mini-games!</p>
+                
+                <div class="games-grid">
+                    <!-- Rock Paper Scissors -->
+                    <div class="game-card" id="rpsGame">
+                        <div class="game-icon">✂️</div>
+                        <h3>Rock Paper Scissors</h3>
+                        <p>Classic game vs Computer</p>
+                        <div class="game-content rps-content" style="display: none;">
+                            <div class="rps-choices">
+                                <button class="choice-btn" data-choice="rock">🗿</button>
+                                <button class="choice-btn" data-choice="paper">📄</button>
+                                <button class="choice-btn" data-choice="scissors">✂️</button>
+                            </div>
+                            <div class="game-result" id="rpsResult"></div>
+                            <div class="game-score">Score: <span id="rpsScore">0</span></div>
+                        </div>
+                    </div>
+
+                    <!-- Memory Game -->
+                    <div class="game-card" id="memoryGame">
+                        <div class="game-icon">🧠</div>
+                        <h3>Memory Cards</h3>
+                        <p>Test your memory skills</p>
+                        <div class="game-content memory-content" style="display: none;">
+                            <div class="memory-grid" id="memoryGrid"></div>
+                            <div class="game-stats">
+                                <span>Moves: <span id="memoryMoves">0</span></span>
+                                <span>Pairs: <span id="memoryPairs">0/8</span></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tic Tac Toe -->
+                    <div class="game-card" id="ticTacToe">
+                        <div class="game-icon">⭕</div>
+                        <h3>Tic Tac Toe</h3>
+                        <p>Beat the AI opponent</p>
+                        <div class="game-content ttt-content" style="display: none;">
+                            <div class="ttt-grid" id="tttGrid">
+                                <div class="ttt-cell" data-index="0"></div>
+                                <div class="ttt-cell" data-index="1"></div>
+                                <div class="ttt-cell" data-index="2"></div>
+                                <div class="ttt-cell" data-index="3"></div>
+                                <div class="ttt-cell" data-index="4"></div>
+                                <div class="ttt-cell" data-index="5"></div>
+                                <div class="ttt-cell" data-index="6"></div>
+                                <div class="ttt-cell" data-index="7"></div>
+                                <div class="ttt-cell" data-index="8"></div>
+                            </div>
+                            <div class="game-result" id="tttResult"></div>
+                            <button class="reset-btn" id="tttReset">Reset Game</button>
+                        </div>
+                    </div>
+
+                    <!-- Number Guessing -->
+                    <div class="game-card" id="numberGuess">
+                        <div class="game-icon">🔢</div>
+                        <h3>Number Guessing</h3>
+                        <p>Guess the number 1-100</p>
+                        <div class="game-content guess-content" style="display: none;">
+                            <input type="number" id="guessInput" placeholder="Enter your guess" min="1" max="100">
+                            <button id="guessBtn">Guess!</button>
+                            <div class="game-result" id="guessResult"></div>
+                            <div class="game-stats">Attempts: <span id="guessAttempts">0</span></div>
+                        </div>
+                    </div>
+
+                    <!-- Snake Game -->
+                    <div class="game-card" id="snakeGame">
+                        <div class="game-icon">🐍</div>
+                        <h3>Snake Game</h3>
+                        <p>Classic arcade game</p>
+                        <div class="game-content snake-content" style="display: none;">
+                            <canvas id="snakeCanvas" width="300" height="300"></canvas>
+                            <div class="game-controls">
+                                <button id="snakeStart">Start Game</button>
+                                <div class="game-score">Score: <span id="snakeScore">0</span></div>
+                            </div>
+                            <div class="snake-instructions">Use arrow keys to move</div>
+                        </div>
+                    </div>
+
+                    <!-- Color Match -->
+                    <div class="game-card" id="colorMatch">
+                        <div class="game-icon">🌈</div>
+                        <h3>Color Match</h3>
+                        <p>Match the color quickly</p>
+                        <div class="game-content color-content" style="display: none;">
+                            <div class="color-display" id="colorDisplay"></div>
+                            <div class="color-options" id="colorOptions"></div>
+                            <div class="game-stats">
+                                <span>Score: <span id="colorScore">0</span></span>
+                                <span>Time: <span id="colorTime">30</span>s</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Word Scramble -->
+                    <div class="game-card" id="wordScramble">
+                        <div class="game-icon">📝</div>
+                        <h3>Word Scramble</h3>
+                        <p>Unscramble the words</p>
+                        <div class="game-content scramble-content" style="display: none;">
+                            <div class="scrambled-word" id="scrambledWord"></div>
+                            <input type="text" id="scrambleInput" placeholder="Enter your answer">
+                            <button id="scrambleSubmit">Submit</button>
+                            <div class="game-result" id="scrambleResult"></div>
+                            <div class="game-stats">Score: <span id="scrambleScore">0</span></div>
+                        </div>
+                    </div>
+
+                    <!-- Simon Says -->
+                    <div class="game-card" id="simonSays">
+                        <div class="game-icon">🔴</div>
+                        <h3>Simon Says</h3>
+                        <p>Remember the sequence</p>
+                        <div class="game-content simon-content" style="display: none;">
+                            <div class="simon-grid">
+                                <button class="simon-btn red" data-color="red"></button>
+                                <button class="simon-btn green" data-color="green"></button>
+                                <button class="simon-btn blue" data-color="blue"></button>
+                                <button class="simon-btn yellow" data-color="yellow"></button>
+                            </div>
+                            <div class="simon-controls">
+                                <button id="simonStart">Start Game</button>
+                                <div class="game-score">Level: <span id="simonLevel">0</span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quiz Game -->
+                    <div class="game-card" id="quizGame">
+                        <div class="game-icon">❓</div>
+                        <h3>Quick Quiz</h3>
+                        <p>Test your knowledge</p>
+                        <div class="game-content quiz-content" style="display: none;">
+                            <div class="quiz-question" id="quizQuestion"></div>
+                            <div class="quiz-options" id="quizOptions"></div>
+                            <div class="game-result" id="quizResult"></div>
+                            <div class="game-stats">Score: <span id="quizScore">0/5</span></div>
+                            <button id="quizNext" style="display: none;">Next Question</button>
+                        </div>
+                    </div>
+
+                    <!-- Reaction Time -->
+                    <div class="game-card" id="reactionGame">
+                        <div class="game-icon">⚡</div>
+                        <h3>Reaction Time</h3>
+                        <p>Test your reflexes</p>
+                        <div class="game-content reaction-content" style="display: none;">
+                            <div class="reaction-area" id="reactionArea">
+                                <div class="reaction-text">Click when green!</div>
+                            </div>
+                            <button id="reactionStart">Start Test</button>
+                            <div class="game-result" id="reactionResult"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <!-- Social Media Icons -->

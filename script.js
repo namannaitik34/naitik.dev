@@ -539,3 +539,837 @@ console.log('  portfolioAdmin.getLaunchDate() - View current launch date');
 console.log('  portfolioAdmin.getTimeRemaining() - Get readable time remaining');
 console.log('  portfolioAdmin.clearLaunchDate() - Clear stored launch date');
 console.log(`📮 Notifications sent to: ${NOTIFICATION_EMAIL}`);
+
+// ===== GAMES FUNCTIONALITY =====
+
+// Game card toggle functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const gameCards = document.querySelectorAll('.game-card');
+    
+    gameCards.forEach(card => {
+        card.addEventListener('click', function(e) {
+            // Don't toggle if clicking on game content
+            if (e.target.closest('.game-content')) return;
+            
+            const content = card.querySelector('.game-content');
+            const isActive = card.classList.contains('active');
+            
+            // Close all other games
+            gameCards.forEach(otherCard => {
+                if (otherCard !== card) {
+                    otherCard.classList.remove('active');
+                    otherCard.querySelector('.game-content').style.display = 'none';
+                }
+            });
+            
+            // Toggle current game
+            if (isActive) {
+                card.classList.remove('active');
+                content.style.display = 'none';
+            } else {
+                card.classList.add('active');
+                content.style.display = 'block';
+                initializeGame(card.id);
+            }
+        });
+    });
+});
+
+function initializeGame(gameId) {
+    switch(gameId) {
+        case 'rpsGame':
+            initRockPaperScissors();
+            break;
+        case 'memoryGame':
+            initMemoryGame();
+            break;
+        case 'ticTacToe':
+            initTicTacToe();
+            break;
+        case 'numberGuess':
+            initNumberGuess();
+            break;
+        case 'snakeGame':
+            initSnakeGame();
+            break;
+        case 'colorMatch':
+            initColorMatch();
+            break;
+        case 'wordScramble':
+            initWordScramble();
+            break;
+        case 'simonSays':
+            initSimonSays();
+            break;
+        case 'quizGame':
+            initQuizGame();
+            break;
+        case 'reactionGame':
+            initReactionGame();
+            break;
+    }
+}
+
+// ===== ROCK PAPER SCISSORS =====
+function initRockPaperScissors() {
+    let rpsScore = 0;
+    const choices = ['rock', 'paper', 'scissors'];
+    const emojis = { rock: '🗿', paper: '📄', scissors: '✂️' };
+    
+    document.querySelectorAll('.choice-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const playerChoice = this.dataset.choice;
+            const computerChoice = choices[Math.floor(Math.random() * 3)];
+            
+            let result = '';
+            if (playerChoice === computerChoice) {
+                result = 'It\'s a tie!';
+            } else if (
+                (playerChoice === 'rock' && computerChoice === 'scissors') ||
+                (playerChoice === 'paper' && computerChoice === 'rock') ||
+                (playerChoice === 'scissors' && computerChoice === 'paper')
+            ) {
+                result = 'You win!';
+                rpsScore++;
+            } else {
+                result = 'Computer wins!';
+            }
+            
+            document.getElementById('rpsResult').innerHTML = 
+                `You: ${emojis[playerChoice]} vs Computer: ${emojis[computerChoice]}<br>${result}`;
+            document.getElementById('rpsScore').textContent = rpsScore;
+        });
+    });
+}
+
+// ===== MEMORY GAME =====
+function initMemoryGame() {
+    const symbols = ['🎮', '🎯', '🎪', '🎨', '🎭', '🎪', '🎯', '🎮', '🎨', '🎭', '🚀', '⭐', '🚀', '⭐', '🎵', '🎵'];
+    let flippedCards = [];
+    let matchedPairs = 0;
+    let moves = 0;
+    
+    const grid = document.getElementById('memoryGrid');
+    grid.innerHTML = '';
+    
+    // Shuffle symbols
+    const shuffled = symbols.sort(() => Math.random() - 0.5);
+    
+    shuffled.forEach((symbol, index) => {
+        const card = document.createElement('div');
+        card.className = 'memory-card';
+        card.dataset.symbol = symbol;
+        card.dataset.index = index;
+        card.addEventListener('click', flipCard);
+        grid.appendChild(card);
+    });
+    
+    function flipCard() {
+        if (flippedCards.length === 2 || this.classList.contains('flipped')) return;
+        
+        this.classList.add('flipped');
+        this.textContent = this.dataset.symbol;
+        flippedCards.push(this);
+        
+        if (flippedCards.length === 2) {
+            moves++;
+            document.getElementById('memoryMoves').textContent = moves;
+            
+            setTimeout(() => {
+                if (flippedCards[0].dataset.symbol === flippedCards[1].dataset.symbol) {
+                    matchedPairs++;
+                    document.getElementById('memoryPairs').textContent = `${matchedPairs}/8`;
+                    if (matchedPairs === 8) {
+                        alert(`Congratulations! You won in ${moves} moves!`);
+                    }
+                } else {
+                    flippedCards.forEach(card => {
+                        card.classList.remove('flipped');
+                        card.textContent = '';
+                    });
+                }
+                flippedCards = [];
+            }, 1000);
+        }
+    }
+}
+
+// ===== TIC TAC TOE =====
+function initTicTacToe() {
+    let board = ['', '', '', '', '', '', '', '', ''];
+    let currentPlayer = 'X';
+    let gameActive = true;
+    
+    const cells = document.querySelectorAll('.ttt-cell');
+    const result = document.getElementById('tttResult');
+    const reset = document.getElementById('tttReset');
+    
+    cells.forEach((cell, index) => {
+        cell.addEventListener('click', () => handleCellClick(index));
+    });
+    
+    reset.addEventListener('click', resetGame);
+    
+    function handleCellClick(index) {
+        if (board[index] !== '' || !gameActive) return;
+        
+        board[index] = currentPlayer;
+        cells[index].textContent = currentPlayer;
+        
+        if (checkWinner()) {
+            result.textContent = `Player ${currentPlayer} wins!`;
+            gameActive = false;
+            return;
+        }
+        
+        if (board.every(cell => cell !== '')) {
+            result.textContent = 'It\'s a draw!';
+            gameActive = false;
+            return;
+        }
+        
+        currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+        
+        if (currentPlayer === 'O' && gameActive) {
+            setTimeout(computerMove, 500);
+        }
+    }
+    
+    function computerMove() {
+        const emptyCells = board.map((cell, index) => cell === '' ? index : null).filter(val => val !== null);
+        const randomIndex = emptyCells[Math.floor(Math.random() * emptyCells.length)];
+        
+        if (randomIndex !== undefined) {
+            handleCellClick(randomIndex);
+        }
+    }
+    
+    function checkWinner() {
+        const winConditions = [
+            [0, 1, 2], [3, 4, 5], [6, 7, 8],
+            [0, 3, 6], [1, 4, 7], [2, 5, 8],
+            [0, 4, 8], [2, 4, 6]
+        ];
+        
+        return winConditions.some(condition => {
+            return condition.every(index => board[index] === currentPlayer);
+        });
+    }
+    
+    function resetGame() {
+        board = ['', '', '', '', '', '', '', '', ''];
+        currentPlayer = 'X';
+        gameActive = true;
+        cells.forEach(cell => cell.textContent = '');
+        result.textContent = '';
+    }
+}
+
+// ===== NUMBER GUESSING =====
+function initNumberGuess() {
+    let targetNumber = Math.floor(Math.random() * 100) + 1;
+    let attempts = 0;
+    
+    const input = document.getElementById('guessInput');
+    const btn = document.getElementById('guessBtn');
+    const result = document.getElementById('guessResult');
+    const attemptsSpan = document.getElementById('guessAttempts');
+    
+    btn.addEventListener('click', makeGuess);
+    input.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') makeGuess();
+    });
+    
+    function makeGuess() {
+        const guess = parseInt(input.value);
+        if (isNaN(guess) || guess < 1 || guess > 100) {
+            result.textContent = 'Please enter a number between 1 and 100';
+            return;
+        }
+        
+        attempts++;
+        attemptsSpan.textContent = attempts;
+        
+        if (guess === targetNumber) {
+            result.textContent = `🎉 Correct! You got it in ${attempts} attempts!`;
+            btn.textContent = 'New Game';
+            btn.onclick = () => {
+                targetNumber = Math.floor(Math.random() * 100) + 1;
+                attempts = 0;
+                attemptsSpan.textContent = '0';
+                result.textContent = '';
+                input.value = '';
+                btn.textContent = 'Guess!';
+                btn.onclick = makeGuess;
+            };
+        } else if (guess < targetNumber) {
+            result.textContent = '📈 Too low! Try higher.';
+        } else {
+            result.textContent = '📉 Too high! Try lower.';
+        }
+        
+        input.value = '';
+    }
+}
+
+// ===== SNAKE GAME =====
+// ===== SNAKE GAME =====
+function initSnakeGame() {
+    const canvas = document.getElementById('snakeCanvas');
+    if (!canvas) return;
+    
+    const ctx = canvas.getContext('2d');
+    const startBtn = document.getElementById('snakeStart');
+    const scoreSpan = document.getElementById('snakeScore');
+    
+    // Set canvas size properly
+    canvas.width = 300;
+    canvas.height = 300;
+    
+    let snake = [{ x: 150, y: 150 }];
+    let food = generateFood();
+    let direction = { x: 0, y: 0 };
+    let score = 0;
+    let gameRunning = false;
+    let gameLoopId = null;
+    
+    // Clear any existing event listeners
+    startBtn.removeEventListener('click', startGame);
+    startBtn.addEventListener('click', startGame);
+    
+    // Use a specific keydown handler for this game
+    const handleKeydown = (e) => {
+        if (!gameRunning) return;
+        
+        switch (e.key) {
+            case 'ArrowUp':
+                if (direction.y === 0) direction = { x: 0, y: -20 };
+                break;
+            case 'ArrowDown':
+                if (direction.y === 0) direction = { x: 0, y: 20 };
+                break;
+            case 'ArrowLeft':
+                if (direction.x === 0) direction = { x: -20, y: 0 };
+                break;
+            case 'ArrowRight':
+                if (direction.x === 0) direction = { x: 20, y: 0 };
+                break;
+        }
+    };
+    
+    // Remove existing listeners and add new one
+    document.removeEventListener('keydown', handleKeydown);
+    document.addEventListener('keydown', handleKeydown);
+    
+    function startGame() {
+        snake = [{ x: 150, y: 150 }];
+        food = generateFood();
+        direction = { x: 0, y: 0 };
+        score = 0;
+        scoreSpan.textContent = '0';
+        gameRunning = true;
+        startBtn.textContent = 'Game Running...';
+        
+        // Clear any existing game loop
+        if (gameLoopId) clearTimeout(gameLoopId);
+        gameLoop();
+    }
+    
+    function gameLoop() {
+        if (!gameRunning) return;
+        
+        update();
+        draw();
+        gameLoopId = setTimeout(gameLoop, 150);
+    }
+    
+    function update() {
+        const head = { x: snake[0].x + direction.x, y: snake[0].y + direction.y };
+        
+        // Check wall collision
+        if (head.x < 0 || head.x >= 300 || head.y < 0 || head.y >= 300) {
+            gameOver();
+            return;
+        }
+        
+        // Check self collision
+        if (snake.some(segment => segment.x === head.x && segment.y === head.y)) {
+            gameOver();
+            return;
+        }
+        
+        snake.unshift(head);
+        
+        // Check food collision
+        if (head.x === food.x && head.y === food.y) {
+            score++;
+            scoreSpan.textContent = score;
+            food = generateFood();
+        } else {
+            snake.pop();
+        }
+    }
+    
+    function draw() {
+        // Clear canvas
+        ctx.fillStyle = 'rgba(0, 0, 0, 0.3)';
+        ctx.fillRect(0, 0, 300, 300);
+        
+        // Draw snake
+        ctx.fillStyle = '#64ffda';
+        snake.forEach(segment => {
+            ctx.fillRect(segment.x, segment.y, 18, 18);
+        });
+        
+        // Draw food
+        ctx.fillStyle = '#ff4757';
+        ctx.fillRect(food.x, food.y, 18, 18);
+    }
+    
+    function generateFood() {
+        let newFood;
+        do {
+            newFood = {
+                x: Math.floor(Math.random() * 15) * 20,
+                y: Math.floor(Math.random() * 15) * 20
+            };
+        } while (snake.some(segment => segment.x === newFood.x && segment.y === newFood.y));
+        
+        return newFood;
+    }
+    
+    function gameOver() {
+        gameRunning = false;
+        if (gameLoopId) clearTimeout(gameLoopId);
+        startBtn.textContent = 'Start Game';
+        alert(`Game Over! Your score: ${score}`);
+    }
+    
+    // Initial draw
+    draw();
+}
+
+// ===== COLOR MATCH =====
+function initColorMatch() {
+    const colors = ['#ff4757', '#2ed573', '#3742fa', '#ffa502', '#ff6b6b', '#4834d4'];
+    let currentColor = '';
+    let score = 0;
+    let timeLeft = 30;
+    let gameActive = false;
+    
+    const display = document.getElementById('colorDisplay');
+    const options = document.getElementById('colorOptions');
+    const scoreSpan = document.getElementById('colorScore');
+    const timeSpan = document.getElementById('colorTime');
+    
+    startColorGame();
+    
+    function startColorGame() {
+        score = 0;
+        timeLeft = 30;
+        gameActive = true;
+        scoreSpan.textContent = '0';
+        
+        const timer = setInterval(() => {
+            timeLeft--;
+            timeSpan.textContent = timeLeft;
+            
+            if (timeLeft <= 0) {
+                clearInterval(timer);
+                gameActive = false;
+                alert(`Time's up! Your score: ${score}`);
+            }
+        }, 1000);
+        
+        newRound();
+    }
+    
+    function newRound() {
+        if (!gameActive) return;
+        
+        currentColor = colors[Math.floor(Math.random() * colors.length)];
+        display.style.backgroundColor = currentColor;
+        
+        options.innerHTML = '';
+        const shuffledColors = [...colors].sort(() => Math.random() - 0.5).slice(0, 4);
+        if (!shuffledColors.includes(currentColor)) {
+            shuffledColors[Math.floor(Math.random() * 4)] = currentColor;
+        }
+        
+        shuffledColors.forEach(color => {
+            const option = document.createElement('div');
+            option.className = 'color-option';
+            option.style.backgroundColor = color;
+            option.addEventListener('click', () => checkAnswer(color));
+            options.appendChild(option);
+        });
+    }
+    
+    function checkAnswer(selectedColor) {
+        if (selectedColor === currentColor) {
+            score++;
+            scoreSpan.textContent = score;
+        }
+        newRound();
+    }
+}
+
+// Continue in next part due to length...
+
+// ===== WORD SCRAMBLE =====
+function initWordScramble() {
+    const words = ['JAVASCRIPT', 'PORTFOLIO', 'DEVELOPER', 'CODING', 'WEBSITE', 'DESIGN', 'PROGRAMMING', 'TECHNOLOGY'];
+    let currentWord = '';
+    let scrambledWord = '';
+    let score = 0;
+    
+    const scrambledSpan = document.getElementById('scrambledWord');
+    const input = document.getElementById('wordInput');
+    const btn = document.getElementById('wordSubmit');
+    const result = document.getElementById('wordResult');
+    const scoreSpan = document.getElementById('wordScore');
+    
+    btn.addEventListener('click', checkWord);
+    input.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') checkWord();
+    });
+    
+    newWord();
+    
+    function newWord() {
+        currentWord = words[Math.floor(Math.random() * words.length)];
+        scrambledWord = currentWord.split('').sort(() => Math.random() - 0.5).join('');
+        scrambledSpan.textContent = scrambledWord;
+        input.value = '';
+        result.textContent = '';
+    }
+    
+    function checkWord() {
+        const guess = input.value.toUpperCase();
+        if (guess === currentWord) {
+            score++;
+            scoreSpan.textContent = score;
+            result.textContent = '✅ Correct!';
+            setTimeout(newWord, 1500);
+        } else {
+            result.textContent = '❌ Try again!';
+        }
+    }
+}
+
+// ===== SIMON SAYS =====
+// ===== SIMON SAYS =====
+function initSimonSays() {
+    const colors = ['red', 'green', 'blue', 'yellow'];
+    let sequence = [];
+    let playerSequence = [];
+    let level = 0;
+    let gameActive = false;
+    let audioContext = null;
+    
+    const startBtn = document.getElementById('simonStart');
+    const levelSpan = document.getElementById('simonLevel');
+    const buttons = document.querySelectorAll('#simonSays .simon-btn');
+    
+    if (!startBtn || !levelSpan || buttons.length === 0) return;
+    
+    // Initialize audio context on first user interaction
+    function initAudio() {
+        if (!audioContext) {
+            audioContext = new (window.AudioContext || window.webkitAudioContext)();
+        }
+        if (audioContext.state === 'suspended') {
+            audioContext.resume();
+        }
+    }
+    
+    // Clear existing event listeners
+    startBtn.removeEventListener('click', startSimon);
+    startBtn.addEventListener('click', startSimon);
+    
+    buttons.forEach((btn, index) => {
+        // Remove existing listeners
+        const newBtn = btn.cloneNode(true);
+        btn.parentNode.replaceChild(newBtn, btn);
+        
+        newBtn.addEventListener('click', () => {
+            if (!gameActive) return;
+            initAudio();
+            playerSequence.push(index);
+            playSound(index);
+            checkSequence();
+        });
+    });
+    
+    // Update buttons reference after cloning
+    const updatedButtons = document.querySelectorAll('#simonSays .simon-btn');
+    
+    function startSimon() {
+        initAudio();
+        sequence = [];
+        playerSequence = [];
+        level = 0;
+        gameActive = true;
+        startBtn.textContent = 'Playing...';
+        nextLevel();
+    }
+    
+    function nextLevel() {
+        level++;
+        levelSpan.textContent = level;
+        playerSequence = [];
+        
+        const nextColor = Math.floor(Math.random() * 4);
+        sequence.push(nextColor);
+        
+        playSequence();
+    }
+    
+    function playSequence() {
+        gameActive = false;
+        
+        sequence.forEach((color, index) => {
+            setTimeout(() => {
+                updatedButtons[color].classList.add('active');
+                playSound(color);
+                
+                setTimeout(() => {
+                    updatedButtons[color].classList.remove('active');
+                    if (index === sequence.length - 1) {
+                        gameActive = true;
+                    }
+                }, 400);
+            }, (index + 1) * 600);
+        });
+    }
+    
+    function checkSequence() {
+        const currentIndex = playerSequence.length - 1;
+        
+        if (playerSequence[currentIndex] !== sequence[currentIndex]) {
+            gameActive = false;
+            startBtn.textContent = 'Start Game';
+            alert(`Game Over! You reached level ${level}`);
+            return;
+        }
+        
+        if (playerSequence.length === sequence.length) {
+            setTimeout(nextLevel, 1000);
+        }
+    }
+    
+    function playSound(index) {
+        try {
+            if (!audioContext) return;
+            
+            const oscillator = audioContext.createOscillator();
+            const gainNode = audioContext.createGain();
+            
+            oscillator.connect(gainNode);
+            gainNode.connect(audioContext.destination);
+            
+            const frequencies = [261.63, 329.63, 392.00, 523.25]; // C, E, G, high C
+            oscillator.frequency.setValueAtTime(frequencies[index], audioContext.currentTime);
+            oscillator.type = 'sine';
+            
+            gainNode.gain.setValueAtTime(0.1, audioContext.currentTime);
+            gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.5);
+            
+            oscillator.start(audioContext.currentTime);
+            oscillator.stop(audioContext.currentTime + 0.5);
+        } catch (error) {
+            console.log('Audio not available:', error);
+        }
+    }
+}
+
+// ===== QUIZ GAME =====
+// ===== QUIZ GAME =====
+function initQuizGame() {
+    const questions = [
+        {
+            q: "What does HTML stand for?",
+            options: ["Hyper Text Markup Language", "High Tech Modern Language", "Home Tool Markup Language"],
+            correct: 0
+        },
+        {
+            q: "Which CSS property controls text size?",
+            options: ["font-weight", "font-size", "text-size"],
+            correct: 1
+        },
+        {
+            q: "What does JS stand for?",
+            options: ["Java Source", "JavaScript", "Just Script"],
+            correct: 1
+        },
+        {
+            q: "Which HTML tag is used for the largest heading?",
+            options: ["<h6>", "<heading>", "<h1>"],
+            correct: 2
+        },
+        {
+            q: "What is the correct way to write a JavaScript array?",
+            options: ["let colors = 'red', 'green', 'blue'", "let colors = (1:'red', 2:'green', 3:'blue')", "let colors = ['red', 'green', 'blue']"],
+            correct: 2
+        }
+    ];
+    
+    let currentQuestion = 0;
+    let score = 0;
+    
+    const questionEl = document.getElementById('quizQuestion');
+    const optionsEl = document.getElementById('quizOptions');
+    const resultEl = document.getElementById('quizResult');
+    const scoreSpan = document.getElementById('quizScore');
+    const nextBtn = document.getElementById('quizNext');
+    
+    if (!questionEl || !optionsEl || !resultEl || !scoreSpan || !nextBtn) return;
+    
+    // Clear existing event listeners
+    nextBtn.removeEventListener('click', nextQuestion);
+    nextBtn.addEventListener('click', nextQuestion);
+    
+    showQuestion();
+    
+    function showQuestion() {
+        if (currentQuestion >= questions.length) {
+            showResults();
+            return;
+        }
+        
+        const q = questions[currentQuestion];
+        questionEl.textContent = q.q;
+        
+        optionsEl.innerHTML = '';
+        q.options.forEach((option, index) => {
+            const btn = document.createElement('button');
+            btn.textContent = option;
+            btn.className = 'quiz-option';
+            btn.addEventListener('click', () => selectAnswer(index));
+            optionsEl.appendChild(btn);
+        });
+        
+        resultEl.textContent = '';
+        nextBtn.style.display = 'none';
+    }
+    
+    function selectAnswer(selected) {
+        const q = questions[currentQuestion];
+        const options = document.querySelectorAll('#quizGame .quiz-option');
+        
+        options.forEach((btn, index) => {
+            if (index === q.correct) {
+                btn.classList.add('correct');
+                btn.style.background = 'rgba(46, 213, 115, 0.3)';
+                btn.style.borderColor = '#2ed573';
+            } else if (index === selected) {
+                btn.classList.add('incorrect');
+                btn.style.background = 'rgba(255, 71, 87, 0.3)';
+                btn.style.borderColor = '#ff4757';
+            }
+            btn.disabled = true;
+        });
+        
+        if (selected === q.correct) {
+            score++;
+            resultEl.textContent = '✅ Correct!';
+        } else {
+            resultEl.textContent = '❌ Incorrect!';
+        }
+        
+        scoreSpan.textContent = `${score}/${questions.length}`;
+        nextBtn.style.display = 'block';
+    }
+    
+    function nextQuestion() {
+        currentQuestion++;
+        showQuestion();
+    }
+    
+    function showResults() {
+        questionEl.textContent = 'Quiz Complete!';
+        optionsEl.innerHTML = `<p style="color: rgba(255, 255, 255, 0.9); margin: 1rem 0;">Your final score: ${score}/${questions.length}</p>`;
+        
+        let message = '';
+        if (score === questions.length) {
+            message = '🎉 Perfect score!';
+        } else if (score >= questions.length * 0.7) {
+            message = '👏 Great job!';
+        } else {
+            message = '📚 Keep learning!';
+        }
+        
+        resultEl.textContent = message;
+        nextBtn.textContent = 'Restart Quiz';
+        nextBtn.style.display = 'block';
+        nextBtn.removeEventListener('click', nextQuestion);
+        nextBtn.addEventListener('click', restartQuiz);
+    }
+    
+    function restartQuiz() {
+        currentQuestion = 0;
+        score = 0;
+        scoreSpan.textContent = '0/5';
+        nextBtn.textContent = 'Next Question';
+        nextBtn.removeEventListener('click', restartQuiz);
+        nextBtn.addEventListener('click', nextQuestion);
+        showQuestion();
+    }
+}
+
+// ===== REACTION TIME =====
+function initReactionGame() {
+    let startTime = 0;
+    let gameActive = false;
+    
+    const startBtn = document.getElementById('reactionStart');
+    const gameArea = document.getElementById('reactionArea');
+    const result = document.getElementById('reactionResult');
+    
+    startBtn.addEventListener('click', startReaction);
+    gameArea.addEventListener('click', recordReaction);
+    
+    function startReaction() {
+        if (gameActive) return;
+        
+        startBtn.style.display = 'none';
+        gameArea.style.backgroundColor = '#ff4757';
+        gameArea.textContent = 'Wait for green...';
+        result.textContent = '';
+        
+        const delay = Math.random() * 4000 + 1000; // 1-5 seconds
+        
+        setTimeout(() => {
+            gameArea.style.backgroundColor = '#2ed573';
+            gameArea.textContent = 'Click now!';
+            startTime = Date.now();
+            gameActive = true;
+        }, delay);
+    }
+    
+    function recordReaction() {
+        if (!gameActive) return;
+        
+        const reactionTime = Date.now() - startTime;
+        gameActive = false;
+        
+        gameArea.style.backgroundColor = '#2c2c54';
+        gameArea.textContent = 'Click "Start" to play again';
+        
+        let message = '';
+        if (reactionTime < 200) {
+            message = '🚀 Lightning fast!';
+        } else if (reactionTime < 300) {
+            message = '⚡ Excellent reflexes!';
+        } else if (reactionTime < 400) {
+            message = '👍 Good reaction time!';
+        } else if (reactionTime < 500) {
+            message = '👌 Not bad!';
+        } else {
+            message = '🐌 Could be faster!';
+        }
+        
+        result.textContent = `${reactionTime}ms - ${message}`;
+        startBtn.style.display = 'block';
+    }
+}
