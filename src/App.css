@@ -46,10 +46,6 @@ html {
   min-width: 0;
 }
 @media (max-width: 900px) {
-  .contact-split {
-    flex-direction: column;
-    gap: 1.2rem;
-  }
   .contact-image {
     display: none;
   }
@@ -166,10 +162,6 @@ html {
     min-height: unset;
     margin-bottom: 1.5rem;
   }
-  .recent-project-img {
-    height: 140px;
-    border-radius: 18px 18px 0 0;
-  }
   .recent-project-details {
     padding: 1rem;
   }
@@ -185,7 +177,7 @@ html {
     margin-bottom: 1rem;
   }
   .recent-project-img {
-    height: 100px;
+    height: 180px;
     border-radius: 14px 14px 0 0;
   }
   .recent-project-details {

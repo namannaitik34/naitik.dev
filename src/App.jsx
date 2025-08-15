@@ -99,6 +99,19 @@ function App() {
               </div>
             </div>
           </div>
+          <div className="recent-project-card">
+            <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=600&q=80" alt="Recent Project 2" className="recent-project-img" />
+            <div className="recent-project-details">
+              <h4 className="recent-project-name">Design Portfolio App</h4>
+              <p className="recent-project-desc">A mobile-first portfolio app for designers, featuring project galleries, testimonials, and contact forms. Built with React Native and Firebase.</p>
+              <div className="recent-project-links">
+                <a href="https://github.com/yourusername/design-portfolio-app" target="_blank" rel="noopener" className="github-logo-link">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" style={{height: '40px', verticalAlign: 'middle'}} />
+                </a>
+                <a href="https://designportfolioapp.com" target="_blank" rel="noopener" className="visit-link">Visit <span className="visit-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="black" xmlns="http://www.w3.org/2000/svg"><path d="M21 3L3 10.53a1 1 0 0 0 .23 1.93l8.34.73.73 8.34a1 1 0 0 0 1.93.23L21 3z"/></svg></span></a>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
