@@ -218,6 +218,9 @@ body, html, #root {
   min-height: 320px;
   box-shadow: 0 2px 16px rgba(0,0,0,0.04);
 }
+.hero-desc{
+  margin-bottom: 2rem;
+}
 @media (max-width: 700px) {
   .hero-section {
     flex-direction: column;
@@ -233,6 +236,13 @@ body, html, #root {
   }
   .hero-content {
     text-align: center;
+  }
+
+  .hero-image-container {
+    margin-top: 2rem;
+  }
+  .hero-desc{
+    margin-bottom: 2rem;
   }
 }
 .hero-image-container {
