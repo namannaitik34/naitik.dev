@@ -226,7 +226,7 @@ function App() {
 
       {/* Testimonial Section */}
       <section className="testimonial-section">
-        <h3 style={{textAlign: 'center', marginBottom: '32px', color: '#2563eb'}}>Testimonials</h3>
+        <h3 style={{textAlign: 'center', marginBottom: '32px', color: '#000000ff', fontSize: '2rem'}}>Testimonials</h3>
         <TestimonialSlider />
       </section>
 
