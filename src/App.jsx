@@ -95,7 +95,7 @@ function App() {
                 <a href="https://github.com/namannaitik34/datalens" target="_blank" rel="noopener" className="github-logo-link">
                   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" style={{height: '40px', verticalAlign: 'middle'}} />
                 </a>
-                <a href="https://designportfolioapp.com" target="_blank" rel="noopener" className="visit-link">Visit <span className="visit-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="black" xmlns="http://www.w3.org/2000/svg"><path d="M21 3L3 10.53a1 1 0 0 0 .23 1.93l8.34.73.73 8.34a1 1 0 0 0 1.93.23L21 3z"/></svg></span></a>
+                <a href="https://datalens-nine.vercel.app/" target="_blank" rel="noopener" className="visit-link">Visit <span className="visit-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="black" xmlns="http://www.w3.org/2000/svg"><path d="M21 3L3 10.53a1 1 0 0 0 .23 1.93l8.34.73.73 8.34a1 1 0 0 0 1.93.23L21 3z"/></svg></span></a>
               </div>
             </div>
           </div>
