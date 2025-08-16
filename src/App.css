@@ -23,6 +23,263 @@
 html {
   scroll-behavior: smooth;
 }
+
+/* Preloader Styles */
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(135deg, #0a0e27 0%, #1a1a2e 50%, #16213e 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  overflow: hidden;
+}
+
+.preloader-content {
+  text-align: center;
+  color: #fff;
+  position: relative;
+}
+
+.ai-brain {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 2rem;
+}
+
+.brain-core {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(45deg, #ffd700, #ffeb3b);
+  border-radius: 50%;
+  margin: 20px auto;
+  position: relative;
+  animation: pulse 2s ease-in-out infinite alternate;
+  box-shadow: 0 0 30px rgba(255, 215, 0, 0.5);
+}
+
+.brain-core::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  animation: innerPulse 1.5s ease-in-out infinite alternate;
+}
+
+.neural-network {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.node {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: #ffd700;
+  border-radius: 50%;
+  animation: nodeGlow 2s ease-in-out infinite;
+}
+
+.node-1 {
+  top: 10px;
+  left: 30px;
+  animation-delay: 0s;
+}
+
+.node-2 {
+  top: 10px;
+  right: 30px;
+  animation-delay: 0.5s;
+}
+
+.node-3 {
+  bottom: 10px;
+  left: 30px;
+  animation-delay: 1s;
+}
+
+.node-4 {
+  bottom: 10px;
+  right: 30px;
+  animation-delay: 1.5s;
+}
+
+.connection {
+  position: absolute;
+  background: linear-gradient(90deg, transparent, #ffd700, transparent);
+  height: 2px;
+  animation: dataFlow 2s ease-in-out infinite;
+}
+
+.connection-1 {
+  top: 14px;
+  left: 38px;
+  width: 44px;
+  animation-delay: 0.2s;
+}
+
+.connection-2 {
+  top: 60px;
+  left: 20px;
+  width: 2px;
+  height: 40px;
+  background: linear-gradient(0deg, transparent, #ffd700, transparent);
+  animation-delay: 0.7s;
+}
+
+.connection-3 {
+  bottom: 14px;
+  left: 38px;
+  width: 44px;
+  animation-delay: 1.2s;
+}
+
+.connection-4 {
+  top: 60px;
+  right: 20px;
+  width: 2px;
+  height: 40px;
+  background: linear-gradient(0deg, transparent, #ffd700, transparent);
+  animation-delay: 1.7s;
+}
+
+.loading-text {
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.developer-text {
+  color: #ffd700;
+  animation: textGlow 2s ease-in-out infinite alternate;
+}
+
+.ai-text {
+  color: #ffeb3b;
+  animation: textGlow 2s ease-in-out infinite alternate-reverse;
+}
+
+.code-snippets {
+  margin-bottom: 2rem;
+  font-family: 'Courier New', monospace;
+  font-size: 0.9rem;
+}
+
+.code-line {
+  color: #64ffda;
+  margin: 0.5rem 0;
+  animation: typewriter 4s steps(40) infinite;
+  opacity: 0.7;
+}
+
+.code-line:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.code-line:nth-child(2) {
+  animation-delay: 1s;
+}
+
+.code-line:nth-child(3) {
+  animation-delay: 2s;
+}
+
+.progress-bar {
+  width: 200px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #ffd700, #ffeb3b);
+  border-radius: 2px;
+  animation: progressFill 3s ease-out forwards;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.1); }
+}
+
+@keyframes innerPulse {
+  0% { opacity: 0.3; transform: translate(-50%, -50%) scale(1); }
+  100% { opacity: 0.8; transform: translate(-50%, -50%) scale(1.2); }
+}
+
+@keyframes nodeGlow {
+  0%, 100% { 
+    opacity: 0.5; 
+    box-shadow: 0 0 5px #ffd700;
+  }
+  50% { 
+    opacity: 1; 
+    box-shadow: 0 0 15px #ffd700, 0 0 25px #ffd700;
+  }
+}
+
+@keyframes dataFlow {
+  0% { opacity: 0; }
+  50% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+@keyframes textGlow {
+  0% { text-shadow: 0 0 10px currentColor; }
+  100% { text-shadow: 0 0 20px currentColor, 0 0 30px currentColor; }
+}
+
+@keyframes typewriter {
+  0% { opacity: 0; }
+  25% { opacity: 1; }
+  75% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+@keyframes progressFill {
+  0% { width: 0%; }
+  100% { width: 100%; }
+}
+
+@media (max-width: 768px) {
+  .loading-text {
+    font-size: 1.5rem;
+  }
+  
+  .code-snippets {
+    font-size: 0.8rem;
+  }
+  
+  .ai-brain {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .brain-core {
+    width: 60px;
+    height: 60px;
+  }
+}
 /* Contact Section Split Layout */
 .contact-split {
   display: flex;

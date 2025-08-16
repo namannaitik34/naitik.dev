@@ -1,8 +1,53 @@
 import './App.css';
 import './Testimonial.css';
 import TestimonialSlider from './TestimonialSlider';
+import { useState, useEffect } from 'react';
 
 function App() {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 3000); // Show preloader for 3 seconds
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (loading) {
+    return (
+      <div className="preloader">
+        <div className="preloader-content">
+          <div className="ai-brain">
+            <div className="brain-core"></div>
+            <div className="neural-network">
+              <div className="node node-1"></div>
+              <div className="node node-2"></div>
+              <div className="node node-3"></div>
+              <div className="node node-4"></div>
+              <div className="connection connection-1"></div>
+              <div className="connection connection-2"></div>
+              <div className="connection connection-3"></div>
+              <div className="connection connection-4"></div>
+            </div>
+          </div>
+          <div className="loading-text">
+            <span className="developer-text">Developer</span>
+            <span className="ai-text">AI</span>
+          </div>
+          <div className="code-snippets">
+            <div className="code-line">{'<'}/{'>'} Building amazing experiences...</div>
+            <div className="code-line">{'{'} AI: "Learning patterns..." {'}'}</div>
+            <div className="code-line">console.log("Loading portfolio...");</div>
+          </div>
+          <div className="progress-bar">
+            <div className="progress-fill"></div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="portfolio-container">
       {/* Hero Section */}
