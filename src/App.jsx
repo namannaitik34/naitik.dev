@@ -74,25 +74,25 @@ function App() {
         <h3 className="recent-projects-title">Recent Projects</h3>
         <div className="recent-projects-list">
           <div className="recent-project-card">
-            <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80" alt="Recent Project 1" className="recent-project-img" />
+            <img src="/images/mocktopus.png" alt="Recent Project 1" className="recent-project-img" />
             <div className="recent-project-details">
-              <h4 className="recent-project-name">AI Chatbot Platform</h4>
-              <p className="recent-project-desc">A conversational AI platform for customer support, built with Node.js, React, and OpenAI API. Features real-time chat, analytics, and custom integrations.</p>
+              <h4 className="recent-project-name">Mocktopus</h4>
+              <p className="recent-project-desc">Mocktopus is an intelligent AI chatbot with a built-in personality switch. Get straightforward, helpful answers by default, or activate Sarcastic Mode for clever, witty comebacks. Whether you need support or sass, Mocktopus adapts instantly — with tentacles full of attitude.</p>
               <div className="recent-project-links">
-                <a href="https://github.com/yourusername/aichatbot" target="_blank" rel="noopener" className="github-logo-link">
-                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" style={{height: '40px', verticalAlign: 'middle'}} />
+                <a href="https://github.com/namannaitik34/mocktopus" target="_blank" rel="noopener" className="github-logo-link">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" style={{height: '40px', verticalAlign: 'middle', transition: 'transform 0.2s'}} />
                 </a>
-                <a href="https://aichatbot.com" target="_blank" rel="noopener" className="visit-link">Visit <span className="visit-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="black" xmlns="http://www.w3.org/2000/svg"><path d="M21 3L3 10.53a1 1 0 0 0 .23 1.93l8.34.73.73 8.34a1 1 0 0 0 1.93.23L21 3z"/></svg></span></a>
+                <a href="https://mocktopus-pearl.vercel.app/" target="_blank" rel="noopener" className="visit-link">Visit <span className="visit-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="black" xmlns="http://www.w3.org/2000/svg"><path d="M21 3L3 10.53a1 1 0 0 0 .23 1.93l8.34.73.73 8.34a1 1 0 0 0 1.93.23L21 3z"/></svg></span></a>
               </div>
             </div>
           </div>
           <div className="recent-project-card">
-            <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=600&q=80" alt="Recent Project 2" className="recent-project-img" />
+            <img src="/images/datalens.png" alt="Recent Project 2" className="recent-project-img" />
             <div className="recent-project-details">
-              <h4 className="recent-project-name">Design Portfolio App</h4>
-              <p className="recent-project-desc">A mobile-first portfolio app for designers, featuring project galleries, testimonials, and contact forms. Built with React Native and Firebase.</p>
+              <h4 className="recent-project-name">DataLens</h4>
+              <p className="recent-project-desc">DataLens is a modern data analytics and visualization platform that empowers users to transform raw datasets into meaningful insights. Upload spreadsheets, explore patterns through interactive dashboards, track key metrics, and export detailed reports with ease.</p>
               <div className="recent-project-links">
-                <a href="https://github.com/yourusername/design-portfolio-app" target="_blank" rel="noopener" className="github-logo-link">
+                <a href="https://github.com/namannaitik34/datalens" target="_blank" rel="noopener" className="github-logo-link">
                   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" style={{height: '40px', verticalAlign: 'middle'}} />
                 </a>
                 <a href="https://designportfolioapp.com" target="_blank" rel="noopener" className="visit-link">Visit <span className="visit-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="black" xmlns="http://www.w3.org/2000/svg"><path d="M21 3L3 10.53a1 1 0 0 0 .23 1.93l8.34.73.73 8.34a1 1 0 0 0 1.93.23L21 3z"/></svg></span></a>
@@ -100,15 +100,15 @@ function App() {
             </div>
           </div>
           <div className="recent-project-card">
-            <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=600&q=80" alt="Recent Project 2" className="recent-project-img" />
+            <img src="/images/buildmycv.png" alt="Recent Project 2" className="recent-project-img" />
             <div className="recent-project-details">
-              <h4 className="recent-project-name">Design Portfolio App</h4>
-              <p className="recent-project-desc">A mobile-first portfolio app for designers, featuring project galleries, testimonials, and contact forms. Built with React Native and Firebase.</p>
+              <h4 className="recent-project-name">buildmyCV</h4>
+              <p className="recent-project-desc">BuildMyCV is an AI-powered resume builder that helps users create ATS-friendly CVs with smart content suggestions. It streamlines the resume-making process by offering personalized guidance and allows users to easily export their final CVs in multiple formats.</p>
               <div className="recent-project-links">
-                <a href="https://github.com/yourusername/design-portfolio-app" target="_blank" rel="noopener" className="github-logo-link">
+                <a href="https://github.com/namannaitik34/buildmyCV" target="_blank" rel="noopener" className="github-logo-link">
                   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" style={{height: '40px', verticalAlign: 'middle'}} />
                 </a>
-                <a href="https://designportfolioapp.com" target="_blank" rel="noopener" className="visit-link">Visit <span className="visit-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="black" xmlns="http://www.w3.org/2000/svg"><path d="M21 3L3 10.53a1 1 0 0 0 .23 1.93l8.34.73.73 8.34a1 1 0 0 0 1.93.23L21 3z"/></svg></span></a>
+                <a href="https://studio--buildmycv-x7de6.us-central1.hosted.app/" target="_blank" rel="noopener" className="visit-link">Visit <span className="visit-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="black" xmlns="http://www.w3.org/2000/svg"><path d="M21 3L3 10.53a1 1 0 0 0 .23 1.93l8.34.73.73 8.34a1 1 0 0 0 1.93.23L21 3z"/></svg></span></a>
               </div>
             </div>
           </div>
