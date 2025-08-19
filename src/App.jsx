@@ -282,7 +282,7 @@ function App() {
           <div className="contact-form-container">
             <h3 className='text-black'>Contact Me</h3>
             <p className="contact-desc">From concept to creation—tell me your idea, I’ll handle the rest.</p>
-                  <form action="https://formspree.io/f/mblkvdvp" method="POST" className="contact-form">
+                  <form action="https://formspree.io/f/mblkvdvp" method="POST" className="contact-form" target="_blank">
               <input type="text" name="name" required placeholder="Your Name" />
               <input type="email" name="email" required placeholder="Your Email" />
               <textarea name="message" required placeholder="Your Message"></textarea>
