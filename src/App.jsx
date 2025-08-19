@@ -282,10 +282,10 @@ function App() {
           <div className="contact-form-container">
             <h3 className='text-black'>Contact Me</h3>
             <p className="contact-desc">From concept to creation—tell me your idea, I’ll handle the rest.</p>
-            <form className="contact-form">
-              <input type="text" placeholder="Your Name" required />
-              <input type="email" placeholder="Your Email" required />
-              <textarea placeholder="Your Message" rows="4" required />
+                  <form action="https://formspree.io/f/mblkvdvp" method="POST" className="contact-form">
+              <input type="text" name="name" required placeholder="Your Name" />
+              <input type="email" name="email" required placeholder="Your Email" />
+              <textarea name="message" required placeholder="Your Message"></textarea>
               <button type="submit" className="discovery-btn">Send Message</button>
             </form>
             <p className="shy-text">Or email me directly at <a href="mailto:kumarnaitik7970@gmail.com">kumarnaitik7970@gmail.com</a></p>
