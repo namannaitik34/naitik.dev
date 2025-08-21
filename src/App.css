@@ -456,7 +456,7 @@ body, html, #root {
 
 .hero-section {
   font-family: 'Inter', 'Segoe UI', 'Arial', sans-serif;
-  background: linear-gradient(120deg, #e3f2fd 0%, #eeec6f 100%);
+  background: white;
   color: #222;
   display: flex;
   align-items: center;
@@ -604,9 +604,9 @@ body, html, #root {
   color: #010a1d;
 }
 .skills-section {
+  background: white;
   font-family: 'Inter', 'Segoe UI', 'Arial', sans-serif;
   color: #111;
-  background: #fff;
   border-radius: 18px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.04);
   padding: 2rem;
