@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Naitik-Portfolio</title>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Advent+Pro:wght@300;400;500;700&family=Bungee+Outline&family=Aclonica&display=swap"
+		rel="stylesheet">
+
+	<!-- force reload updated CSS -->
+	<link rel="stylesheet" href="style.css?v=2">
+	<link rel="stylesheet" href="tabs.css">
+</head>
+
+<body class="site-animated">
+	<!-- site nav (hidden on landing, appears after scrolling past landing) -->
+	<nav class="site-nav" aria-label="Main navigation">
+		<div class="nav-left">
+			<span class="dot"></span>
+			<span class="dot hollow"></span>
+			<span class="brand">namannaitik34</span>
+		</div>
+		<ul class="nav-center">
+			<li>home</li>
+			<li>works</li>
+			<li>services</li>
+			<li>about</li>
+		</ul>
+		<div class="nav-right">contact ▸▸▸</div>
+		<!-- hamburger toggle for small screens -->
+		<button type="button" class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
+			<span class="hamburger" aria-hidden="true"></span>
+		</button>
+	</nav>
+	<!-- Mobile nav overlay -->
+	<div id="mobile-nav" class="mobile-nav" hidden>
+		<div class="mobile-nav-inner">
+			<button type="button" class="mobile-close" aria-label="Close menu">✕</button>
+			<ul class="mobile-nav-list">
+				<li><a href="#landing-page">Home</a></li>
+				<li><a href="#works">Works</a></li>
+				<li><a href="#services">Services</a></li>
+				<li><a href="#about-section">About</a></li>
+			</ul>
+			<a class="mobile-contact-link" href="#footer">Contact</a>
+		</div>
+	</div>
+	<!-- landing page -->
+	<section id="landing-page">
+		<div class="info">
+			<div>NAMANNAITIK34</div>
+			<div>FULL STACK DEVELOPER</div>
+			<div style="letter-spacing: 10px;">
+				........
+			</div>
+			<div class="text">
+				<img src="assests/landing-page/design.png" alt="design image">
+				<div style="opacity: 0.3;">PORTF</div>
+				<div style="opacity: 0.3;">OLIO</div>
+			</div>
+			<div class="ui">
+				<div>
+					<img src="assests/landing-page/Rectangle.png" alt="rectangle green line">
+					UI/UX DESIGN
+				</div>
+			</div>
+			<div class="russian">
+				<div>( Наманнаитик )</div>
+			</div>
+		</div>
+
+		<div class="contact">
+			<div>EMAIL</div>
+			<div>kumarnaitik7@gmail.com</div>
+			<div>TEL.........</div>
+			<div>+91 797 061 9555</div>
+		</div>
+
+		<div class="button">
+			<button class="btn-contact">contact</button>
+			<div class="about">
+				<button class="work">works \</button>
+				<button class="work">about</button>
+			</div>
+		</div>
+
+
+	</section>
+
+	<!-- Parallax Videos Section -->
+	<section id="parallax-section" class="parallax-section">
+		<div class="parallax-container">
+			<div class="parallax-header">
+				<h2 class="parallax-title">featured works</h2>
+				<p class="parallax-subtitle">Experience my work in motion</p>
+			</div>
+
+			<div class="parallax-videos-grid">
+				<!-- Video 1 -->
+				<div class="parallax-video-wrapper">
+					<div class="parallax-video-inner">
+						<video autoplay muted loop playsinline data-object-fit="cover">
+							<source src="assests/videos/orthosaarthi.mp4" type="video/mp4">
+						</video>
+						<div class="parallax-video-overlay">
+							<div class="parallax-video-info">
+								<h3 class="project-name">OrthoSaathi</h3>
+								<p class="project-desc">A comprehensive platform connecting orthopedic patients with expert doctors for consultation and care management.</p>
+								<div class="project-tech">
+									<span class="tech-tag">React</span>
+									<span class="tech-tag">Node.js</span>
+									<span class="tech-tag">MongoDB</span>
+									<span class="tech-tag">Stripe</span>
+								</div>
+								<a href="#" class="visit-btn">Visit Project ↗</a>
+							</div>
+						</div>
+						<div class="parallax-video-title">OrthoSaathi</div>
+					</div>
+				</div>
+
+				<!-- Video 2 -->
+				<div class="parallax-video-wrapper">
+					<div class="parallax-video-inner">
+						<video autoplay muted loop playsinline data-object-fit="cover">
+							<source src="assests/videos/kashipatent.mp4" type="video/mp4">
+						</video>
+						<div class="parallax-video-overlay">
+							<div class="parallax-video-info">
+								<h3 class="project-name">KahiPatent</h3>
+								<p class="project-desc">An intelligent patent management system helping organizations track, manage, and protect their intellectual property globally.</p>
+								<div class="project-tech">
+									<span class="tech-tag">Vue.js</span>
+									<span class="tech-tag">Express</span>
+									<span class="tech-tag">MySQL</span>
+									<span class="tech-tag">Firebase</span>
+								</div>
+								<a href="#" class="visit-btn">Visit Project ↗</a>
+							</div>
+						</div>
+						<div class="parallax-video-title">KahiPatent</div>
+					</div>
+				</div>
+
+				<!-- Video 3 -->
+				<div class="parallax-video-wrapper">
+					<div class="parallax-video-inner">
+						<video autoplay muted loop playsinline data-object-fit="cover">
+							<source src="assests/videos/arp.mp4" type="video/mp4">
+						</video>
+						<div class="parallax-video-overlay">
+							<div class="parallax-video-info">
+								<h3 class="project-name">ARP Electric</h3>
+								<p class="project-desc">A next-gen e-commerce platform for industrial electrical solutions with real-time inventory and B2B ordering system.</p>
+								<div class="project-tech">
+									<span class="tech-tag">Next.js</span>
+									<span class="tech-tag">TypeScript</span>
+									<span class="tech-tag">PostgreSQL</span>
+									<span class="tech-tag">AWS</span>
+								</div>
+								<a href="#" class="visit-btn">Visit Project ↗</a>
+							</div>
+						</div>
+						<div class="parallax-video-title">ARP Electric</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Testimonials (clients) -->
+	<section id="testimonials" class="testimonials-section">
+	<div class="testimonials-inner">
+		<h3 class="testimonials-title">Client Testimonials</h3>
+		<div class="testimonial-carousel">
+			<button class="testimonial-arrow prev" aria-label="Previous">‹</button>
+			<div class="testimonial-viewport">
+				<div class="testimonial-track">
+					<article class="testimonial-slide">
+						<blockquote class="testimonial-quote">“Naitik delivered a polished, high-performance website on-time and improved our conversion rate within weeks. Technical skill matched by excellent communication.”</blockquote>
+						<div class="testimonial-meta">
+							<img src="https://via.placeholder.com/64" alt="Client avatar">
+							<div class="meta-text"><strong>Dr. Harpreet Singh</strong><span> — Orthosaarthi</span></div>
+						</div>
+					</article>
+					<article class="testimonial-slide">
+						<blockquote class="testimonial-quote">“He transformed our UX and rebuilt the frontend with clean code. Easily one of the most reliable developers we've worked with.”</blockquote>
+						<div class="testimonial-meta">
+							<img src="https://via.placeholder.com/64" alt="Client avatar">
+							<div class="meta-text"><strong>Shivam Singh</strong><span> — KahiPatent</span></div>
+						</div>
+					</article>
+					<article class="testimonial-slide">
+						<blockquote class="testimonial-quote">“Creative, fast, and proactive — Naitik exceeded expectations and shipped a responsive product that delighted our users.”</blockquote>
+						<div class="testimonial-meta">
+							<img src="https://via.placeholder.com/64" alt="Client avatar">
+							<div class="meta-text"><strong>Nishant Parsai</strong><span> — ARP Electric Solution</span></div>
+						</div>
+					</article>
+				</div>
+			</div>
+			<button class="testimonial-arrow next" aria-label="Next">›</button>
+		</div>
+		<div class="testimonial-dots" aria-hidden="false"></div>
+	</div>
+</section>
+
+
+		<!-- Works cards section (interactive cards) -->
+	<section id="works" aria-label="Works">
+		<div class="works-header">
+			<h2 class="works-title">projects showcase</h2>
+			<p class="works-subtitle">Explore my creative projects and solutions</p>
+		</div>
+		<div class="container">
+		  <div class="box">
+		    <span></span>
+		    <div class="content">
+		      <h2>Card one</h2>
+		      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+		      <a href="#">Read More</a>
+		    </div>
+		  </div>
+		  <div class="box">
+		    <span></span>
+		    <div class="content">
+		      <h2>Card two</h2>
+		      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+		      <a href="#">Read More</a>
+		    </div>
+		  </div>
+		  <div class="box">
+		    <span></span>
+		    <div class="content">
+		      <h2>Card Three</h2>
+		      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+		      <a href="#">Read More</a>
+		    </div>
+		  </div>
+		  <div class="box">
+		    <span></span>
+		    <div class="content">
+		      <h2>Card Three</h2>
+		      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+		      <a href="#">Read More</a>
+		    </div>
+		  </div>
+		  <div class="box">
+		    <span></span>
+		    <div class="content">
+		      <h2>Card Three</h2>
+		      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+		      <a href="#">Read More</a>
+		    </div>
+		  </div>
+		  <div class="box">
+		    <span></span>
+		    <div class="content">
+		      <h2>Card Three</h2>
+		      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+		      <a href="#">Read More</a>
+		    </div>
+		  </div>
+		</div>
+	</section>
+
+	<section id="about-section" aria-label="About myself">
+		<!-- decorative abstract fluid shape (purely visual) -->
+		<div class="about-shape" aria-hidden="true">
+			<svg viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice"
+				role="img">
+				<defs>
+					<linearGradient id="g1" x1="0%" x2="100%">
+						<stop offset="0%" stop-color="#EDE0FF" />
+						<stop offset="100%" stop-color="#D7F8E3" />
+					</linearGradient>
+					<linearGradient id="g2" x1="0%" x2="100%">
+						<stop offset="0%" stop-color="#FFD8D1" />
+						<stop offset="100%" stop-color="#FFEFA6" />
+					</linearGradient>
+
+					<!-- additional gradients for extra blobs -->
+					<linearGradient id="g3" x1="0%" x2="100%">
+						<stop offset="0%" stop-color="#A6F0FF" />
+						<stop offset="100%" stop-color="#C9F7FF" />
+					</linearGradient>
+					<linearGradient id="g4" x1="0%" x2="100%">
+						<stop offset="0%" stop-color="#FFD1F0" />
+						<stop offset="100%" stop-color="#FFF3B8" />
+					</linearGradient>
+					<filter id="blur" x="-50%" y="-50%" width="200%" height="200%">
+						<feGaussianBlur stdDeviation="26" />
+					</filter>
+				</defs>
+
+				<!-- larger soft morphing blob -->
+				<path id="blob1" fill="url(#g1)" opacity="0.88" filter="url(#blur)"
+					d="M421,95 C492,141 524,236 496,323 C468,410 345,517 250,487 C155,457 88,336 112,241 C136,146 350,49 421,95 Z">
+					<animate attributeName="d" dur="14s" repeatCount="indefinite" values="
+							M421,95 C492,141 524,236 496,323 C468,410 345,517 250,487 C155,457 88,336 112,241 C136,146 350,49 421,95 Z;
+							M480,120 C520,200 500,310 440,360 C380,410 300,450 220,440 C140,430 90,330 120,250 C150,170 300,120 480,120 Z;
+							M421,95 C492,141 524,236 496,323 C468,410 345,517 250,487 C155,457 88,336 112,241 C136,146 350,49 421,95 Z" />
+				</path>
+
+				<!-- smaller accent morphing blob -->
+				<path id="blob2" fill="url(#g2)" opacity="0.72" filter="url(#blur)"
+					d="M200,380 C240,420 320,460 380,430 C440,400 470,320 436,270 C402,220 320,180 260,200 C200,220 160,340 200,380 Z">
+					<animate attributeName="d" dur="10s" repeatCount="indefinite"
+						values="
+							M200,380 C240,420 320,460 380,430 C440,400 470,320 436,270 C402,220 320,180 260,200 C200,220 160,340 200,380 Z;
+							M220,340 C260,380 320,420 360,400 C400,380 430,320 400,270 C370,220 310,200 260,220 C210,240 190,320 220,340 Z;
+							M200,380 C240,420 320,460 380,430 C440,400 470,320 436,270 C402,220 320,180 260,200 C200,220 160,340 200,380 Z" />
+				</path>
+
+				<!-- extra overlapping accent blob (slower, larger) -->
+				<path id="blob3" fill="url(#g3)" opacity="0.58" filter="url(#blur)"
+					d="M520,200 C560,260 540,340 500,400 C460,460 360,520 280,500 C200,480 140,380 160,300 C180,220 360,160 520,200 Z">
+					<animate attributeName="d" dur="18s" repeatCount="indefinite"
+						values="
+							M520,200 C560,260 540,340 500,400 C460,460 360,520 280,500 C200,480 140,380 160,300 C180,220 360,160 520,200 Z;
+							M480,160 C540,220 560,320 520,380 C480,440 380,480 300,460 C220,440 140,340 180,260 C220,180 360,140 480,160 Z;
+							M520,200 C560,260 540,340 500,400 C460,460 360,520 280,500 C200,480 140,380 160,300 C180,220 360,160 520,200 Z" />
+				</path>
+
+				<!-- fast little spark blob (adds lively detail) -->
+				<path id="blob4" fill="url(#g4)" opacity="0.48" filter="url(#blur)"
+					d="M120,120 C150,140 190,160 230,150 C270,140 300,110 290,80 C280,50 200,40 160,60 C120,80 90,100 120,120 Z">
+					<animate attributeName="d" dur="8s" repeatCount="indefinite" values="
+							M120,120 C150,140 190,160 230,150 C270,140 300,110 290,80 C280,50 200,40 160,60 C120,80 90,100 120,120 Z;
+							M140,100 C170,120 210,140 240,130 C270,120 290,100 280,70 C270,40 210,50 170,70 C130,90 100,110 140,100 Z;
+							M120,120 C150,140 190,160 230,150 C270,140 300,110 290,80 C280,50 200,40 160,60 C120,80 90,100 120,120 Z" />
+				</path>
+			</svg>
+		</div>
+
+		<div class="about-wrapper">
+
+			<article class="about-card" tabindex="0" role="region" aria-labelledby="about-title" id="about-card">
+				<div class="about-header">
+					<div>
+						<div id="about-title" class="about-title">Step into my world</div>
+						<div class="about-subtitle">I’m a Full Stack Web Developer and aspiring Data Scientist who loves
+							bringing ideas to life through clean, functional, and visually engaging web applications.
+							With a strong foundation in both frontend and backend development, I create seamless user
+							experiences backed by solid, scalable systems. Now, I’m diving deeper into the world of data
+							— learning to analyze, predict, and build intelligent solutions that solve real-world
+							problems. My goal is to merge creativity, code, and data to craft products that truly make
+							an impact.</div>
+					</div>
+				</div>
+			</article>
+
+			<!-- Tech card (right) -->
+
+			<!-- About details moved out of the title block (left panel with portrait + timeline) -->
+			<div class="about-details" id="about-details">
+				<div class="about-left-panel">
+					<div class="hover-card"></div>
+				</div>
+			</div>
+			<aside class="tech-card" aria-labelledby="tech-title">
+				<div id="tech-title" class="tech-title">Languages & Tools</div>
+
+				<div class="tech-grid" id="tech-grid">
+					<!-- Languages -->
+					<div class="tech-item" title="Python">
+						<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+							alt="Python logo">
+						<div>Python</div>
+					</div>
+					<div class="tech-item" title="JavaScript">
+						<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+							alt="JavaScript logo">
+						<div>JavaScript</div>
+					</div>
+					<div class="tech-item" title="TypeScript">
+						<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
+							alt="TypeScript logo">
+						<div>TypeScript</div>
+					</div>
+					<div class="tech-item" title="Kotlin">
+						<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg"
+							alt="Kotlin logo">
+						<div>Kotlin</div>
+					</div>
+
+					<!-- Tools & Frameworks (use devicon where available) -->
+					<div class="tech-item" title="React">
+						<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
+							alt="React logo">
+						<div>React</div>
+					</div>
+					<div class="tech-item" title="Node.js">
+						<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
+							alt="Node.js logo">
+						<div>Node.js</div>
+					</div>
+					<div class="tech-item" title="Express">
+						<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg"
+							alt="Express logo" onerror="this.style.display='none'">
+						<div>Express</div>
+					</div>
+					<div class="tech-item" title="MongoDB">
+						<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg"
+							alt="MongoDB logo">
+						<div>MongoDB</div>
+					</div>
+
+					<div class="tech-item" title="MySQL">
+						<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"
+							alt="MySQL logo">
+						<div>MySQL</div>
+					</div>
+					<div class="tech-item" title="Firebase">
+						<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg"
+							alt="Firebase logo" onerror="this.style.display='none'">
+						<div>Firebase</div>
+					</div>
+					<div class="tech-item" title="Git">
+						<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"
+							alt="Git logo">
+						<div>Git</div>
+					</div>
+					<div class="tech-item" title="Docker">
+						<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg"
+							alt="Docker logo">
+						<div>Docker</div>
+					</div>
+
+					<div class="tech-item" title="Figma">
+						<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg"
+							alt="Figma logo" onerror="this.style.display='none'">
+						<div>Figma</div>
+					</div>
+
+					<div class="tech-item" title="Android">
+						<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/android/android-original.svg"
+							alt="Android logo">
+						<div>Android</div>
+					</div>
+					<div class="tech-item" title="Flutter">
+						<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg"
+							alt="Flutter logo">
+						<div>Flutter</div>
+					</div>
+					<div class="tech-item" title="Bootstrap">
+						<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-plain.svg"
+							alt="Bootstrap logo">
+						<div>Bootstrap</div>
+					</div>
+					<div class="tech-item" title="Tailwind CSS">
+						<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg"
+							alt="Tailwind CSS logo" onerror="this.style.display='none'">
+						<div>Tailwind</div>
+					</div>
+
+					<div class="tech-item" title="Next.js">
+						<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg"
+							alt="Next.js logo" onerror="this.style.display='none'">
+						<div>Next.js</div>
+					</div>
+					<div class="tech-item" title="AWS">
+						<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/awsv2/aws-plain.svg" alt="AWS logo"
+							onerror="this.style.display='none'">
+						<div>AWS</div>
+					</div>
+					<div class="tech-item" title="Azure">
+						<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg"
+							alt="Azure logo" onerror="this.style.display='none'">
+						<div>Azure</div>
+					</div>
+					<div class="tech-item" title="Django">
+						<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-original.svg"
+							alt="Django logo" onerror="this.style.display='none'">
+						<div>Django</div>
+					</div>
+
+					<div class="tech-item" title="Flask">
+						<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg"
+							alt="Flask logo" onerror="this.style.display='none'">
+						<div>Flask</div>
+					</div>
+					<div class="tech-item" title="PyTorch">
+						<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg"
+							alt="PyTorch logo" onerror="this.style.display='none'">
+						<div>PyTorch</div>
+					</div>
+					<div class="tech-item" title="TensorFlow">
+						<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg"
+							alt="TensorFlow logo" onerror="this.style.display='none'">
+						<div>TensorFlow</div>
+					</div>
+				</div>
+			</aside>
+
+			<!-- small right-side panels: testimonial + contact -->
+
+		</div>
+		</aside>
+
+
+		</div>
+	</section>
+
+
+	<section id="footer">
+		<div class="footer-header">
+			<h2 class="footer-title">Let's Connect</h2>
+			<p class="footer-subtitle">Ready to bring your ideas to life? Let's talk</p>
+		</div>
+		<img class="footer-bg" src="assests/footer/background-footer.png" alt="footer background">
+
+		<div class="footer-inner">
+			<div class="footer-left">
+				<div class="talk-to-me">talk2me</div>
+				<ul class="social-list">
+					<li>instagram</li>
+					<li>linkedIN</li>
+					<li>github</li>
+					<li>linktr.ee</li>
+					<li>peerlist</li>
+					<li>whatsapp</li>
+				</ul>
+			</div>
+
+			<div class="footer-center">
+				<ul class="footer-nav">
+					<li>home</li>
+					<li>works</li>
+					<li>services</li>
+					<li>about</li>
+				</ul>
+			</div>
+
+			<div class="footer-right">
+				<form class="footer-form" action="#" method="post">
+					<label>name</label>
+					<input class="footer-input" type="text" placeholder="your name">
+					<label>subject</label>
+					<input class="footer-input" type="text" placeholder="your subject">
+					<label>e-mail</label>
+					<input class="footer-input" type="email" placeholder="johndoe@example.com">
+					<label>message</label>
+					<textarea class="footer-textarea" placeholder="enter your message here"></textarea>
+					<button class="footer-submit" type="submit">SUBMIT</button>
+				</form>
+			</div>
+		</div>
+
+		<div class="footer-bottom">
+			<div class="footer-line"></div>
+			<div class="footer-copy">© 2025<br>Made with love, jokes, and lots of braincells ;)</div>
+		</div>
+
+	</section>
+
+
+<!-- GSAP (required for tabs sticky/scroll) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+<!-- Testimonial carousel script -->
+<script>
+	(function(){
+		const track = document.querySelector('.testimonial-track');
+		const slides = track ? Array.from(track.children) : [];
+		const prev = document.querySelector('.testimonial-arrow.prev');
+		const next = document.querySelector('.testimonial-arrow.next');
+		const dotsWrap = document.querySelector('.testimonial-dots');
+		if (!track || slides.length === 0) return;
+
+		let idx = 0;
+		let timer = null;
+
+		// build dots
+		slides.forEach((s,i)=>{
+			const d = document.createElement('button');
+			d.className = 'testimonial-dot'+(i===0? ' active':'');
+			d.setAttribute('aria-label', 'Show testimonial '+(i+1));
+			d.addEventListener('click', ()=>{ goTo(i); resetAuto(); });
+			dotsWrap.appendChild(d);
+		});
+
+		const dots = Array.from(dotsWrap.children);
+
+		function update() {
+			track.style.transform = `translateX(-${idx * 100}%)`;
+			dots.forEach((d,i)=> d.classList.toggle('active', i===idx));
+		}
+
+		function goTo(i){ idx = (i + slides.length) % slides.length; update(); }
+
+		function prevFn(){ goTo(idx-1); }
+		function nextFn(){ goTo(idx+1); }
+
+		if (prev) prev.addEventListener('click', ()=>{ prevFn(); resetAuto(); });
+		if (next) next.addEventListener('click', ()=>{ nextFn(); resetAuto(); });
+
+		function startAuto(){ timer = setInterval(()=>{ nextFn(); }, 4500); }
+		function resetAuto(){ if (timer) clearInterval(timer); startAuto(); }
+
+		// init
+		update(); startAuto();
+	})();
+</script>
+
+<!-- Parallax Videos Effect -->
+<script>
+(function() {
+	const videoWrappers = Array.from(document.querySelectorAll('.parallax-video-wrapper'));
+	if (videoWrappers.length === 0) return;
+
+	videoWrappers.forEach((wrapper, index) => {
+		const videoInner = wrapper.querySelector('.parallax-video-inner');
+		
+		gsap.to(videoInner, {
+			scrollTrigger: {
+				trigger: wrapper,
+				start: 'top bottom',
+				end: 'bottom top',
+				scrub: 0.5,
+				onUpdate: (self) => {
+					// Move video up as user scrolls down (parallax effect)
+					gsap.to(videoInner, {
+						y: -100 * self.progress,
+						duration: 0
+					});
+				}
+			}
+		});
+	});
+})();
+</script>
+
+<script>
+	// Show the top nav only after the user scrolls past the landing page
+	(function () {
+		var nav = document.querySelector('.site-nav');
+		var landing = document.getElementById('landing-page');
+		if (!nav || !landing) return;
+
+		function updateNav() {
+			var show = window.scrollY > (landing.offsetHeight - 20);
+			if (show) {
+				if (!nav.classList.contains('visible')) {
+					nav.classList.add('visible');
+					document.body.classList.add('has-nav-visible');
+				}
+			} else {
+				if (nav.classList.contains('visible')) {
+					nav.classList.remove('visible');
+					document.body.classList.remove('has-nav-visible');
+				}
+			}
+		}
+
+		// initial state
+		updateNav();
+		window.addEventListener('scroll', updateNav, { passive: true });
+		window.addEventListener('resize', updateNav);
+	})();
+
+	// about-shape subtle parallax on pointer/scroll
+	(function () {
+		const section = document.getElementById('about-section');
+		const shape = section && section.querySelector('.about-shape');
+		if (!section || !shape) return;
+
+		// pointer move depth
+		section.addEventListener('pointermove', e => {
+			const rect = section.getBoundingClientRect();
+			const x = (e.clientX - rect.left) / rect.width - 0.5; // -0.5..0.5
+			const y = (e.clientY - rect.top) / rect.height - 0.5;
+			const tx = x * 18; const ty = y * 10;
+			shape.style.transform = `translate(${tx}px, ${ty}px)`;
+		});
+		// subtle scroll parallax
+		window.addEventListener('scroll', () => {
+			const rect = section.getBoundingClientRect();
+			const pct = Math.min(Math.max((window.innerHeight - rect.top) / (window.innerHeight + rect.height), 0), 1);
+			const scrollTx = (pct - 0.5) * 40; // -20..20
+			shape.style.transform += ` translateY(${scrollTx}px)`;
+		}, { passive: true });
+	})();
+
+	// Buttons & nav behaviour: smooth scroll and enable actions
+	(function () {
+		function scrollToId(id) {
+			const el = document.getElementById(id);
+			if (!el) return;
+			el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+		}
+
+		// contact button -> footer form
+		const btnContact = document.querySelector('.btn-contact');
+		btnContact && btnContact.addEventListener('click', function (e) {
+			e.preventDefault();
+			scrollToId('footer');
+			setTimeout(() => {
+				const firstField = document.querySelector('#footer input, #footer textarea');
+				if (firstField) firstField.focus();
+			}, 600);
+		});
+
+		// works / about buttons
+		document.querySelectorAll('.work').forEach(b => {
+			b.addEventListener('click', function (e) {
+				e.preventDefault();
+				const txt = (b.textContent || '').toLowerCase();
+				if (txt.includes('work')) scrollToId('works');
+				else if (txt.includes('about')) scrollToId('about-section');
+			});
+		});
+
+		// Nav center quick links
+		document.querySelectorAll('.nav-center li').forEach(li => {
+			li.style.cursor = 'pointer';
+			li.addEventListener('click', function () {
+				const txt = (li.textContent || '').toLowerCase();
+				if (txt.includes('home')) window.scrollTo({ top: 0, behavior: 'smooth' });
+				else if (txt.includes('works')) scrollToId('works');
+				else if (txt.includes('about')) scrollToId('about-section');
+			});
+		});
+
+		// nav-right contact
+		const navRight = document.querySelector('.nav-right');
+		navRight && navRight.addEventListener('click', function () { scrollToId('footer'); });
+
+		// Mobile nav toggle
+		const navToggle = document.querySelector('.nav-toggle');
+		const mobileNav = document.getElementById('mobile-nav');
+		const mobileClose = document.querySelector('.mobile-close');
+
+		function openMobileNav() {
+			if (!mobileNav) return;
+			mobileNav.hidden = false;
+			mobileNav.style.display = 'flex';
+			// ensure overlay appears above any stacking contexts (Chrome quirks)
+			try { mobileNav.style.zIndex = '2147483647'; } catch(e){}
+			document.documentElement.style.overflow = 'hidden';
+			navToggle && navToggle.setAttribute('aria-expanded', 'true');
+		}
+		function closeMobileNav() {
+			if (!mobileNav) return;
+			mobileNav.hidden = true;
+			mobileNav.style.display = 'none';
+			document.documentElement.style.overflow = '';
+			navToggle && navToggle.setAttribute('aria-expanded', 'false');
+		}
+
+		// support mouse click and pointer/touch events for reliability across devices
+		function bindOpenClose(el, fn) {
+			if (!el) return;
+			el.addEventListener('click', fn);
+			el.addEventListener('pointerup', fn);
+			el.addEventListener('touchend', fn);
+		}
+
+		navToggle && bindOpenClose(navToggle, function () {
+			const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+			if (expanded) closeMobileNav(); else openMobileNav();
+		});
+
+		if (mobileClose) {
+			bindOpenClose(mobileClose, function (e) { e.stopPropagation(); closeMobileNav(); });
+		}
+
+		// allow clicking/tapping on the overlay background to close the menu
+		if (mobileNav) {
+			mobileNav.addEventListener('click', function (e) {
+				if (e.target === mobileNav) closeMobileNav();
+			});
+		}
+
+		// close mobile nav when clicking a link
+		document.querySelectorAll('.mobile-nav-list a').forEach(a => {
+			a.addEventListener('click', function () { closeMobileNav(); });
+		});
+
+		// close on escape
+		window.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeMobileNav(); });
+	})();
+</script>
+
+</body>
+</html>

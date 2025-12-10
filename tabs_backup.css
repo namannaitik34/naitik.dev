@@ -1,0 +1,580 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+:root {
+	--gray-700: #424242;
+	--gray-500: #737373;
+	--black: black;
+	--border-radius--tiny: .375rem;
+	--light-grey: #f4f4f4;
+	--border-radius--xtiny: .25rem;
+	--gray-800: #292929;
+	--gray-25: #fcfcfc;
+	--gray-400: #a3a3a3;
+	--gray-50: #fafafa;
+	--gray-900: #141414;
+	--dark-green: #25fabe;
+	--green: #61ffc9;
+	--nav--gray-800: #292929;
+	--nav--gray-50: #fafafa;
+	--gray-600: #525252;
+	--white: white;
+	--border-radius--xxsmall: .5rem;
+	--gray-300: #d6d6d6;
+	--gray-200: #e5e5e5;
+	--gray-100: whitesmoke;
+	--border-radius--xlarge: 2rem;
+	--border-radius--xxtiny: .175rem;
+	--border-radius--large-still: 1.75rem;
+	--border-radius--0: 0rem;
+	--border-radius--medium: 1.25rem;
+	--border-radius--large-change: 1.75rem;
+	--border-radius--xmedium: 1.5rem;
+	--border-radius--xsmall: .75rem;
+	--border-radius--small: 1rem;
+	--border-radius--home-hero: 2rem;
+	--nav--gray-700: #424242;
+	--border-radius--about-image: 2rem;
+	--border-radius--button-circle: 100vw;
+	--nav--circle: #292929;
+	--nav--y: #61ffc9;
+}
+
+html, body {
+.yoda-tabs-left {
+	border-radius: var(--border-radius--medium);
+	background-color: var(--gray-700);
+	flex-direction: column;
+	justify-content: flex-end;
+	align-items: stretch;
+	padding: 1.5rem;
+	display: flex;
+}
+
+.yoda-tabs-left-top {
+	height: 100%;
+	position: relative;
+}
+
+.yoda-tabs-content {
+	width: 100%;
+	height: 100%;
+	text-align: center;
+.yoda-tabs-line {
+	flex-direction: column;
+	justify-content: space-around;
+	padding-top: 0%;
+	padding-bottom: 0%;
+	display: flex;
+	position: absolute;
+	opacity: 0;
+	transition: opacity 0.5s;
+}
+
+.yoda-tabs-content.is-1 {
+	opacity: 1;
+}
+		grid-row-gap: 1.5rem;
+		grid-template-rows: auto;
+		grid-template-columns: .4fr 1fr;
+		grid-auto-columns: 1fr;
+		padding-left: 3.3%;
+		padding-right: 3.3%;
+		display: grid;
+}
+@media(max-width: 576px) {
+	.yoda-tabs-component {
+		grid-template-columns: 1fr;
+	}
+}
+.max-width-small {
+	width: 100%;
+	max-width: 30rem;
+}
+
+.margin-small {
+	margin: 3.5rem;
+	margin-bottom: 0;
+}
+
+.heading-style-h3 {
+	letter-spacing: -.02em;
+	font-size: 2.8125rem;
+	font-weight: 500;
+	line-height: 1;
+}
+
+.light-green-underline {
+	box-shadow: none;
+	display: inline-block;
+}
+
+p {
+	color: var(--gray-500);
+	margin-bottom: 5rem;
+}
+
+.text-size-medium {
+	font-size: 1.125rem;
+}
+
+sup {
+	top: 0em;
+}
+
+sub,
+sup {
+	vertical-align: baseline;
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+}
+
+.yoda-tabs-section {
+	z-index: 99;
+	border-radius: var(--border-radius--xlarge);
+	background: linear-gradient(180deg, #000000 0%, #0d0d0d 50%, #000000 100%);
+	position: relative;
+	overflow: hidden;
+}
+
+/* Animated gradient background overlay */
+.yoda-tabs-section::before {
+	content: '';
+	position: absolute;
+	top: -50%;
+	left: -50%;
+	width: 200%;
+	height: 200%;
+	background: radial-gradient(circle at 40% 60%, rgba(97, 255, 201, 0.08) 0%, transparent 50%),
+				radial-gradient(circle at 60% 40%, rgba(43, 138, 239, 0.08) 0%, transparent 50%);
+	animation: rotateTabsBg 30s linear infinite;
+	pointer-events: none;
+	z-index: 0;
+}
+
+@keyframes rotateTabsBg {
+	0% { transform: rotate(0deg); }
+	100% { transform: rotate(360deg); }
+}
+
+/* Floating particles effect */
+.yoda-tabs-section::after {
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background-image: 
+		radial-gradient(2px 2px at 15% 25%, rgba(255, 255, 255, 0.12), transparent),
+		radial-gradient(1px 1px at 70% 80%, rgba(97, 255, 201, 0.15), transparent),
+		radial-gradient(2px 2px at 55% 55%, rgba(43, 138, 239, 0.12), transparent),
+		radial-gradient(1px 1px at 90% 20%, rgba(255, 255, 255, 0.1), transparent);
+	background-size: 200% 200%;
+	background-position: 0% 0%;
+	animation: floatTabsParticles 25s ease-in-out infinite;
+	pointer-events: none;
+	z-index: 0;
+}
+
+@keyframes floatTabsParticles {
+	0%, 100% { background-position: 0% 0%; opacity: 1; }
+	50% { background-position: 100% 100%; opacity: 0.7; }
+}
+
+.yoda-tabs-padding {
+		padding-top: 7rem;
+		padding-bottom: 7rem;
+		position: relative;
+}
+.heading{
+	margin-bottom: 3rem;
+	font-size: 3.5rem;
+	text-align: center;
+	background: linear-gradient(135deg, #ffffff 0%, #61ffc9 50%, #2b8aef 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+	font-family: 'Advent Pro', sans-serif;
+	font-weight: 700;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	position: relative;
+	z-index: 2;
+}
+@media(max-width: 576px) {
+	.yoda-tabs-padding {
+		padding-top: 2rem;
+		padding-bottom: 0rem;
+	}
+}
+
+.yoda-tabs-height {
+		height: 550vh;
+}
+@media(max-width: 576px) {
+	.yoda-tabs-height {
+		height: 600vh;
+	}
+}
+
+.yoda-tabs-sticky-wrapper {
+	height: 100vh;
+	position: -webkit-sticky;
+	position: sticky;
+	top: 5vh;
+}
+
+.yoda-tabs-container {
+	width: 100%;
+	max-width: 120rem;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.yoda-tabs-component {
+	height: 90vh;
+	grid-column-gap: 2rem;
+	grid-row-gap: 2rem;
+	grid-template-rows: auto;
+	grid-template-columns: .45fr 1fr;
+	grid-auto-columns: 1fr;
+	padding-left: 3.3%;
+	padding-right: 3.3%;
+	display: grid;
+	position: relative;
+	z-index: 2;
+}
+@media(max-width: 900px) {
+	.yoda-tabs-component {
+		grid-template-columns: 1fr;
+		grid-row-gap: 1.5rem;
+		height: auto;
+		min-height: 70vh;
+	}
+}
+@media(max-width: 576px) {
+	.yoda-tabs-component {
+		grid-template-columns: 1fr;
+		height: auto;
+		padding-left: 5%;
+		padding-right: 5%;
+	}
+}
+
+.yoda-tabs-left {
+	border-radius: var(--border-radius--medium);
+	background-color: var(--gray-700);
+	flex-direction: column;
+	justify-content: flex-end;
+	align-items: stretch;
+	padding: 1.5rem;
+	display: flex;
+}
+
+.yoda-tabs-left-top {
+	height: 100%;
+	position: relative;
+}
+
+.yoda-tabs-content {
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	flex-direction: column;
+	justify-content: space-around;
+	padding-top: 0%;
+	padding-bottom: 0%;
+	display: flex;
+	position: absolute;
+	opacity: 0;
+	transition: opacity 0.5s;
+}
+
+.yoda-tabs-content.is-1 {
+	opacity: 1;
+}
+
+.heading-style-h4 {
+	letter-spacing: -.02em;
+	font-size: 3.5rem;
+	font-weight: 600;
+	line-height: 1.05;
+	font-family: 'Advent Pro', sans-serif;
+	text-shadow: 0 2px 10px rgba(97, 255, 201, 0.3);
+}
+@media(max-width: 900px) {
+	.heading-style-h4 {
+		font-size: 2.5rem;
+	}
+}
+@media(max-width: 576px) {
+	.heading-style-h4 {
+		margin: 0;
+		font-size: 1.8rem;
+	}
+}
+
+.text-color-gray100 {
+	color: var(--gray-100);
+}
+
+.yoda-tabs-line {
+	width: 100%;
+	height: 2px;
+	background: linear-gradient(90deg, transparent, rgba(97, 255, 201, 0.5), transparent);
+	box-shadow: 0 0 10px rgba(97, 255, 201, 0.3);
+}
+
+.text-color-gray400 {
+	color: var(--gray-400);
+}
+
+.text-size-small {
+	font-size: 1.8rem;
+	font-family: 'Advent Pro', sans-serif;
+	line-height: 1.4;
+	opacity: 0.9;
+}
+@media(max-width: 900px) {
+	.text-size-small {
+		font-size: 1.3rem;
+	}
+}
+@media(max-width: 576px) {
+	.text-size-small {
+		font-size: 1rem;
+		line-height: 1.5;
+	}
+}
+
+.yoda-tabs-left-bottom {
+	flex-direction: column;
+	display: flex;
+}
+
+.yoda-tabs-button {
+	grid-column-gap: .5rem;
+	grid-row-gap: .5rem;
+	border: 2px solid var(--gray-800);
+	background-color: var(--gray-800);
+	color: var(--gray-25);
+	text-align: center;
+	letter-spacing: .05em;
+	text-transform: uppercase;
+	cursor: pointer;
+	border-radius: .8rem;
+	justify-content: center;
+	align-items: center;
+	padding: .8rem 1.5rem;
+	font-size: .95rem;
+	font-weight: 600;
+	text-decoration: none;
+	transition: all .3s ease;
+	display: flex;
+	overflow: hidden;
+	position: relative;
+	box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.yoda-tabs-button:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 6px 20px rgba(97, 255, 201, 0.4);
+}
+
+.yoda-tabs-video,
+.yoda-tabs-right,
+.yoda-tabs-button {
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	-webkit-transform: translate3d(0, 0, 0);
+	-moz-transform: translate3d(0, 0, 0);
+}
+
+.yoda-tabs-button.is-green {
+	border-color: var(--green);
+	background-color: var(--green);
+	color: var(--gray-900);
+}
+
+.yoda-tabs-button.is-secondary {
+	color: var(--gray-900);
+	background-color: transparent;
+	transition: border-color .6s, color .6s;
+}
+
+.yoda-tabs-button.is-green.is-secondary {
+	color: var(--gray-25);
+	background-color: rgba(97, 255, 201, 0);
+}
+
+.yoda-tabs-button-text {
+	z-index: 2;
+	position: relative;
+}
+
+.yoda-tabs-button-circle-wrapper {
+	width: 1.25rem;
+	height: 1.25rem;
+	border-radius: 100vw;
+	justify-content: center;
+	align-items: center;
+	display: flex;
+	position: relative;
+	overflow: hidden;
+}
+
+.yoda-tabs-button-icon {
+	z-index: 2;
+	width: 1rem;
+	height: 1rem;
+	justify-content: center;
+	align-items: center;
+	display: flex;
+	position: absolute;
+}
+
+.yoda-tabs-button-circlee {
+  color: var(--white);
+	width: 80%;
+	aspect-ratio: 1 / 1;
+	border-radius: var(--border-radius--button-circle);
+	position: absolute;
+	top: 0;
+  transform: translate3d(0px, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+	transform-style: preserve-3d;
+	height: 250px;
+	transition: all .2s ease-in-out;
+	will-change: transform, width, height, color;
+	border: 1px solid transparent;
+}
+.yoda-tabs-button.is-green.is-secondary:hover {
+  color: var(--gray-800);
+  border-color: var(--green);
+}
+.yoda-tabs-button.is-green.is-secondary:hover .yoda-tabs-button-circlee {
+    
+	background-color: var(--green);
+  transform: translate3d(0px, -43%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+  width: 100%;
+}
+
+.yoda-tabs-right {
+	width: 100%;
+	height: 100%;
+	border-radius: var(--border-radius--medium);
+	position: relative;
+	overflow: hidden;
+	grid-area: span 1 / span 1 / span 1 / span 1;
+	border: 1px solid rgba(97, 255, 201, 0.15);
+	box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+	background: rgba(20, 20, 20, 0.6);
+}
+
+@media(max-width: 900px) {
+	.yoda-tabs-right {
+		min-height: 400px;
+	}
+}
+
+@media(max-width: 576px) {
+	.yoda-tabs-right {
+		min-height: 280px;
+	}
+}
+
+.w-background-video {
+	height: 500px;
+	color: #fff;
+	position: relative;
+	overflow: hidden;
+}
+
+.yoda-tabs-video {
+	width: 100%;
+	height: 100%;
+	border-radius: var(--border-radius--medium);
+	object-fit: cover;
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 0;
+	transform: translateY(6%);
+	transition: opacity 0.45s ease, transform 0.45s ease;
+}
+
+.yoda-tabs-video.is-1 {
+	opacity: 1;
+	transform: translateY(0);
+	z-index: 2;
+}
+
+audio,
+canvas,
+progress,
+video {
+	vertical-align: baseline;
+	display: inline-block;
+}
+
+.w-background-video>video {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	z-index: -100;
+	background-position: 50%;
+	background-size: cover;
+	margin: auto;
+	position: absolute;
+	top: -100%;
+	bottom: -100%;
+	left: -100%;
+	right: -100%;
+}
+
+img {
+	border: 0;
+	max-width: 100%;
+	vertical-align: middle;
+	display: inline-block;
+}
+
+.yoda-tabs-gda-badge {
+	width: 5rem;
+	margin-bottom: 1.5rem;
+	object-fit: cover;
+	position: relative;
+	z-index: 2;
+	margin-top: 2rem;
+	margin-right: 2rem;
+}
+
+.video-container {
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+
+/* Responsive adjustments for tabs on small screens */
+@media (max-width: 900px) {
+	.yoda-tabs-height { height: auto; min-height: 100vh; }
+	.yoda-tabs-sticky-wrapper { position: static; height: auto; }
+	.yoda-tabs-padding { padding-top: 4rem; padding-bottom: 4rem; }
+	.heading { font-size: 2.8rem; margin-bottom: 2rem; }
+}
+
+@media (max-width: 700px) {
+	.yoda-tabs-height { height: auto; min-height: 100vh; }
+	.yoda-tabs-video, .w-background-video { height: 280px; position: relative; top: 0; left: 0; }
+	.yoda-tabs-sticky-wrapper { position: static; height: auto; }
+	.yoda-tabs-component { height: auto; min-height: auto; padding-bottom: 2rem; }
+	.yoda-tabs-padding { padding-top: 3rem; padding-bottom: 3rem; }
+	.heading { font-size: 2.2rem; }
+}
+
+@media (max-width: 480px) {
+	.yoda-tabs-padding { padding-top: 2rem; padding-bottom: 2rem; }
+	.yoda-tabs-gda-badge { width: 3.5rem; margin-top: 1rem; margin-right: 1rem; }
+	.yoda-tabs-video, .w-background-video { height: 220px; }
+	.yoda-tabs-left { padding: 1.5rem; }
+	.heading { font-size: 1.8rem; margin-bottom: 1.5rem; }
+}

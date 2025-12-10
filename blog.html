@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>My Journey — Blog</title>
+  <link rel="stylesheet" href="blog.css">
+  <link href="https://fonts.googleapis.com/css2?family=Advent+Pro:wght@300;400;600;700&family=Aclonica&family=Bungee+Outline&display=swap" rel="stylesheet">
+</head>
+<body>
+  <main class="blog-root">
+
+    <!-- HERO -->
+    <header class="hero" id="hero">
+      <div class="hero-parallax" data-parallax="0.25"></div>
+      <div class="hero-inner container">
+        <div class="hero-left">
+          <div class="img-placeholder" data-img="HeroImage1" aria-hidden="true">
+            <span class="label">HeroImage1</span>
+          </div>
+        </div>
+        <div class="hero-right">
+          <h1 class="hero-title">My Journey</h1>
+          <p class="hero-tagline">Coder. Traveller. Fitness lover. Musician. Explorer of life — one line of code at a time.</p>
+          <p class="hero-desc">I write code that solves problems, walk mountains that teach me patience, and listen to songs that remind me how to breathe.</p>
+          <a class="btn btn-cta" href="#intro">Read my story</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- INTRO -->
+    <section id="intro" class="section intro container">
+      <div class="two-col">
+        <div class="col col-left slide-left">
+          <div class="img-placeholder" data-img="IntroImage1"><span class="label">IntroImage1</span></div>
+        </div>
+        <div class="col col-right slide-right">
+          <h2>Who I am</h2>
+          <p class="lead">A short personal note — I code to build things, trek to clear my head, train to stay disciplined, and play music to feel alive. This is a patchwork of projects, journeys and the small rituals that keep me moving.</p>
+          <p>On this blog I share lessons, failures, and small victories — with tips for developers, travel notes, workout ideas, and playlists.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CODING JOURNEY -->
+    <section id="coding" class="section coding">
+      <div class="container">
+        <h2 class="section-title">My Coding Journey <span class="typewriter" data-text="— from Hello World to full stack adventures"></span></h2>
+        <div class="coding-grid">
+          <div class="code-image img-placeholder" data-img="CodingImage1"><span class="label">CodingImage1</span></div>
+          <div class="code-content">
+            <ol class="timeline">
+              <li><strong>2016:</strong> First line of JavaScript — curiosity sparked.</li>
+              <li><strong>2018:</strong> Built my first full-stack app — shipped, learned ops.</li>
+              <li><strong>2020:</strong> Remote projects, collaboration, and stronger architecture.</li>
+              <li><strong>2024:</strong> Focus on performance, accessibility and delightful UX.</li>
+            </ol>
+            <div class="cards">
+              <article class="mini-card reveal-up">APIs • Server-side</article>
+              <article class="mini-card reveal-up">Frontend • UX</article>
+              <article class="mini-card reveal-up">Testing • Automation</article>
+            </div>
+            <pre class="code-snippet" aria-hidden="true">// small example (decorative)
+const greet = name => `Hello, ${name}!`;
+console.log(greet('Traveller'));
+            </pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRAVEL -->
+    <section id="travel" class="section travel">
+      <div class="travel-bg" data-parallax="0.12"></div>
+      <div class="container travel-inner">
+        <blockquote class="travel-quote" data-parallax="0.35">"Mountains teach in silence; the view is the homework."</blockquote>
+        <div class="gallery">
+          <div class="gallery-item reveal-img" data-img="TravelImage1"><span class="label">TravelImage1</span></div>
+          <div class="gallery-item reveal-img" data-img="TravelImage2"><span class="label">TravelImage2</span></div>
+          <div class="gallery-item reveal-img" data-img="TravelImage3"><span class="label">TravelImage3</span></div>
+          <div class="gallery-item reveal-img" data-img="TravelImage4"><span class="label">TravelImage4</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FITNESS -->
+    <section id="fitness" class="section fitness container">
+      <h2 class="section-title">Fitness Lifestyle</h2>
+      <div class="fitness-inner two-col">
+        <div class="col col-left reveal-up"><div class="img-placeholder" data-img="FitnessImage1"><span class="label">FitnessImage1</span></div></div>
+        <div class="col col-right reveal-up">
+          <div class="img-placeholder small" data-img="FitnessImage2"><span class="label">FitnessImage2</span></div>
+          <p>I follow simple routines that stack into bigger wins: short runs, mobility, strength circuits, and calorie-aware meals. Consistency beats intensity.</p>
+          <div class="hslider" aria-label="routines">
+            <div class="htrack">
+              <div class="hcard">Morning Run</div>
+              <div class="hcard">Bodyweight</div>
+              <div class="hcard">Mobility</div>
+              <div class="hcard">Recovery</div>
+              <div class="hcard">Nutrition</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MUSIC -->
+    <section id="music" class="section music">
+      <div class="music-bg"></div>
+      <div class="container music-inner">
+        <div class="music-left">
+          <div class="round-img img-placeholder" data-img="MusicImage1"><span class="label">MusicImage1</span></div>
+        </div>
+        <div class="music-right">
+          <h2 class="section-title">My Relationship with Music</h2>
+          <p class="music-text">I listen to songs that pull me into a different state — focus playlists for coding, ambient for travel, and upbeat tracks for training.</p>
+          <div class="wave" aria-hidden="true"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BEYOND THESE LABELS -->
+    <section id="beyond" class="section beyond container">
+      <div class="beyond-inner two-col">
+        <div class="col col-left reveal-scale"><div class="img-placeholder" data-img="PortraitImage1"><span class="label">PortraitImage1</span></div></div>
+        <div class="col col-right reveal-scale">
+          <h2>Beyond These Labels</h2>
+          <p class="lead">There is more than a list of interests — a unified curiosity, a drive to learn, and an urge to share what I discover. This blog is the map of that curiosity.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA / END -->
+    <footer id="end" class="section end container">
+      <div class="end-inner two-col">
+        <div class="col col-left reveal-up"><div class="img-placeholder" data-img="EndImage1"><span class="label">EndImage1</span></div></div>
+        <div class="col col-right reveal-up">
+          <h2>Join me on the journey</h2>
+          <p>Follow along — subscribe, say hi, or check the works page. I post notes about code, trails, music and the small things that keep me curious.</p>
+          <div class="end-cta"><a class="btn" href="#">Subscribe</a> <a class="btn ghost" href="#">Contact</a></div>
+        </div>
+      </div>
+    </footer>
+
+  </main>
+
+  <script>
+    // small utility: reveal on intersection
+    (function(){
+      const io = new IntersectionObserver((entries)=>{
+        entries.forEach(e=>{
+          if(e.isIntersecting) e.target.classList.add('in-view');
+        });
+      },{threshold:0.12});
+      document.querySelectorAll('.reveal-up, .reveal-scale, .reveal-img, .slide-left, .slide-right, .img-placeholder, .mini-card').forEach(el=>io.observe(el));
+
+      // typewriter for coding header
+      const tw = document.querySelector('.typewriter');
+      if(tw){
+        const txt = tw.dataset.text||''; let i=0;
+        function step(){ if(i<=txt.length){ tw.textContent = txt.slice(0,i++); setTimeout(step,40); } }
+        setTimeout(step,600);
+      }
+
+      // parallax on elements with data-parallax
+      const parallaxEls = Array.from(document.querySelectorAll('[data-parallax]'));
+      function onScroll(){
+        const sc = window.scrollY || window.pageYOffset;
+        parallaxEls.forEach(el=>{
+          const speed = parseFloat(el.dataset.parallax) || 0.15;
+          el.style.transform = `translateY(${-(sc*speed)}px)`;
+        });
+      }
+      window.addEventListener('scroll', onScroll, {passive:true});
+      onScroll();
+
+      // horizontal slider simple drag/scroll
+      document.querySelectorAll('.hslider').forEach(slider=>{
+        const track = slider.querySelector('.htrack');
+        let isDown=false, startX, scrollLeft;
+        slider.addEventListener('mousedown', (e)=>{ isDown=true; slider.classList.add('dragging'); startX=e.pageX - slider.offsetLeft; scrollLeft=slider.scrollLeft; });
+        window.addEventListener('mouseup', ()=>{ isDown=false; slider.classList.remove('dragging'); });
+        slider.addEventListener('mousemove', (e)=>{ if(!isDown) return; e.preventDefault(); const x=e.pageX - slider.offsetLeft; const walk=(x-startX)*1.5; slider.scrollLeft = scrollLeft - walk; });
+      });
+    })();
+  </script>
+</body>
+</html>
