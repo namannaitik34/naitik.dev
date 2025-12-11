@@ -606,28 +606,23 @@
 	})();
 </script>
 
-<!-- Parallax Videos Effect -->
+<!-- Parallax Videos Effect - Optimized -->
 <script>
 (function() {
 	const videoWrappers = Array.from(document.querySelectorAll('.parallax-video-wrapper'));
 	if (videoWrappers.length === 0) return;
 
-	videoWrappers.forEach((wrapper, index) => {
+	videoWrappers.forEach((wrapper) => {
 		const videoInner = wrapper.querySelector('.parallax-video-inner');
 		
 		gsap.to(videoInner, {
+			y: -50,
 			scrollTrigger: {
 				trigger: wrapper,
 				start: 'top bottom',
 				end: 'bottom top',
-				scrub: 0.5,
-				onUpdate: (self) => {
-					// Move video up as user scrolls down (parallax effect)
-					gsap.to(videoInner, {
-						y: -100 * self.progress,
-						duration: 0
-					});
-				}
+				scrub: 1,
+				lazy: true
 			}
 		});
 	});
@@ -662,27 +657,27 @@
 		window.addEventListener('resize', updateNav);
 	})();
 
-	// about-shape subtle parallax on pointer/scroll
+	// about-shape subtle parallax - optimized
 	(function () {
 		const section = document.getElementById('about-section');
 		const shape = section && section.querySelector('.about-shape');
 		if (!section || !shape) return;
 
-		// pointer move depth
+		// Simplified pointer move with throttling
+		let ticking = false;
 		section.addEventListener('pointermove', e => {
-			const rect = section.getBoundingClientRect();
-			const x = (e.clientX - rect.left) / rect.width - 0.5; // -0.5..0.5
-			const y = (e.clientY - rect.top) / rect.height - 0.5;
-			const tx = x * 18; const ty = y * 10;
-			shape.style.transform = `translate(${tx}px, ${ty}px)`;
+			if (!ticking) {
+				requestAnimationFrame(() => {
+					const rect = section.getBoundingClientRect();
+					const x = (e.clientX - rect.left) / rect.width - 0.5;
+					const y = (e.clientY - rect.top) / rect.height - 0.5;
+					const tx = x * 10; const ty = y * 6;
+					shape.style.transform = `translate(${tx}px, ${ty}px)`;
+					ticking = false;
+				});
+				ticking = true;
+			}
 		});
-		// subtle scroll parallax
-		window.addEventListener('scroll', () => {
-			const rect = section.getBoundingClientRect();
-			const pct = Math.min(Math.max((window.innerHeight - rect.top) / (window.innerHeight + rect.height), 0), 1);
-			const scrollTx = (pct - 0.5) * 40; // -20..20
-			shape.style.transform += ` translateY(${scrollTx}px)`;
-		}, { passive: true });
 	})();
 
 	// Buttons & nav behaviour: smooth scroll and enable actions
