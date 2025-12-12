@@ -39,6 +39,9 @@
 }
 
 html, body {
+	font-family: 'Poppins', sans-serif;
+}
+
 .yoda-tabs-left {
 	border-radius: var(--border-radius--medium);
 	background-color: var(--gray-700);
@@ -58,6 +61,16 @@ html, body {
 	width: 100%;
 	height: 100%;
 	text-align: center;
+	flex-direction: column;
+	justify-content: space-around;
+	padding-top: 0%;
+	padding-bottom: 0%;
+	display: flex;
+	position: absolute;
+	opacity: 0;
+	transition: opacity 0.5s;
+}
+
 .yoda-tabs-line {
 	flex-direction: column;
 	justify-content: space-around;
@@ -72,13 +85,15 @@ html, body {
 .yoda-tabs-content.is-1 {
 	opacity: 1;
 }
-		grid-row-gap: 1.5rem;
-		grid-template-rows: auto;
-		grid-template-columns: .4fr 1fr;
-		grid-auto-columns: 1fr;
-		padding-left: 3.3%;
-		padding-right: 3.3%;
-		display: grid;
+
+.yoda-tabs-component {
+	grid-row-gap: 1.5rem;
+	grid-template-rows: auto;
+	grid-template-columns: .4fr 1fr;
+	grid-auto-columns: 1fr;
+	padding-left: 3.3%;
+	padding-right: 3.3%;
+	display: grid;
 }
 @media(max-width: 576px) {
 	.yoda-tabs-component {
@@ -386,8 +401,10 @@ sup {
 .yoda-tabs-button {
 	-webkit-backface-visibility: hidden;
 	-moz-backface-visibility: hidden;
+	backface-visibility: hidden;
 	-webkit-transform: translate3d(0, 0, 0);
 	-moz-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
 }
 
 .yoda-tabs-button.is-green {

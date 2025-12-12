@@ -98,12 +98,13 @@ main, .about-wrapper, .site-nav, #footer, .yoda-tabs-section { position: relativ
 
 /* Testimonials carousel - Modern 3D Card Stack Design */
 .testimonials-section {
-    padding: 100px 20px;
-    background: linear-gradient(180deg, #000000 0%, #0a0a0a 30%, #000000 100%);
+    padding: 120px 20px 140px;
+    background: linear-gradient(180deg, #2a2e2c 0%, #1a1a1a 30%, #0a0a0a 60%, #050505 80%, #000000 100%);
     color: #eee;
     margin: 0;
     position: relative;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: visible;
 }
 
 /* Animated gradient background */
@@ -112,50 +113,33 @@ main, .about-wrapper, .site-nav, #footer, .yoda-tabs-section { position: relativ
     position: absolute;
     inset: 0;
     background: 
-        radial-gradient(ellipse at 20% 50%, rgba(97, 255, 201, 0.1) 0%, transparent 40%),
-        radial-gradient(ellipse at 80% 80%, rgba(0, 95, 61, 0.1) 0%, transparent 45%),
-        radial-gradient(ellipse at 50% 0%, rgba(255, 188, 0, 0.05) 0%, transparent 50%);
+        radial-gradient(ellipse at 50% 0%, rgba(97, 255, 201, 0.03) 0%, transparent 50%),
+        radial-gradient(ellipse at 50% 100%, rgba(0, 95, 61, 0.03) 0%, transparent 50%);
     pointer-events: none;
 }
 
-@keyframes meshFlow {
-    0%, 100% { opacity: 0.6; }
-    50% { opacity: 0.8; }
-}
-
-/* Static grid pattern overlay - performance optimized */
-.testimonials-section::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-image: 
-        linear-gradient(0deg, transparent 24%, rgba(97, 255, 201, 0.02) 25%, rgba(97, 255, 201, 0.02) 26%, transparent 27%, transparent),
-        linear-gradient(90deg, transparent 24%, rgba(97, 255, 201, 0.02) 25%, rgba(97, 255, 201, 0.02) 26%, transparent 27%, transparent);
-    background-size: 60px 60px;
-    opacity: 0.3;
-    pointer-events: none;
-}
+/* Removed for minimalistic design */
 
 .testimonials-inner {
-    max-width: 1000px;
+    max-width: 900px;
     margin: 0 auto;
     position: relative;
     z-index: 2;
+    padding: 0 20px;
 }
 
 .testimonials-title {
-    font-size: 3.5rem;
-    margin: 0 0 60px 0;
+    font-size: 2.8rem;
+    margin: 0 0 80px 0;
     color: #fff;
     text-align: center;
-    font-weight: 700;
-    letter-spacing: 2px;
+    font-weight: 600;
+    letter-spacing: 1px;
     font-family: 'Advent Pro', sans-serif;
-    background: linear-gradient(135deg, #61ffc9 0%, #005F3D 50%, #61ffc9 100%);
+    background: linear-gradient(135deg, #61ffc9 0%, rgba(97, 255, 201, 0.6) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    text-transform: uppercase;
 }
 
 .testimonial-carousel {
@@ -163,15 +147,16 @@ main, .about-wrapper, .site-nav, #footer, .yoda-tabs-section { position: relativ
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 20px;
+    gap: 30px;
     perspective: 1200px;
+    overflow: visible;
 }
 
 .testimonial-viewport {
-    overflow: hidden;
+    overflow: visible;
     width: 100%;
-    max-width: 800px;
-    padding: 20px 0;
+    max-width: 750px;
+    padding: 60px 0;
 }
 
 .testimonial-track {
@@ -179,87 +164,64 @@ main, .about-wrapper, .site-nav, #footer, .yoda-tabs-section { position: relativ
     gap: 2rem;
     transition: transform 0.7s cubic-bezier(.25,.46,.45,.94);
     transform-style: preserve-3d;
+    padding: 0 10px;
 }
 
 .testimonial-slide {
     min-width: 100%;
     box-sizing: border-box;
-    padding: 40px;
-    background: linear-gradient(135deg, rgba(15, 30, 50, 0.95) 0%, rgba(20, 40, 60, 0.95) 100%);
-    border-radius: 20px;
+    padding: 50px 45px;
+    background: rgba(10, 10, 10, 0.4);
+    border-radius: 12px;
     position: relative;
     overflow: hidden;
-    box-shadow: 
-        0 20px 60px rgba(0, 0, 0, 0.7),
-        0 0 40px rgba(97, 255, 201, 0.15),
-        inset 0 1px 0 rgba(255, 255, 255, 0.1);
-    border: 2px solid rgba(97, 255, 201, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(97, 255, 201, 0.1);
     transform: translateZ(0);
-    transition: all 0.5s cubic-bezier(.25,.46,.45,.94);
-    backdrop-filter: blur(20px);
+    transition: all 0.4s ease;
+    backdrop-filter: blur(10px);
 }
 
-.testimonial-slide::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(135deg, rgba(97, 255, 201, 0.1) 0%, rgba(0, 95, 61, 0.1) 100%);
-    opacity: 0;
-    transition: opacity 0.4s ease;
-    pointer-events: none;
+.testimonial-slide:hover {
+    border-color: rgba(97, 255, 201, 0.3);
+    box-shadow: 0 12px 48px rgba(0, 0, 0, 0.4);
 }
 
-.testimonial-slide:hover::before { opacity: 1; }
-
-.testimonial-slide::after {
-    content: '„';
-    position: absolute;
-    top: 20px;
-    right: 30px;
-    font-size: 80px;
-    color: rgba(97, 255, 201, 0.08);
-    font-family: Georgia, serif;
-    line-height: 0.8;
-    pointer-events: none;
-}
+/* Removed for minimalistic design */
 
 .testimonial-quote {
-    font-size: 1.3rem;
-    line-height: 1.8;
-    margin: 0 0 30px 0;
-    color: #ffffff;
-    font-weight: 400;
+    font-size: 1.2rem;
+    line-height: 1.9;
+    margin: 0 0 40px 0;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 300;
     position: relative;
     z-index: 1;
-    font-style: italic;
+    font-style: normal;
 }
 
 .testimonial-meta { 
     display: flex; 
     align-items: center; 
     gap: 16px; 
-    padding-top: 24px;
-    border-top: 1px solid rgba(97, 255, 201, 0.2);
+    padding-top: 30px;
+    border-top: 1px solid rgba(97, 255, 201, 0.1);
     position: relative;
     z-index: 1;
 }
 
 .testimonial-meta img { 
-    width: 60px; 
-    height: 60px; 
+    width: 56px; 
+    height: 56px; 
     border-radius: 50%; 
     object-fit: cover;
-    border: 2px solid rgba(97, 255, 201, 0.4);
-    box-shadow: 0 4px 16px rgba(97, 255, 201, 0.2);
+    border: 2px solid rgba(97, 255, 201, 0.2);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease;
 }
 
 .testimonial-slide:hover .testimonial-meta img {
-    border-color: rgba(97, 255, 201, 0.7);
-    box-shadow: 0 8px 24px rgba(97, 255, 201, 0.3);
+    border-color: rgba(97, 255, 201, 0.4);
 }
 
 .meta-text { 
@@ -282,28 +244,27 @@ main, .about-wrapper, .site-nav, #footer, .yoda-tabs-section { position: relativ
 }
 
 .testimonial-arrow { 
-    background: linear-gradient(135deg, rgba(97, 255, 201, 0.1) 0%, rgba(43, 138, 239, 0.1) 100%);
+    background: rgba(10, 10, 10, 0.6);
     backdrop-filter: blur(10px);
-    border: 2px solid rgba(97, 255, 201, 0.3);
-    color: #61ffc9;
-    width: 56px;
-    height: 56px;
+    border: 1px solid rgba(97, 255, 201, 0.2);
+    color: rgba(97, 255, 201, 0.8);
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    font-size: 1.8rem;
-    transition: all 0.3s cubic-bezier(.25,.46,.45,.94);
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
     flex-shrink: 0;
 }
 
 .testimonial-arrow:hover {
-    background: linear-gradient(135deg, rgba(97, 255, 201, 0.25) 0%, rgba(43, 138, 239, 0.25) 100%);
-    transform: scale(1.15) translateZ(0);
-    box-shadow: 0 8px 32px rgba(97, 255, 201, 0.4);
-    border-color: rgba(97, 255, 201, 0.6);
+    background: rgba(10, 10, 10, 0.8);
+    border-color: rgba(97, 255, 201, 0.5);
+    color: #61ffc9;
 }
 
 .testimonial-arrow.prev { order: -1; }
@@ -311,32 +272,29 @@ main, .about-wrapper, .site-nav, #footer, .yoda-tabs-section { position: relativ
 
 .testimonial-dots { 
     display: flex; 
-    gap: 10px; 
+    gap: 12px; 
     justify-content: center; 
-    margin-top: 40px;
+    margin-top: 60px;
     flex-wrap: wrap;
 }
 
 .testimonial-dot { 
-    width: 12px; 
-    height: 12px; 
+    width: 10px; 
+    height: 10px; 
     border-radius: 50%; 
-    background: rgba(97, 255, 201, 0.2);
+    background: rgba(97, 255, 201, 0.15);
     cursor: pointer;
-    transition: all 0.3s cubic-bezier(.25,.46,.45,.94);
-    border: 2px solid transparent;
+    transition: all 0.3s ease;
 }
 
 .testimonial-dot:hover { 
-    background: rgba(97, 255, 201, 0.5);
-    transform: scale(1.3);
+    background: rgba(97, 255, 201, 0.4);
 }
 
 .testimonial-dot.active { 
-    background: #61ffc9;
-    box-shadow: 0 0 20px rgba(97, 255, 201, 0.7);
-    width: 36px;
-    border-radius: 6px;
+    background: rgba(97, 255, 201, 0.8);
+    width: 32px;
+    border-radius: 5px;
 }
 
 @media (max-width: 768px) {
@@ -366,7 +324,7 @@ main, .about-wrapper, .site-nav, #footer, .yoda-tabs-section { position: relativ
 
 /* ===== Parallax Videos Section ===== */
 #parallax-section {
-    background: linear-gradient(180deg, #000000 0%, #0a0a0a 30%, #001a15 60%, #000000 100%);
+    background: linear-gradient(180deg, #000000 0%, #0a0a0a 30%, #1a1a1a 70%, #2a2e2c 100%);
     padding: 120px 0;
     position: relative;
     overflow: hidden;
@@ -861,13 +819,31 @@ body.has-nav-visible{
 
 .talk-to-me{
     color: white;
-    font-size: 6rem;
-    font-family: 'Aclonica', sans-serif;
+    font-size: 2.5rem;
+    font-family: 'Advent Pro', sans-serif;
+    font-weight: 700;
     position: relative;
-    pointer-events: none;
-    white-space: nowrap;
-    margin-bottom: 40px;
+    margin-bottom: 16px;
     z-index: 2;
+    letter-spacing: 1px;
+}
+
+.footer-description {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 32px;
+    font-family: 'Advent Pro', sans-serif;
+    font-weight: 300;
+}
+
+.footer-section-title {
+    color: white;
+    font-size: 1.5rem;
+    font-family: 'Advent Pro', sans-serif;
+    font-weight: 600;
+    margin-bottom: 20px;
+    letter-spacing: 0.5px;
 }
 
 /* Footer layout (three columns) */
@@ -901,11 +877,32 @@ body.has-nav-visible{
     margin: 0;
 }
 .social-list li{
-    color: #fff;
-    opacity: 0.8;
-    margin: 14px 0;
-    font-family: 'Aclonica', sans-serif;
-    font-size: 1.25rem;
+    margin: 12px 0;
+}
+.social-list li a{
+    color: rgba(255, 255, 255, 0.8);
+    font-family: 'Advent Pro', sans-serif;
+    font-size: 1.1rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
+    position: relative;
+}
+.social-list li a::before {
+    content: '→';
+    margin-right: 8px;
+    color: #61ffc9;
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: all 0.3s ease;
+}
+.social-list li a:hover{
+    color: #61ffc9;
+    transform: translateX(8px);
+}
+.social-list li a:hover::before {
+    opacity: 1;
+    transform: translateX(0);
 }
 
 .footer-nav{
@@ -916,69 +913,116 @@ body.has-nav-visible{
     text-align: left;
 }
 .footer-nav li{
-    color: #fff;
-    opacity: 0.8;
-    margin: 14px 0;
-    font-family: 'Aclonica', sans-serif;
-    font-size: 1.25rem;
+    margin: 10px 0;
+}
+.footer-nav li a{
+    color: rgba(255, 255, 255, 0.8);
+    font-family: 'Advent Pro', sans-serif;
+    font-size: 1.05rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
+    position: relative;
+}
+.footer-nav li a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #61ffc9;
+    transition: width 0.3s ease;
+}
+.footer-nav li a:hover{
+    color: #61ffc9;
+}
+.footer-nav li a:hover::after {
+    width: 100%;
 }
 
 .footer-form{
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 12px;
 }
 .footer-form label{
-    color: #aaa;
-    font-size: 1.2rem;
-    text-transform: lowercase;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.95rem;
+    text-transform: capitalize;
     font-family: 'Advent Pro', sans-serif;
+    font-weight: 500;
+    margin-bottom: 4px;
 }
 .footer-input, .footer-textarea{
     border-radius: 8px;
-    border: none;
-    padding: 12px 14px;
+    border: 2px solid rgba(97, 255, 201, 0.2);
+    padding: 12px 16px;
     font-size: 1rem;
-    background: #fff;
-    color: #111;
+    background: rgba(255, 255, 255, 0.05);
+    color: #fff;
+    font-family: 'Advent Pro', sans-serif;
+    transition: all 0.3s ease;
+}
+.footer-input:focus, .footer-textarea:focus{
+    outline: none;
+    border-color: #61ffc9;
+    background: rgba(255, 255, 255, 0.08);
+}
+.footer-input::placeholder, .footer-textarea::placeholder{
+    color: rgba(255, 255, 255, 0.4);
 }
 .footer-textarea{
-    min-height: 90px;
+    min-height: 120px;
     resize: vertical;
 }
 .footer-submit{
     margin-top: 8px;
-    width: 120px;
-    padding: 8px 12px;
-    background: #fff;
+    width: 100%;
+    padding: 12px 16px;
+    background: #61ffc9;
     color: #000;
-    font-weight: 700;
+    font-weight: 600;
     border-radius: 8px;
     border: none;
     cursor: pointer;
-    align-self: flex-end;
+    font-family: 'Advent Pro', sans-serif;
+    font-size: 1.05rem;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+.footer-submit:hover{
+    background: #005F3D;
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(97, 255, 201, 0.3);
 }
 
 .footer-bottom{
     position: relative;
-    padding: 32px 6% 0 6%;
+    padding: 40px 6% 0 6%;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     z-index: 2;
     margin-top: auto;
+    gap: 20px;
 }
 .footer-line{
-    flex: 1 1 auto;
+    width: 100%;
     height: 1px;
-    background: rgba(255,255,255,0.12);
-    margin-right: 18px;
+    background: rgba(255,255,255,0.15);
 }
 .footer-copy{
     color: rgba(255,255,255,0.6);
-    font-size: 0.85rem;
-    text-align: right;
+    font-size: 0.95rem;
+    text-align: center;
     font-family: 'Advent Pro', sans-serif;
+    line-height: 1.6;
+}
+.footer-copy p {
+    margin: 4px 0;
 }
 
 /* Tablet: adjust layout and spacing */
@@ -1209,6 +1253,48 @@ input[type="submit"]:hover,
 .footer-nav a,
 .social-list a { -webkit-tap-highlight-color: rgba(0,0,0,0); }
 
+
+.more-about {
+  font-size: 2rem;
+  color: #ffffff;
+  position: relative;
+  display: inline-block;
+  font-family: advent pro, sans-serif;
+  text-decoration: none;
+  margin-top: 10px;
+}
+
+.more-about::after,
+.more-about::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(to right, #c2f0d8, #005F3D);
+  bottom: -2px;
+  left: 0;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.4s ease-out;
+}
+
+.more-about::before {
+  transform-origin: left;
+}
+.more-about:hover{
+  background: -webkit-linear-gradient(#00fff0, #005F3D);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+    
+
+.more-about:hover::after,
+.more-about:hover::before {
+  transform: scaleX(1);
+}
+
+
 @media (prefers-reduced-motion: reduce) {
     .nav-center li,
     .nav-right,
@@ -1259,6 +1345,44 @@ input[type="submit"]:focus-visible,
 .box .content a:focus-visible {
     outline: 3px solid rgba(97,255,201,0.22);
     outline-offset: 3px;
+}
+
+/* Card footer with Visit and GitHub links */
+.card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-top: 20px;
+    padding-top: 20px;
+}
+
+.card-footer a {
+    transition: all 0.3s ease;
+}
+
+.card-footer .github-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(97, 255, 201, 0.3);
+    color: #61ffc9;
+    cursor: pointer;
+}
+
+.card-footer .github-link:hover {
+    background: rgba(97, 255, 201, 0.15);
+    border-color: #61ffc9;
+    transform: scale(1.1);
+}
+
+.card-footer .github-link svg {
+    display: block;
+    fill: currentColor;
 }
 
 /* Reduce motion for users who prefer it */
@@ -1355,7 +1479,7 @@ input[type="submit"]:focus-visible,
 
 /* About section uses a dark, immersive background for the design hero */
 #about-section {
-    background-color: #575e5b;
+    background: linear-gradient(180deg, #2a2e2c 0%, #4a4e4c 20%, #575e5b 50%, #4a4e4c 80%, #2a2e2c 100%);
     color: #fff;
 }
 
@@ -2007,13 +2131,22 @@ input[type="submit"]:focus-visible,
 #works .container .box:hover:after { transform: skewX(0deg); left: 20px; width: calc(100% - 90px); }
 
 #works .container .box:nth-child(1):before,
-#works .container .box:nth-child(1):after { background: linear-gradient(315deg, #ffbc00, #ff0058); }
+#works .container .box:nth-child(1):after { background: linear-gradient(315deg, #efef20, #3e3d3d); }
 
 #works .container .box:nth-child(2):before,
-#works .container .box:nth-child(2):after { background: linear-gradient(315deg, #03a9f4, #ff0058); }
+#works .container .box:nth-child(2):after { background: linear-gradient(315deg, #73d3ff, #2020f3); }
 
 #works .container .box:nth-child(3):before,
-#works .container .box:nth-child(3):after { background: linear-gradient(315deg, #4dff03, #00d0ff); }
+#works .container .box:nth-child(3):after { background: linear-gradient(315deg, #f8f9f8, #dc11f7); }
+
+#works .container .box:nth-child(4):before,
+#works .container .box:nth-child(4):after { background: linear-gradient(315deg, #f09e07, #f8f8f7); }
+
+#works .container .box:nth-child(5):before,
+#works .container .box:nth-child(5):after { background: linear-gradient(315deg, #f8f9f8, #dc11f7); }
+
+#works .container .box:nth-child(6):before,
+#works .container .box:nth-child(6):after { background: linear-gradient(315deg, #f8f9f8, #126801); }
 
 #works .container .box span { display: block; position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: 5; pointer-events: none; }
 
@@ -2031,11 +2164,11 @@ input[type="submit"]:focus-visible,
 
 #works .container .box:hover .content { left: -25px; padding: 60px 40px; }
 
-#works .container .box .content h2 { font-size: 2em; color: #fff; margin-bottom: 10px; }
+#works .container .box .content h2 { font-size: 2em; color: #fff; margin-bottom: 10px; font-family: 'Advent Pro', sans-serif; }
 
-#works .container .box .content p { font-size: 1.1em; margin-bottom: 10px; line-height: 1.4em; }
+#works .container .box .content p { font-size: 1.1em; margin-bottom: 10px; line-height: 1.4em; font-family: 'Advent Pro', sans-serif; }
 
-#works .container .box .content a { display: inline-block; font-size: 1.1em; color: #111; background: #fff; padding: 10px; border-radius: 4px; text-decoration: none; font-weight: 700; margin-top: 5px; }
+#works .container .box .content a { display: inline-block; font-size: 1.1em; color: #111; background: #fff; padding: 10px; border-radius: 4px; text-decoration: none; font-weight: 700; margin-top: 5px; font-family: 'Advent Pro', sans-serif;}
 
 #works .container .box .content a:hover { background: #ffcf4d; border: 1px solid rgba(255,0,88,0.4); box-shadow: 0 1px 15px rgba(1,1,1,0.2); }
 
