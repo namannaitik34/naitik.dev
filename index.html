@@ -5,14 +5,15 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Naitik-Portfolio</title>
-	<link
-		href="https://fonts.googleapis.com/css2?family=Advent+Pro:wght@300;400;500;700&family=Bungee+Outline&family=Aclonica&display=swap"
-		rel="stylesheet">
+	<link rel="icon" href="assests/favicon.png" type="image/png">
+	
+	<!-- Preconnect for faster font loading -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Advent+Pro:wght@300;400;500;700&display=swap" rel="stylesheet">
 
-	<!-- force reload updated CSS -->
-	<link rel="stylesheet" href="style.css?v=2">
-	<link rel="stylesheet" href="tabs.css">
-	<link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+	<link rel="stylesheet" href="style.css?v=3">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
 
 	<style>
 		/* Modern minimal hover effects for services */
@@ -89,12 +90,14 @@
 		}
 
 		@media (prefers-reduced-motion: reduce) {
+
 			#services-section .service-item,
 			#services-section .service-item::before,
 			#services-section .service-number,
 			#services-section .service-tech span {
 				transition: none;
 			}
+
 			#services-section .service-item:hover {
 				transform: none;
 			}
@@ -108,18 +111,21 @@
 		<div class="nav-left">
 			<span class="dot"></span>
 			<span class="dot hollow"></span>
-			<a href="#landing-page" style="text-decoration: none; color: #0c0c0c !important;"><span class="brand">namannaitik34</span></a> 
+			<a href="#landing-page" style="text-decoration: none; color: #0c0c0c !important;"><span
+					class="brand">namannaitik34</span></a>
 		</div>
 		<ul class="nav-center">
 			<li><a href="#landing-page" style="text-decoration: none; color: inherit;">home</a></li>
-			<li><a href="#works" style="text-decoration: none; color: inherit;">works</a></li>
-			<li><a href="#services-section" style="text-decoration: none; color: inherit;">services</a></li>
+			<li><a href="#works" style="text-decoration: none; color: inherit;">personal projects</a></li>
+			<li><a href="#parallax-section" style="text-decoration: none; color: inherit;">client works</a></li>
 			<li><a href="#about-section" style="text-decoration: none; color: inherit;">about</a></li>
+			<li><a href="#services-section" style="text-decoration: none; color: inherit;">services</a></li>
 			<li class="nav-download-item" aria-hidden="true"></li>
 		</ul>
 		<div class="nav-right">
-			<a href="https://drive.google.com/file/d/1TlDei-QqFfDKBKs4HO4CKeZkR9AfbkR0/view?usp=sharing" target="_blank" class="nav-download" style="text-decoration: none; color: #0c0c0c;">Download CV</a>
-			<div class="nav-right-contact">contact ▸▸▸</div>
+			<a href="https://drive.google.com/file/d/1TlDei-QqFfDKBKs4HO4CKeZkR9AfbkR0/view?usp=sharing" target="_blank"
+				class="nav-download" style="text-decoration: none; color: #0c0c0c;">Download CV</a>
+			<div class="nav-right-contact">get in touch ▸▸▸</div>
 		</div>
 		<!-- hamburger toggle for small screens -->
 		<button type="button" class="nav-toggle" aria-label="Open menu" aria-expanded="false"
@@ -132,13 +138,15 @@
 		<div class="mobile-nav-inner">
 			<button type="button" class="mobile-close" aria-label="Close menu">✕</button>
 			<ul class="mobile-nav-list">
-				<li><a href="#landing-page">Home</a></li>
-				<li><a href="#works">Works</a></li>
-				<li><a href="#services-section">Services</a></li>
-				<li><a href="#about-section">About</a></li>
-				<li><a href="https://drive.google.com/file/d/1TlDei-QqFfDKBKs4HO4CKeZkR9AfbkR0/view?usp=sharing" class="mobile-cv-link">Download CV</a></li>
+				<li><a href="#landing-page">home</a></li>
+				<li><a href="#works">personal projects</a></li>
+				<li><a href="#parallax-section">client works</a></li>
+				<li><a href="#about-section">about</a></li>
+				<li><a href="#services-section">services</a></li>
+				<li><a href="https://drive.google.com/file/d/1TlDei-QqFfDKBKs4HO4CKeZkR9AfbkR0/view?usp=sharing"
+						class="mobile-cv-link">Download CV</a></li>
 			</ul>
-			<a class="mobile-contact-link" href="#footer">Contact</a>
+			<a class="mobile-contact-link" href="#footer">Get in touch</a>
 		</div>
 	</div>
 	<!-- landing page (minimal hero) -->
@@ -148,9 +156,9 @@
 			<h1 class="hero-title">Full‑Stack Developer</h1>
 			<p class="hero-subtitle">I build fast, clean, human‑centered web apps.</p>
 			<div class="hero-ctas">
-				<button class="btn-primary btn-contact">Contact</button>
+				<button class="btn-primary btn-contact">get in touch</button>
 				<div class="hero-links">
-					<button class="work">works</button>
+					<button class="work">personal projects</button>
 					<button class="work">about</button>
 				</div>
 			</div>
@@ -162,12 +170,13 @@
 			<div class="works-header">
 				<h2 class="works-title">Featured Projects</h2>
 				<p class="works-subtitle">Showcasing my latest work and creative solutions</p>
-			</div>			
+			</div>
 			<div class="projects-grid">
 				<!-- Project 1 -->
 				<div class="project-item">
 					<div class="project-image">
-						<img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=500&fit=crop" alt="Mocktopus Preview" loading="lazy">
+						<img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=500&fit=crop"
+							alt="Mocktopus Preview" loading="lazy">
 						<div class="project-overlay-hover"></div>
 					</div>
 					<div class="project-content">
@@ -180,8 +189,9 @@
 						</div>
 						<a href="https://mocktopus-pearl.vercel.app/" target="_blank" class="project-btn">
 							View Project
-							<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18">
-								<path d="M7 17L17 7M17 7H7M17 7V17"/>
+							<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18"
+								height="18">
+								<path d="M7 17L17 7M17 7H7M17 7V17" />
 							</svg>
 						</a>
 					</div>
@@ -190,7 +200,8 @@
 				<!-- Project 2 -->
 				<div class="project-item">
 					<div class="project-image">
-						<img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=500&fit=crop" alt="DataLens Preview" loading="lazy">
+						<img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=500&fit=crop"
+							alt="DataLens Preview" loading="lazy">
 						<div class="project-overlay-hover"></div>
 					</div>
 					<div class="project-content">
@@ -203,8 +214,9 @@
 						</div>
 						<a href="https://datalens-nine.vercel.app/" target="_blank" class="project-btn">
 							View Project
-							<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18">
-								<path d="M7 17L17 7M17 7H7M17 7V17"/>
+							<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18"
+								height="18">
+								<path d="M7 17L17 7M17 7H7M17 7V17" />
 							</svg>
 						</a>
 					</div>
@@ -213,7 +225,8 @@
 				<!-- Project 3 -->
 				<div class="project-item">
 					<div class="project-image">
-						<img src="https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=800&h=500&fit=crop" alt="BuildMyCV Preview" loading="lazy">
+						<img src="https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=800&h=500&fit=crop"
+							alt="BuildMyCV Preview" loading="lazy">
 						<div class="project-overlay-hover"></div>
 					</div>
 					<div class="project-content">
@@ -224,10 +237,12 @@
 							<span>Next.js</span>
 							<span>Firebase</span>
 						</div>
-						<a href="https://studio--buildmycv-x7de6.us-central1.hosted.app/" target="_blank" class="project-btn">
+						<a href="https://studio--buildmycv-x7de6.us-central1.hosted.app/" target="_blank"
+							class="project-btn">
 							View Project
-							<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18">
-								<path d="M7 17L17 7M17 7H7M17 7V17"/>
+							<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18"
+								height="18">
+								<path d="M7 17L17 7M17 7H7M17 7V17" />
 							</svg>
 						</a>
 					</div>
@@ -236,7 +251,8 @@
 				<!-- Project 4 -->
 				<div class="project-item">
 					<div class="project-image">
-						<img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=800&h=500&fit=crop" alt="TripWripp Preview" loading="lazy">
+						<img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=800&h=500&fit=crop"
+							alt="TripWripp Preview" loading="lazy">
 						<div class="project-overlay-hover"></div>
 					</div>
 					<div class="project-content">
@@ -249,8 +265,9 @@
 						</div>
 						<a href="https://tripwripp.app/" target="_blank" class="project-btn">
 							View Project
-							<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18">
-								<path d="M7 17L17 7M17 7H7M17 7V17"/>
+							<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18"
+								height="18">
+								<path d="M7 17L17 7M17 7H7M17 7V17" />
 							</svg>
 						</a>
 					</div>
@@ -259,7 +276,8 @@
 				<!-- Project 5 -->
 				<div class="project-item">
 					<div class="project-image">
-						<img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=500&fit=crop" alt="Homify Preview" loading="lazy">
+						<img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=500&fit=crop"
+							alt="Homify Preview" loading="lazy">
 						<div class="project-overlay-hover"></div>
 					</div>
 					<div class="project-content">
@@ -272,8 +290,9 @@
 						</div>
 						<a href="https://homify34.vercel.app/" target="_blank" class="project-btn">
 							View Project
-							<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18">
-								<path d="M7 17L17 7M17 7H7M17 7V17"/>
+							<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18"
+								height="18">
+								<path d="M7 17L17 7M17 7H7M17 7V17" />
 							</svg>
 						</a>
 					</div>
@@ -282,7 +301,8 @@
 				<!-- Project 6 -->
 				<div class="project-item">
 					<div class="project-image">
-						<img src="https://images.unsplash.com/photo-1590674899484-d5640e854abe?w=800&h=500&fit=crop" alt="Smart Park Preview" loading="lazy">
+						<img src="https://images.unsplash.com/photo-1590674899484-d5640e854abe?w=800&h=500&fit=crop"
+							alt="Smart Park Preview" loading="lazy">
 						<div class="project-overlay-hover"></div>
 					</div>
 					<div class="project-content">
@@ -295,8 +315,9 @@
 						</div>
 						<a href="https://smartpark34.vercel.app/" target="_blank" class="project-btn">
 							View Project
-							<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18">
-								<path d="M7 17L17 7M17 7H7M17 7V17"/>
+							<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18"
+								height="18">
+								<path d="M7 17L17 7M17 7H7M17 7V17" />
 							</svg>
 						</a>
 					</div>
@@ -315,12 +336,14 @@
 			<div class="ongoing-grid">
 				<article class="ongoing-card">
 					<div class="ongoing-media">
-						<img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1200&h=800&fit=crop" alt="Project Placeholder visual" loading="lazy">
+						<img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1200&h=800&fit=crop"
+							alt="Project Placeholder visual" loading="lazy">
 						<span class="ongoing-pill">Sprint 05</span>
 					</div>
 					<div class="ongoing-body">
 						<h3>Project Placeholder</h3>
-						<p>High-impact visual placeholder for an upcoming case study. Visual system and prototype in build.</p>
+						<p>High-impact visual placeholder for an upcoming case study. Visual system and prototype in
+							build.</p>
 						<div class="ongoing-meta">
 							<span>Design</span>
 							<span>Prototype</span>
@@ -334,12 +357,14 @@
 
 				<article class="ongoing-card">
 					<div class="ongoing-media">
-						<img src="https://images.unsplash.com/photo-1529333166437-7750fbbcd5f3?w=1200&h=800&fit=crop" alt="Visual concept preview" loading="lazy">
+						<img src="https://images.unsplash.com/photo-1529333166437-7750fbbcd5f3?w=1200&h=800&fit=crop"
+							alt="Visual concept preview" loading="lazy">
 						<span class="ongoing-pill">UX Pass</span>
 					</div>
 					<div class="ongoing-body">
 						<h3>Visual Concept</h3>
-						<p>Large-format showcase image for portfolio expansion with refined UI polish and animation cues.</p>
+						<p>Large-format showcase image for portfolio expansion with refined UI polish and animation
+							cues.</p>
 						<div class="ongoing-meta">
 							<span>Branding</span>
 							<span>UI</span>
@@ -353,12 +378,14 @@
 
 				<article class="ongoing-card">
 					<div class="ongoing-media">
-						<img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1200&h=800&fit=crop" alt="Concept shot preview" loading="lazy">
+						<img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1200&h=800&fit=crop"
+							alt="Concept shot preview" loading="lazy">
 						<span class="ongoing-pill">Build</span>
 					</div>
 					<div class="ongoing-body">
 						<h3>Concept Shot</h3>
-						<p>High-res imagery set for future project highlights. Motion prototypes and web layouts underway.</p>
+						<p>High-res imagery set for future project highlights. Motion prototypes and web layouts
+							underway.</p>
 						<div class="ongoing-meta">
 							<span>Web</span>
 							<span>Motion</span>
@@ -373,7 +400,7 @@
 		</div>
 	</section>
 
-		<!-- Parallax Videos Section -->
+	<!-- Parallax Videos Section -->
 	<section id="parallax-section" class="parallax-section">
 		<div class="parallax-container">
 			<div class="parallax-header">
@@ -399,7 +426,7 @@
 									<span class="tech-tag">MongoDB</span>
 									<span class="tech-tag">Stripe</span>
 								</div>
-								<a href="#" class="visit-btn">Visit Project ↗</a>
+								<a href="https://orthosaarthi.com/" class="visit-btn">Visit Project ↗</a>
 							</div>
 						</div>
 						<div class="parallax-video-title">OrthoSaathi</div>
@@ -414,7 +441,7 @@
 						</video>
 						<div class="parallax-video-overlay">
 							<div class="parallax-video-info">
-								<h3 class="project-name">KahiPatent</h3>
+								<h3 class="project-name">KashiPatent</h3>
 								<p class="project-desc">An intelligent patent management system helping organizations
 									track, manage, and protect their intellectual property globally.</p>
 								<div class="project-tech">
@@ -423,10 +450,10 @@
 									<span class="tech-tag">MySQL</span>
 									<span class="tech-tag">Firebase</span>
 								</div>
-								<a href="#" class="visit-btn">Visit Project ↗</a>
+								<a href="https://kashipatent.com/" class="visit-btn">Visit Project ↗</a>
 							</div>
 						</div>
-						<div class="parallax-video-title">KahiPatent</div>
+						<div class="parallax-video-title">KashiPatent</div>
 					</div>
 				</div>
 
@@ -447,7 +474,7 @@
 									<span class="tech-tag">PostgreSQL</span>
 									<span class="tech-tag">AWS</span>
 								</div>
-								<a href="#" class="visit-btn">Visit Project ↗</a>
+								<a href="https://arp.net.in/" class="visit-btn">Visit Project ↗</a>
 							</div>
 						</div>
 						<div class="parallax-video-title">ARP Electric</div>
@@ -756,7 +783,8 @@
 					<div class="service-number">01</div>
 					<div class="service-content">
 						<h3 class="service-name">Full-Stack Web Development</h3>
-						<p class="service-desc">Building scalable, high-performance web applications from front to back. Modern frameworks, clean architecture, and robust APIs.</p>
+						<p class="service-desc">Building scalable, high-performance web applications from front to back.
+							Modern frameworks, clean architecture, and robust APIs.</p>
 						<div class="service-tech">
 							<span>React</span>
 							<span>Node.js</span>
@@ -772,7 +800,8 @@
 					<div class="service-number">02</div>
 					<div class="service-content">
 						<h3 class="service-name">UI/UX Design & Prototyping</h3>
-						<p class="service-desc">Crafting beautiful, intuitive interfaces that put users first. From wireframes to high-fidelity prototypes.</p>
+						<p class="service-desc">Crafting beautiful, intuitive interfaces that put users first. From
+							wireframes to high-fidelity prototypes.</p>
 						<div class="service-tech">
 							<span>Figma</span>
 							<span>Adobe XD</span>
@@ -787,7 +816,8 @@
 					<div class="service-number">03</div>
 					<div class="service-content">
 						<h3 class="service-name">Mobile App Development</h3>
-						<p class="service-desc">Native and cross-platform mobile solutions for iOS and Android. Fast, responsive, and feature-rich applications.</p>
+						<p class="service-desc">Native and cross-platform mobile solutions for iOS and Android. Fast,
+							responsive, and feature-rich applications.</p>
 						<div class="service-tech">
 							<span>Flutter</span>
 							<span>Kotlin</span>
@@ -802,7 +832,8 @@
 					<div class="service-number">04</div>
 					<div class="service-content">
 						<h3 class="service-name">Machine Learning & Data Science</h3>
-						<p class="service-desc">Intelligent systems that learn and adapt. From predictive models to deep learning solutions.</p>
+						<p class="service-desc">Intelligent systems that learn and adapt. From predictive models to deep
+							learning solutions.</p>
 						<div class="service-tech">
 							<span>Python</span>
 							<span>TensorFlow</span>
@@ -817,7 +848,8 @@
 					<div class="service-number">05</div>
 					<div class="service-content">
 						<h3 class="service-name">API Development & Integration</h3>
-						<p class="service-desc">RESTful APIs, GraphQL, and third-party integrations. Secure, documented, and scalable backend services.</p>
+						<p class="service-desc">RESTful APIs, GraphQL, and third-party integrations. Secure, documented,
+							and scalable backend services.</p>
 						<div class="service-tech">
 							<span>Express</span>
 							<span>Django</span>
@@ -832,7 +864,8 @@
 					<div class="service-number">06</div>
 					<div class="service-content">
 						<h3 class="service-name">E-Commerce Solutions</h3>
-						<p class="service-desc">Complete online store solutions with payment processing, inventory tracking, and customer analytics.</p>
+						<p class="service-desc">Complete online store solutions with payment processing, inventory
+							tracking, and customer analytics.</p>
 						<div class="service-tech">
 							<span>Stripe</span>
 							<span>PayPal</span>
@@ -856,13 +889,19 @@
 		<div class="footer-inner">
 			<div class="footer-left">
 				<div class="talk-to-me">Get in Touch</div>
-				<p class="footer-description">Feel free to reach out through any platform. I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.</p>
+				<p class="footer-description">Feel free to reach out through any platform. I'm always open to discussing
+					new projects, creative ideas, or opportunities to be part of your vision.</p>
 				<ul class="social-list">
-					<li><a href="https://instagram.com/namannaitik34" target="_blank" rel="noopener noreferrer">Instagram</a></li>
-					<li><a href="https://linkedin.com/in/namannaitik34" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
-					<li><a href="https://github.com/namannaitik34" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-					<li><a href="https://linktr.ee/namannaitik34" target="_blank" rel="noopener noreferrer">Linktree</a></li>
-					<li><a href="https://peerlist.io/namannaitik34" target="_blank" rel="noopener noreferrer">Peerlist</a></li>
+					<li><a href="https://instagram.com/namannaitik34" target="_blank"
+							rel="noopener noreferrer">Instagram</a></li>
+					<li><a href="https://linkedin.com/in/namannaitik34" target="_blank"
+							rel="noopener noreferrer">LinkedIn</a></li>
+					<li><a href="https://github.com/namannaitik34" target="_blank" rel="noopener noreferrer">GitHub</a>
+					</li>
+					<li><a href="https://linktr.ee/namannaitik34" target="_blank" rel="noopener noreferrer">Linktree</a>
+					</li>
+					<li><a href="https://peerlist.io/namannaitik34" target="_blank"
+							rel="noopener noreferrer">Peerlist</a></li>
 					<li><a href="mailto:namannaitik34@gmail.com">Email</a></li>
 				</ul>
 			</div>
@@ -875,7 +914,7 @@
 					<li><a href="#parallax-section">Services</a></li>
 					<li><a href="#about-section">About</a></li>
 					<li><a href="blog.html">Blog</a></li>
-					<li><a href="#footer">Contact</a></li>
+					<li><a href="#footer">get in touch</a></li>
 				</ul>
 				<h3 class="footer-section-title" style="margin-top: 2rem;">Resources</h3>
 				<ul class="footer-nav">
@@ -889,14 +928,17 @@
 				<h3 class="footer-section-title">Send a Message</h3>
 				<form class="footer-form" action="#" method="post">
 					<label for="footer-name">Name</label>
-					<input id="footer-name" class="footer-input" type="text" name="name" placeholder="Your name" required>
-					
+					<input id="footer-name" class="footer-input" type="text" name="name" placeholder="Your name"
+						required>
+
 					<label for="footer-email">Email</label>
-					<input id="footer-email" class="footer-input" type="email" name="email" placeholder="johndoe@example.com" required>
-					
+					<input id="footer-email" class="footer-input" type="email" name="email"
+						placeholder="johndoe@example.com" required>
+
 					<label for="footer-message">Message</label>
-					<textarea id="footer-message" class="footer-textarea" name="message" placeholder="Enter your message here..." required></textarea>
-					
+					<textarea id="footer-message" class="footer-textarea" name="message"
+						placeholder="Enter your message here..." required></textarea>
+
 					<button class="footer-submit" type="submit">Send Message</button>
 				</form>
 			</div>
@@ -911,11 +953,6 @@
 		</div>
 
 	</section>
-
-
-	<!-- GSAP (required for tabs sticky/scroll) -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 
 	<!-- Testimonial carousel script -->
 	<script>
@@ -960,11 +997,6 @@
 			// init
 			update(); startAuto();
 		})();
-	</script>
-
-	<!-- Parallax Videos Effect disabled per request -->
-	<script>
-		// Background/parallax animation removed to keep section static
 	</script>
 
 	<script>
