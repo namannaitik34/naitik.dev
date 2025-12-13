@@ -14,24 +14,113 @@
 	<link rel="stylesheet" href="tabs.css">
 	<link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
 
+	<style>
+		/* Modern minimal hover effects for services */
+		#services-section .service-item {
+			position: relative;
+			transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
+		}
+
+		#services-section .service-item::before {
+			content: "";
+			position: absolute;
+			left: -20px;
+			top: 50%;
+			transform: translateY(-50%) scaleY(0);
+			width: 3px;
+			height: 50%;
+			background: #0c0c0c;
+			border-radius: 2px;
+			transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
+		}
+
+		#services-section .service-item:hover {
+			transform: translateX(6px);
+		}
+
+		#services-section .service-item:hover::before {
+			transform: translateY(-50%) scaleY(1);
+		}
+
+		#services-section .service-number {
+			transition: color 300ms ease, transform 300ms ease;
+		}
+
+		#services-section .service-item:hover .service-number {
+			color: rgba(12, 12, 12, 0.12);
+			transform: translateX(4px);
+		}
+
+		#services-section .service-name {
+			transition: color 280ms ease, letter-spacing 280ms ease;
+		}
+
+		#services-section .service-item:hover .service-name {
+			color: #000;
+			letter-spacing: 0.5px;
+		}
+
+		#services-section .service-desc {
+			transition: color 280ms ease;
+		}
+
+		#services-section .service-item:hover .service-desc {
+			color: rgba(12, 12, 12, 0.7);
+		}
+
+		#services-section .service-tech span {
+			display: inline-block;
+			padding: 4px 10px;
+			margin: 2px 4px 2px 0;
+			border-radius: 4px;
+			background: rgba(12, 12, 12, 0.04);
+			transition: all 280ms cubic-bezier(0.4, 0, 0.2, 1);
+		}
+
+		#services-section .service-item:hover .service-tech span {
+			background: rgba(12, 12, 12, 0.08);
+			color: rgba(12, 12, 12, 0.7);
+			transform: translateY(-2px);
+		}
+
+		#services-section .service-item:hover .service-tech span:hover {
+			background: #0c0c0c;
+			color: #f8f8f8;
+		}
+
+		@media (prefers-reduced-motion: reduce) {
+			#services-section .service-item,
+			#services-section .service-item::before,
+			#services-section .service-number,
+			#services-section .service-tech span {
+				transition: none;
+			}
+			#services-section .service-item:hover {
+				transform: none;
+			}
+		}
+	</style>
 </head>
 
 <body class="site-animated">
-
 	<!-- site nav (hidden on landing, appears after scrolling past landing) -->
 	<nav class="site-nav" aria-label="Main navigation">
 		<div class="nav-left">
 			<span class="dot"></span>
 			<span class="dot hollow"></span>
-			<span class="brand">namannaitik34</span>
+			<a href="#landing-page" style="text-decoration: none; color: #0c0c0c !important;"><span class="brand">namannaitik34</span></a> 
 		</div>
 		<ul class="nav-center">
-			<li>home</li>
-			<li>works</li>
-			<li>services</li>
-			<li>about</li>
+			<li><a href="#landing-page" style="text-decoration: none; color: inherit;">home</a></li>
+			<li><a href="#works" style="text-decoration: none; color: inherit;">works</a></li>
+			<li><a href="#services-section" style="text-decoration: none; color: inherit;">services</a></li>
+			<li><a href="#about-section" style="text-decoration: none; color: inherit;">about</a></li>
+			<li class="nav-download-item" aria-hidden="true"></li>
 		</ul>
-		<div class="nav-right">contact ▸▸▸</div>
+		<div class="nav-right">
+			<a href="https://drive.google.com/file/d/1TlDei-QqFfDKBKs4HO4CKeZkR9AfbkR0/view?usp=sharing" target="_blank" class="nav-download" style="text-decoration: none; color: #0c0c0c;">Download CV</a>
+			<div class="nav-right-contact">contact ▸▸▸</div>
+		</div>
 		<!-- hamburger toggle for small screens -->
 		<button type="button" class="nav-toggle" aria-label="Open menu" aria-expanded="false"
 			aria-controls="mobile-nav">
@@ -45,55 +134,246 @@
 			<ul class="mobile-nav-list">
 				<li><a href="#landing-page">Home</a></li>
 				<li><a href="#works">Works</a></li>
-				<li><a href="#services">Services</a></li>
+				<li><a href="#services-section">Services</a></li>
 				<li><a href="#about-section">About</a></li>
+				<li><a href="https://drive.google.com/file/d/1TlDei-QqFfDKBKs4HO4CKeZkR9AfbkR0/view?usp=sharing" class="mobile-cv-link">Download CV</a></li>
 			</ul>
 			<a class="mobile-contact-link" href="#footer">Contact</a>
 		</div>
 	</div>
-	<!-- landing page -->
-	<section id="landing-page">
-		<div class="info">
-			<div>NAMANNAITIK34</div>
-			<div>FULL STACK DEVELOPER</div>
-			<div style="letter-spacing: 10px;">
-				........
-			</div>
-			<div class="text">
-				<img src="assests/landing-page/design.png" alt="design image">
-				<div style="opacity: 0.3;">PORTF</div>
-				<div style="opacity: 0.3;">OLIO</div>
-			</div>
-			<div class="ui">
-				<div>
-					<img src="assests/landing-page/Rectangle.png" alt="rectangle green line">
-					UI/UX DESIGN
+	<!-- landing page (minimal hero) -->
+	<section id="landing-page" aria-label="Hero">
+		<div class="hero-wrap">
+			<div class="hero-badge">namannaitik34</div>
+			<h1 class="hero-title">Full‑Stack Developer</h1>
+			<p class="hero-subtitle">I build fast, clean, human‑centered web apps.</p>
+			<div class="hero-ctas">
+				<button class="btn-primary btn-contact">Contact</button>
+				<div class="hero-links">
+					<button class="work">works</button>
+					<button class="work">about</button>
 				</div>
 			</div>
-			<div class="russian">
-				<div>( Наманнаитик )</div>
+		</div>
+	</section>
+	<!-- Works cards section (interactive cards) -->
+	<section id="works" aria-label="Works">
+		<div class="works-container">
+			<div class="works-header">
+				<h2 class="works-title">Featured Projects</h2>
+				<p class="works-subtitle">Showcasing my latest work and creative solutions</p>
+			</div>			
+			<div class="projects-grid">
+				<!-- Project 1 -->
+				<div class="project-item">
+					<div class="project-image">
+						<img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=500&fit=crop" alt="Mocktopus Preview" loading="lazy">
+						<div class="project-overlay-hover"></div>
+					</div>
+					<div class="project-content">
+						<h3 class="project-title">Mocktopus</h3>
+						<p class="project-description">AI chatbot with personality switch</p>
+						<div class="project-tags">
+							<span>AI</span>
+							<span>React</span>
+							<span>Node.js</span>
+						</div>
+						<a href="https://mocktopus-pearl.vercel.app/" target="_blank" class="project-btn">
+							View Project
+							<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18">
+								<path d="M7 17L17 7M17 7H7M17 7V17"/>
+							</svg>
+						</a>
+					</div>
+				</div>
+
+				<!-- Project 2 -->
+				<div class="project-item">
+					<div class="project-image">
+						<img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=500&fit=crop" alt="DataLens Preview" loading="lazy">
+						<div class="project-overlay-hover"></div>
+					</div>
+					<div class="project-content">
+						<h3 class="project-title">DataLens</h3>
+						<p class="project-description">Modern analytics & dashboards</p>
+						<div class="project-tags">
+							<span>Analytics</span>
+							<span>D3.js</span>
+							<span>React</span>
+						</div>
+						<a href="https://datalens-nine.vercel.app/" target="_blank" class="project-btn">
+							View Project
+							<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18">
+								<path d="M7 17L17 7M17 7H7M17 7V17"/>
+							</svg>
+						</a>
+					</div>
+				</div>
+
+				<!-- Project 3 -->
+				<div class="project-item">
+					<div class="project-image">
+						<img src="https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=800&h=500&fit=crop" alt="BuildMyCV Preview" loading="lazy">
+						<div class="project-overlay-hover"></div>
+					</div>
+					<div class="project-content">
+						<h3 class="project-title">BuildMyCV</h3>
+						<p class="project-description">AI-powered resume builder</p>
+						<div class="project-tags">
+							<span>AI</span>
+							<span>Next.js</span>
+							<span>Firebase</span>
+						</div>
+						<a href="https://studio--buildmycv-x7de6.us-central1.hosted.app/" target="_blank" class="project-btn">
+							View Project
+							<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18">
+								<path d="M7 17L17 7M17 7H7M17 7V17"/>
+							</svg>
+						</a>
+					</div>
+				</div>
+
+				<!-- Project 4 -->
+				<div class="project-item">
+					<div class="project-image">
+						<img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=800&h=500&fit=crop" alt="TripWripp Preview" loading="lazy">
+						<div class="project-overlay-hover"></div>
+					</div>
+					<div class="project-content">
+						<h3 class="project-title">TripWripp</h3>
+						<p class="project-description">Travel booking platform</p>
+						<div class="project-tags">
+							<span>Booking</span>
+							<span>React</span>
+							<span>APIs</span>
+						</div>
+						<a href="https://tripwripp.app/" target="_blank" class="project-btn">
+							View Project
+							<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18">
+								<path d="M7 17L17 7M17 7H7M17 7V17"/>
+							</svg>
+						</a>
+					</div>
+				</div>
+
+				<!-- Project 5 -->
+				<div class="project-item">
+					<div class="project-image">
+						<img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=500&fit=crop" alt="Homify Preview" loading="lazy">
+						<div class="project-overlay-hover"></div>
+					</div>
+					<div class="project-content">
+						<h3 class="project-title">Homify</h3>
+						<p class="project-description">Household service management</p>
+						<div class="project-tags">
+							<span>Services</span>
+							<span>Flutter</span>
+							<span>Firebase</span>
+						</div>
+						<a href="https://homify34.vercel.app/" target="_blank" class="project-btn">
+							View Project
+							<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18">
+								<path d="M7 17L17 7M17 7H7M17 7V17"/>
+							</svg>
+						</a>
+					</div>
+				</div>
+
+				<!-- Project 6 -->
+				<div class="project-item">
+					<div class="project-image">
+						<img src="https://images.unsplash.com/photo-1590674899484-d5640e854abe?w=800&h=500&fit=crop" alt="Smart Park Preview" loading="lazy">
+						<div class="project-overlay-hover"></div>
+					</div>
+					<div class="project-content">
+						<h3 class="project-title">Smart Park</h3>
+						<p class="project-description">Parking management system</p>
+						<div class="project-tags">
+							<span>IoT</span>
+							<span>Android</span>
+							<span>Cloud</span>
+						</div>
+						<a href="https://smartpark34.vercel.app/" target="_blank" class="project-btn">
+							View Project
+							<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18">
+								<path d="M7 17L17 7M17 7H7M17 7V17"/>
+							</svg>
+						</a>
+					</div>
+				</div>
 			</div>
 		</div>
-
-		<div class="contact">
-			<div>EMAIL</div>
-			<div>kumarnaitik7@gmail.com</div>
-			<div>TEL.........</div>
-			<div>+91 797 061 9555</div>
-		</div>
-
-		<div class="button">
-			<button class="btn-contact">contact</button>
-			<div class="about">
-				<button class="work">works \</button>
-				<button class="work">about</button>
-			</div>
-		</div>
-
-
 	</section>
 
-	<!-- Parallax Videos Section -->
+	<!-- Ongoing projects (separate style) -->
+	<section id="ongoing-projects" aria-label="Ongoing projects">
+		<div class="ongoing-container">
+			<div class="ongoing-header">
+				<h2 class="ongoing-title">Ongoing Projects</h2>
+				<p class="ongoing-subtitle">Fresh builds currently in motion</p>
+			</div>
+			<div class="ongoing-grid">
+				<article class="ongoing-card">
+					<div class="ongoing-media">
+						<img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1200&h=800&fit=crop" alt="Project Placeholder visual" loading="lazy">
+						<span class="ongoing-pill">Sprint 05</span>
+					</div>
+					<div class="ongoing-body">
+						<h3>Project Placeholder</h3>
+						<p>High-impact visual placeholder for an upcoming case study. Visual system and prototype in build.</p>
+						<div class="ongoing-meta">
+							<span>Design</span>
+							<span>Prototype</span>
+						</div>
+						<div class="ongoing-footer">
+							<span class="ongoing-status in-progress">In progress</span>
+							<a class="ongoing-link" href="#">Track</a>
+						</div>
+					</div>
+				</article>
+
+				<article class="ongoing-card">
+					<div class="ongoing-media">
+						<img src="https://images.unsplash.com/photo-1529333166437-7750fbbcd5f3?w=1200&h=800&fit=crop" alt="Visual concept preview" loading="lazy">
+						<span class="ongoing-pill">UX Pass</span>
+					</div>
+					<div class="ongoing-body">
+						<h3>Visual Concept</h3>
+						<p>Large-format showcase image for portfolio expansion with refined UI polish and animation cues.</p>
+						<div class="ongoing-meta">
+							<span>Branding</span>
+							<span>UI</span>
+						</div>
+						<div class="ongoing-footer">
+							<span class="ongoing-status review">Design review</span>
+							<a class="ongoing-link" href="#">Preview</a>
+						</div>
+					</div>
+				</article>
+
+				<article class="ongoing-card">
+					<div class="ongoing-media">
+						<img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1200&h=800&fit=crop" alt="Concept shot preview" loading="lazy">
+						<span class="ongoing-pill">Build</span>
+					</div>
+					<div class="ongoing-body">
+						<h3>Concept Shot</h3>
+						<p>High-res imagery set for future project highlights. Motion prototypes and web layouts underway.</p>
+						<div class="ongoing-meta">
+							<span>Web</span>
+							<span>Motion</span>
+						</div>
+						<div class="ongoing-footer">
+							<span class="ongoing-status shipping">Shipping soon</span>
+							<a class="ongoing-link" href="#">Notify</a>
+						</div>
+					</div>
+				</article>
+			</div>
+		</div>
+	</section>
+
+		<!-- Parallax Videos Section -->
 	<section id="parallax-section" class="parallax-section">
 		<div class="parallax-container">
 			<div class="parallax-header">
@@ -220,114 +500,6 @@
 		</div>
 	</section>
 
-
-	<!-- Works cards section (interactive cards) -->
-	<section id="works" aria-label="Works">
-		<div class="works-header">
-			<h2 class="works-title">projects showcase</h2>
-			<p class="works-subtitle">Explore my creative projects and solutions</p>
-		</div>
-		<div class="container">
-			<div class="box">
-				<span></span>
-				<div class="content">
-					<h2>mocktopus</h2>
-					<p>Mocktopus is a smart AI chatbot with a personality switch — helpful by default, sarcastic on
-						demand. Support or sass, it adapts instantly.</p>
-					<div class="card-footer">
-						<a href="https://mocktopus-pearl.vercel.app/" target="_blank">Visit now ➪</a>
-						<a href="https://github.com/namannaitik34/mocktopus" target="_blank" class="github-link" title="View on GitHub">
-							<svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
-								<path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v 3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-							</svg>
-						</a>
-					</div>
-				</div>
-			</div>
-			<div class="box">
-				<span></span>
-				<div class="content">
-					<h2>dataLens</h2>
-					<p>DataLens is a modern analytics tool that turns raw data into insights with interactive
-						dashboards, metric tracking, and easy report exports.</p>
-					<div class="card-footer">
-						<a href="https://datalens-nine.vercel.app/" target="_blank">Visit now ➪</a>
-						<a href="https://github.com/namannaitik34/datalens" target="_blank" class="github-link" title="View on GitHub">
-							<svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
-								<path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v 3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-							</svg>
-						</a>
-					</div>
-				</div>
-			</div>
-			<div class="box">
-				<span></span>
-				<div class="content">
-					<h2>buildmyCV</h2>
-					<p>BuildMyCV is an AI resume builder that creates ATS-friendly CVs with smart suggestions and quick
-						multi-format exports.</p>
-					<div class="card-footer">
-						<a href="https://studio--buildmycv-x7de6.us-central1.hosted.app/" target="_blank">Visit now ➪</a>
-						<a href="https://github.com/namannaitik34/buildmycv" target="_blank" class="github-link" title="View on GitHub">
-							<svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
-								<path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v 3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-							</svg>
-						</a>
-					</div>
-				</div>
-			</div>
-			<div class="box">
-				<span></span>
-				<div class="content">
-					<h2>Tripwripp</h2>
-					<p>TripWripp helps you explore destinations, book travel packages, and customize trips with a
-						simple, user-friendly interface.</p>
-					<div class="card-footer">
-						<a href="https://tripwripp.app/" target="_blank">Visit now ➪</a>
-						<a href="https://github.com/namannaitik34/tripwripp" target="_blank" class="github-link" title="View on GitHub">
-							<svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
-								<path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v 3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-							</svg>
-						</a>
-					</div>
-				</div>
-			</div>
-			<div class="box">
-				<span></span>
-				<div class="content">
-					<h2>homify</h2>
-					<p>A role-based web app for household service management with Customer, Service Pro, and Admin
-						roles. It includes secure login, service tracking, simple request workflows, and admin control
-						over users and services.</p>
-					<div class="card-footer">
-						<a href="https://homify34.vercel.app/" target="_blank">Visit now ➪</a>
-						<a href="https://github.com/namannaitik34/homify" target="_blank" class="github-link" title="View on GitHub">
-							<svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
-								<path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v 3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-							</svg>
-						</a>
-					</div>
-				</div>
-			</div>
-			<div class="box">
-				<span></span>
-				<div class="content">
-					<h2>smart park</h2>
-					<p>A smart, multi-user parking management system that lets admins manage parking lots, spots, and
-						vehicles with ease, while users can seamlessly register, park, and track their vehicles in real
-						time.</p>
-					<div class="card-footer">
-						<a href="https://smartpark34.vercel.app/" target="_blank">Visit now ➪</a>
-						<a href="https://github.com/namannaitik34/smartpark" target="_blank" class="github-link" title="View on GitHub">
-							<svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
-								<path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v 3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-							</svg>
-						</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
 
 	<section id="about-section" aria-label="About myself">
 		<!-- decorative abstract fluid shape (purely visual) -->
@@ -570,6 +742,109 @@
 		</div>
 	</section>
 
+	<!-- Services Section -->
+	<section id="services-section" aria-label="Services">
+		<div class="services-container">
+			<div class="services-header">
+				<h2 class="services-title">What I Offer</h2>
+				<p class="services-subtitle">Turning ideas into reality with cutting-edge technology</p>
+			</div>
+
+			<div class="services-list">
+				<!-- Service 1 -->
+				<div class="service-item">
+					<div class="service-number">01</div>
+					<div class="service-content">
+						<h3 class="service-name">Full-Stack Web Development</h3>
+						<p class="service-desc">Building scalable, high-performance web applications from front to back. Modern frameworks, clean architecture, and robust APIs.</p>
+						<div class="service-tech">
+							<span>React</span>
+							<span>Node.js</span>
+							<span>Next.js</span>
+							<span>MongoDB</span>
+							<span>PostgreSQL</span>
+						</div>
+					</div>
+				</div>
+
+				<!-- Service 2 -->
+				<div class="service-item">
+					<div class="service-number">02</div>
+					<div class="service-content">
+						<h3 class="service-name">UI/UX Design & Prototyping</h3>
+						<p class="service-desc">Crafting beautiful, intuitive interfaces that put users first. From wireframes to high-fidelity prototypes.</p>
+						<div class="service-tech">
+							<span>Figma</span>
+							<span>Adobe XD</span>
+							<span>User Research</span>
+							<span>Design Systems</span>
+						</div>
+					</div>
+				</div>
+
+				<!-- Service 3 -->
+				<div class="service-item">
+					<div class="service-number">03</div>
+					<div class="service-content">
+						<h3 class="service-name">Mobile App Development</h3>
+						<p class="service-desc">Native and cross-platform mobile solutions for iOS and Android. Fast, responsive, and feature-rich applications.</p>
+						<div class="service-tech">
+							<span>Flutter</span>
+							<span>Kotlin</span>
+							<span>Android SDK</span>
+							<span>Firebase</span>
+						</div>
+					</div>
+				</div>
+
+				<!-- Service 4 -->
+				<div class="service-item">
+					<div class="service-number">04</div>
+					<div class="service-content">
+						<h3 class="service-name">Machine Learning & Data Science</h3>
+						<p class="service-desc">Intelligent systems that learn and adapt. From predictive models to deep learning solutions.</p>
+						<div class="service-tech">
+							<span>Python</span>
+							<span>TensorFlow</span>
+							<span>PyTorch</span>
+							<span>Data Analysis</span>
+						</div>
+					</div>
+				</div>
+
+				<!-- Service 5 -->
+				<div class="service-item">
+					<div class="service-number">05</div>
+					<div class="service-content">
+						<h3 class="service-name">API Development & Integration</h3>
+						<p class="service-desc">RESTful APIs, GraphQL, and third-party integrations. Secure, documented, and scalable backend services.</p>
+						<div class="service-tech">
+							<span>Express</span>
+							<span>Django</span>
+							<span>GraphQL</span>
+							<span>REST</span>
+						</div>
+					</div>
+				</div>
+
+				<!-- Service 6 -->
+				<div class="service-item">
+					<div class="service-number">06</div>
+					<div class="service-content">
+						<h3 class="service-name">E-Commerce Solutions</h3>
+						<p class="service-desc">Complete online store solutions with payment processing, inventory tracking, and customer analytics.</p>
+						<div class="service-tech">
+							<span>Stripe</span>
+							<span>PayPal</span>
+							<span>Inventory Systems</span>
+							<span>Analytics</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
 
 	<section id="footer">
 		<div class="footer-header">
@@ -687,27 +962,9 @@
 		})();
 	</script>
 
-	<!-- Parallax Videos Effect - Optimized -->
+	<!-- Parallax Videos Effect disabled per request -->
 	<script>
-		(function () {
-			const videoWrappers = Array.from(document.querySelectorAll('.parallax-video-wrapper'));
-			if (videoWrappers.length === 0) return;
-
-			videoWrappers.forEach((wrapper) => {
-				const videoInner = wrapper.querySelector('.parallax-video-inner');
-
-				gsap.to(videoInner, {
-					y: -50,
-					scrollTrigger: {
-						trigger: wrapper,
-						start: 'top bottom',
-						end: 'bottom top',
-						scrub: 1,
-						lazy: true
-					}
-				});
-			});
-		})();
+		// Background/parallax animation removed to keep section static
 	</script>
 
 	<script>
@@ -718,7 +975,9 @@
 			if (!nav || !landing) return;
 
 			function updateNav() {
-				var show = window.scrollY > (landing.offsetHeight - 20);
+				// Show nav after a very short scroll on desktop
+				var threshold = 50; // pixels
+				var show = window.scrollY > threshold;
 				if (show) {
 					if (!nav.classList.contains('visible')) {
 						nav.classList.add('visible');
@@ -763,6 +1022,8 @@
 
 		// Buttons & nav behaviour: smooth scroll and enable actions
 		(function () {
+			const cvUrl = 'assests/cv.pdf';
+
 			function scrollToId(id) {
 				const el = document.getElementById(id);
 				if (!el) return;
@@ -797,13 +1058,15 @@
 					const txt = (li.textContent || '').toLowerCase();
 					if (txt.includes('home')) window.scrollTo({ top: 0, behavior: 'smooth' });
 					else if (txt.includes('works')) scrollToId('works');
+					else if (txt.includes('services')) scrollToId('parallax-section');
 					else if (txt.includes('about')) scrollToId('about-section');
+					else if (txt.includes('cv')) { if (cvUrl) window.open(cvUrl, '_blank'); }
 				});
 			});
 
 			// nav-right contact
-			const navRight = document.querySelector('.nav-right');
-			navRight && navRight.addEventListener('click', function () { scrollToId('footer'); });
+			const navRightContact = document.querySelector('.nav-right-contact');
+			navRightContact && navRightContact.addEventListener('click', function () { scrollToId('footer'); });
 
 			// Mobile nav toggle
 			const navToggle = document.querySelector('.nav-toggle');
@@ -813,16 +1076,15 @@
 			function openMobileNav() {
 				if (!mobileNav) return;
 				mobileNav.hidden = false;
-				mobileNav.style.display = 'flex';
-				// ensure overlay appears above any stacking contexts (Chrome quirks)
+				mobileNav.classList.add('is-open');
 				try { mobileNav.style.zIndex = '2147483647'; } catch (e) { }
 				document.documentElement.style.overflow = 'hidden';
 				navToggle && navToggle.setAttribute('aria-expanded', 'true');
 			}
 			function closeMobileNav() {
 				if (!mobileNav) return;
-				mobileNav.hidden = true;
-				mobileNav.style.display = 'none';
+				mobileNav.classList.remove('is-open');
+				setTimeout(() => { mobileNav.hidden = true; }, 260);
 				document.documentElement.style.overflow = '';
 				navToggle && navToggle.setAttribute('aria-expanded', 'false');
 			}
@@ -860,6 +1122,8 @@
 			window.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeMobileNav(); });
 		})();
 	</script>
+
+
 
 </body>
 
