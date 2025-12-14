@@ -1284,11 +1284,11 @@ body.has-nav-visible{
     font-family: 'Advent Pro', sans-serif;
 }
 .mobile-nav-inner { text-align: center; color: white; }
-.mobile-close { position: fixed; right: 18px; top: 18px; background: transparent; border: 0; color: #fff; font-size: 2rem; cursor: pointer; z-index: 2147483648; pointer-events: auto; width:56px; height:56px; display:flex; align-items:center; justify-content:center; }
-.mobile-nav-list { list-style: none; padding: 0; margin: 0 0 1.25rem 0; }
-.mobile-nav-list li { margin: 1rem 0; }
-.mobile-nav-list a { color: #fff; font-size: 1.6rem; text-decoration: none; }
-.mobile-contact-link { display: inline-block; margin-top: 1rem; color: #111; background: #61ffc9; padding: 10px 18px; border-radius: 8px; text-decoration:none; font-weight:700; }
+.mobile-close { position: fixed; right: 18px; top: 18px; background: transparent; border: 0; color: #fff; font-size: 1.8rem; cursor: pointer; z-index: 2147483648; pointer-events: auto; width:44px; height:44px; display:flex; align-items:center; justify-content:center; }
+.mobile-nav-list { list-style: none; padding: 0; margin: 0 0 1rem 0; }
+.mobile-nav-list li { margin: 0.7rem 0; }
+.mobile-nav-list a { color: #fff; font-size: 1.15rem; text-decoration: none; font-weight: 500; }
+.mobile-contact-link { display: inline-block; margin-top: 0.75rem; color: #111; background: #61ffc9; padding: 8px 16px; border-radius: 6px; text-decoration:none; font-weight:700; font-size: 1rem; }
 
 /* Show hamburger and hide center links on smaller screens */
 @media (max-width: 600px) {
@@ -1317,17 +1317,17 @@ body.has-nav-visible{
     .mobile-contact-link,
     .mobile-close { font-family: 'Advent Pro', sans-serif; }
     .mobile-nav-inner {
-        width: 80%;
-        max-width: 360px;
+        width: 75%;
+        max-width: 320px;
         height: 100%;
         background: linear-gradient(180deg, rgba(10,10,10,0.98), rgba(20,20,20,0.98));
         box-shadow: -20px 0 60px rgba(0,0,0,0.6);
         transform: translateX(100%);
         transition: transform 320ms cubic-bezier(.2,.9,.2,1);
-        padding: 48px 24px;
+        padding: 60px 20px 24px;
         display: flex;
         flex-direction: column;
-        gap: 12px;
+        gap: 8px;
         align-items: flex-start;
         justify-content: flex-start;
     }

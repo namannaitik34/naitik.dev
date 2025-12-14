@@ -5,6 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My Journey - Bold Stories</title>
+  	<link rel="icon" href="assests/favicon2.png" type="image/png">
+
   <link rel="stylesheet" href="blog.css">
   <link
     href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Poppins:wght@300;400;600;700;800&display=swap"
@@ -16,7 +18,12 @@
   <nav class="blog-nav">
     <div class="nav-wrapper">
       <a href="index.html" class="nav-logo">← Back</a>
+      <button class="theme-toggle" type="button" aria-label="Toggle theme">
+        <span class="theme-toggle-icon">🌙</span>
+        <span class="theme-toggle-label">Dark</span>
+      </button>
       <h1 class="nav-title">My Story</h1>
+
       <div class="nav-actions">
         <div class="nav-links">
           <a href="#travel">Travel</a>
@@ -24,10 +31,7 @@
           <a href="#articles">Articles</a>
           <a href="#photography">Photos</a>
         </div>
-        <button class="theme-toggle" type="button" aria-label="Toggle theme">
-          <span class="theme-toggle-icon">🌙</span>
-          <span class="theme-toggle-label">Dark</span>
-        </button>
+
       </div>
     </div>
   </nav>
@@ -35,52 +39,64 @@
   <main class="blog-main">
     <!-- Hero Section -->
     <section class="hero">
-      <div class="hero-content">
-        <div class="hero-badge">WELCOME ABOARD</div>
-        <h1 class="hero-title">
-          <span class="gradient-text">Adventures,</span>
-          <span class="bold-text">Strength,</span>
-          <span class="gradient-text">& Moments</span>
-        </h1>
-        <p class="hero-desc">A full-stack developer exploring the world through travel, fitness, and the lens of a
-          camera</p>
-        <div class="hero-stats">
-          <div class="stat">
-            <div class="stat-icon">🌍</div>
-            <div class="stat-text">
-              <strong>25+</strong>
-              <span>Countries</span>
+      <div class="hero-background">
+        <div class="hero-gradient"></div>
+        <div class="floating-shapes">
+          <div class="shape shape-1"></div>
+          <div class="shape shape-2"></div>
+          <div class="shape shape-3"></div>
+        </div>
+      </div>
+      <div class="hero-container">
+        <div class="hero-content">
+          <div class="hero-intro">
+            <span class="intro-line"></span>
+            <span class="intro-text">Welcome to my world</span>
+          </div>
+          <h1 class="hero-title">
+            <span class="title-line">Adventures</span>
+            <span class="title-line">Captured in</span>
+            <span class="title-line highlight">Frames & Stories</span>
+          </h1>
+          <p class="hero-desc">Developer by day, explorer by heart. Documenting life through travel, fitness, and photography.</p>
+          <div class="hero-cta">
+            <a href="#travel" class="cta-primary">Explore Stories</a>
+            <a href="#photography" class="cta-secondary">
+              <span class="cta-icon">📸</span>
+              View Gallery
+            </a>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="visual-grid">
+            <div class="grid-item item-1">
+              <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=500&fit=crop" alt="Mountains">
+              <span class="item-tag">Mountains</span>
+            </div>
+            <div class="grid-item item-2">
+              <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400&h=300&fit=crop" alt="Beach">
+              <span class="item-tag">Beaches</span>
+            </div>
+            <div class="grid-item item-3">
+              <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=300&fit=crop" alt="Fitness">
+              <span class="item-tag">Fitness</span>
             </div>
           </div>
-          <div class="stat">
-            <div class="stat-icon">📸</div>
-            <div class="stat-text">
-              <strong>1000+</strong>
-              <span>Photos</span>
+          <div class="visual-stats">
+            <div class="stat-pill">
+              <span class="stat-number">25+</span>
+              <span class="stat-label">Destinations</span>
             </div>
-          </div>
-          <div class="stat">
-            <div class="stat-icon">💪</div>
-            <div class="stat-text">
-              <strong>3+ Yrs</strong>
-              <span>Fitness</span>
+            <div class="stat-pill">
+              <span class="stat-number">1K+</span>
+              <span class="stat-label">Photos</span>
             </div>
           </div>
         </div>
       </div>
-      <div class="hero-visual">
-        <div class="hero-card card-1">
-          <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=300&h=300&fit=crop"
-            alt="Mountain Adventure">
-        </div>
-        <div class="hero-card card-2">
-          <img src="https://images.unsplash.com/photo-1488085061387-422e29b40080?w=300&h=300&fit=crop"
-            alt="Travel Journey">
-        </div>
-        <div class="hero-card card-3">
-          <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=300&h=300&fit=crop"
-            alt="Fitness Goals">
-        </div>
+      <div class="scroll-hint">
+        <span>Scroll to explore</span>
+        <div class="scroll-line"></div>
       </div>
     </section>
 
@@ -93,223 +109,289 @@
 
       <div class="travel-showcase">
         <div class="featured-travel">
-          <div class="featured-tag">FEATURED</div>
+          <div class="featured-tag">✦ FEATURED</div>
           <div class="featured-image nepal">
-            <img src="assests/blog/scene.JPG" alt="Nepal Himalayas">
+            <img src="assests/blog/khumai.jpg" alt="Nepal Himalayas">
           </div>
-          <h3>Khumai danda</h3>
-          <p>Khumai Danda Trek is a short 4 day offbeat trek in Nepal’s Annapurna region, reaching about 3,245m
-            and offering spectacular close-up views of Machhapuchhre (Fishtail), Annapurna South, and Himchuli.</p>
-          <div class="travel-meta">
-            <span>2025</span>
-            <span>4 Days</span>
-            <span>3,300m Peak</span>
+          <div class="featured-content">
+            <h3>Khumai Danda</h3>
+            <p>A stunning 4-day offbeat trek in Nepal's Annapurna region with breathtaking Himalayan views.</p>
+            <div class="travel-meta">
+              <span>📍 Nepal</span>
+              <span>🗓 2025</span>
+              <span>⛰ 3,300m</span>
+            </div>
           </div>
         </div>
-        
+
+
         <div class="travel-grid">
           <div class="travel-item">
-            <div class="travel-card-image greece">
-              <img src="https://images.unsplash.com/photo-1613395877344-13d4a8e0d49e?w=500&h=350&fit=crop"
-                alt="Greece Islands">
+            <div class="travel-card-image beaches">
+              <img src="assests/blog/beaches.jpg"
+                alt="Beaches">
             </div>
-            <h4>Greece Islands</h4>
-            <p>Santorini sunsets & ancient ruins</p>
-            <span class="year">2023</span>
+            <div class="travel-item-content">
+              <h4>Beaches</h4>
+              <p>Crystal waters & golden sands</p>
+            </div>
           </div>
           <div class="travel-item">
-            <div class="travel-card-image uae">
-              <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=500&h=350&fit=crop"
-                alt="UAE Desert">
+            <div class="travel-card-image mountains">
+              <img src="assests/blog/mountains.jpg"
+                alt="Mountains">
             </div>
-            <h4>UAE Desert</h4>
-            <p>Golden dunes & Bedouin culture</p>
-            <span class="year">2023</span>
+            <div class="travel-item-content">
+              <h4>Mountains</h4>
+              <p>Alpine peaks & misty trails</p>
+            </div>
           </div>
           <div class="travel-item">
-            <div class="travel-card-image japan">
-              <img src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=500&h=350&fit=crop" alt="Japan">
+            <div class="travel-card-image religious">
+              <img src="assests/blog/aesthetics.jpg"
+                alt="Religious">
             </div>
-            <h4>Japan</h4>
-            <p>Tokyo chaos & Kyoto serenity</p>
-            <span class="year">2022</span>
+            <div class="travel-item-content">
+              <h4>Religious</h4>
+              <p>Spiritual sites & sacred journeys</p>
+            </div>
           </div>
           <div class="travel-item">
-            <div class="travel-card-image costarica">
-              <img src="https://images.unsplash.com/photo-1534371284080-5b499e1e6d56?w=500&h=350&fit=crop"
-                alt="Costa Rica">
+            <div class="travel-card-image forests">
+              <img src="assests/blog/forest.jpeg"
+                alt="Forests">
             </div>
-            <h4>Costa Rica</h4>
-            <p>Rainforest adventures & wildlife</p>
-            <span class="year">2022</span>
+            <div class="travel-item-content">
+              <h4>Forests</h4>
+              <p>Lush greens & hidden paths</p>
+            </div>
           </div>
           <div class="travel-item">
-            <div class="travel-card-image swiss">
-              <img src="https://images.unsplash.com/photo-1527004013197-933c4bb611b3?w=500&h=350&fit=crop"
-                alt="Switzerland">
+            <div class="travel-card-image deserts">
+              <img src="assests/blog/fort.jpg"
+                alt="Deserts">
             </div>
-            <h4>Switzerland</h4>
-            <p>Alpine peaks & mountain villages</p>
-            <span class="year">2021</span>
+            <div class="travel-item-content">
+              <h4>Forts</h4>
+              <p>Historic landmarks & ancient architecture</p>
+            </div>
           </div>
           <div class="travel-item">
-            <div class="travel-card-image upcoming">
-              <img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=500&h=350&fit=crop"
-                alt="Coming Soon">
+            <div class="travel-card-image aesthetic">
+              <img src="assests/blog/aesthetics1.jpg"
+                alt="Aesthetic">
             </div>
-            <h4>Coming Soon</h4>
-            <p>Next adventure being planned...</p>
-            <span class="year">2025</span>
+            <div class="travel-item-content">
+              <h4>Aesthetic</h4>
+              <p>Dreamy spots & perfect frames</p>
+            </div>
           </div>
         </div>
       </div>
 
-      <!-- Travel Stories / Instagram Highlights -->
-      <div class="travel-stories">
-        <h3 class="stories-title">Quick Stories</h3>
-        <p class="stories-subtitle">Moments captured in time</p>
-
-        <div class="stories-container">
-          <button class="story-nav story-nav-prev" aria-label="Previous story">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-              stroke-linecap="round" stroke-linejoin="round">
+      <!-- Story Viewer Modal -->
+      <div class="story-viewer" id="storyViewer">
+        <div class="story-viewer-backdrop"></div>
+        <div class="story-viewer-content">
+          <button class="story-close" aria-label="Close story">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 6L6 18M6 6l12 12"/>
+            </svg>
+          </button>
+          <div class="story-progress">
+            <div class="story-progress-bar"></div>
+          </div>
+          <button class="story-nav-btn story-prev" aria-label="Previous story">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
               <polyline points="15 18 9 12 15 6"></polyline>
             </svg>
           </button>
-
-          <div class="stories-slider">
-            <div class="stories-track">
-              <div class="story-card">
-                <img src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=400&h=700&fit=crop"
-                  alt="Nepal Trek" class="story-background">
-                <div class="story-content">
-                  <h4>Nepal Trek</h4>
-                  <p>High altitude views</p>
-                </div>
-              </div>
-              <div class="story-card">
-                <img src="https://images.unsplash.com/photo-1613395877344-13d4a8e0d49e?w=400&h=700&fit=crop"
-                  alt="Greek Paradise" class="story-background">
-                <div class="story-content">
-                  <h4>Greek Paradise</h4>
-                  <p>Island hopping</p>
-                </div>
-              </div>
-              <div class="story-card">
-                <img src="https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=400&h=700&fit=crop"
-                  alt="Desert Sunrise" class="story-background">
-                <div class="story-content">
-                  <h4>Desert Sunrise</h4>
-                  <p>Golden moments</p>
-                </div>
-              </div>
-              <div class="story-card">
-                <img src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=400&h=700&fit=crop"
-                  alt="Tokyo Nights" class="story-background">
-                <div class="story-content">
-                  <h4>Tokyo Nights</h4>
-                  <p>City lights</p>
-                </div>
-              </div>
-              <div class="story-card">
-                <img src="https://images.unsplash.com/photo-1534371284080-5b499e1e6d56?w=400&h=700&fit=crop"
-                  alt="Rainforest" class="story-background">
-                <div class="story-content">
-                  <h4>Rainforest</h4>
-                  <p>Wildlife encounters</p>
-                </div>
-              </div>
-              <div class="story-card">
-                <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=700&fit=crop"
-                  alt="Alps Adventure" class="story-background">
-                <div class="story-content">
-                  <h4>Alps Adventure</h4>
-                  <p>Mountain peaks</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <button class="story-nav story-nav-next" aria-label="Next story">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-              stroke-linecap="round" stroke-linejoin="round">
+          <button class="story-nav-btn story-next" aria-label="Next story">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
               <polyline points="9 18 15 12 9 6"></polyline>
             </svg>
           </button>
+          <img class="story-viewer-image" src="" alt="Story">
+          <div class="story-viewer-info">
+            <span class="story-viewer-label"></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Instagram Style Story Highlights -->
+      <div class="story-highlights">
+        <div class="highlights-header">
+          <h3 class="highlights-title">Story Highlights</h3>
+          <div class="scroll-indicator">
+            <span class="scroll-text">Scroll</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </div>
+        </div>
+        
+        <div class="highlights-wrapper">
+          <div class="highlights-track">
+            <div class="highlight-item" data-full="assests/blog/pokhara.png" data-label="Nepal">
+              <div class="highlight-ring">
+                <div class="highlight-image">
+                  <img src="assests/blog/pokhara.png" alt="Nepal">
+                </div>
+              </div>
+              <span class="highlight-label">pokhara</span>
+            </div>
+            <div class="highlight-item" data-full="assests/blog/saripakha.jpeg" data-label="Greece">
+              <div class="highlight-ring">
+                <div class="highlight-image">
+                  <img src="assests/blog/saripakha.jpeg" alt="Greece">
+                </div>
+              </div>
+              <span class="highlight-label">saripakha</span>
+            </div>
+            <div class="highlight-item" data-full="assests/blog/chichimle.jpg" data-label="Desert">
+              <div class="highlight-ring">
+                <div class="highlight-image">
+                  <img src="assests/blog/chichimle.jpg" alt="Desert">
+                </div>
+              </div>
+              <span class="highlight-label">chichimle</span>
+            </div>
+            <div class="highlight-item" data-full="assests/blog/khumai1.jpg" data-label="Tokyo">
+              <div class="highlight-ring">
+                <div class="highlight-image">
+                  <img src="assests/blog/khumai1.jpg" alt="Tokyo">
+                </div>
+              </div>
+              <span class="highlight-label">khumai</span>
+            </div>
+            <div class="highlight-item" data-full="assests/blog/pachmarhi.png" data-label="Jungle">
+              <div class="highlight-ring">
+                <div class="highlight-image">
+                  <img src="assests/blog/pachmarhi.png" alt="Jungle">
+                </div>
+              </div>
+              <span class="highlight-label">pachmarhi</span>
+            </div>
+            <div class="highlight-item" data-full="assests/blog/aesthetics1.jpg" data-label="Alps">
+              <div class="highlight-ring">
+                <div class="highlight-image">
+                  <img src="assests/blog/aesthetics1.jpg" alt="Alps">
+                </div>
+              </div>
+              <span class="highlight-label">varanasi</span>
+            </div>
+            <div class="highlight-item" data-full="assests/blog/fort.jpg" data-label="Dubai">
+              <div class="highlight-ring">
+                <div class="highlight-image">
+                  <img src="assests/blog/fort.jpg" alt="Dubai">
+                </div>
+              </div>
+              <span class="highlight-label">jodhpur</span>
+            </div>
+            <div class="highlight-item" data-full="assests/blog/aesthetics.jpg" data-label="Swiss">
+              <div class="highlight-ring">
+                <div class="highlight-image">
+                  <img src="assests/blog/aesthetics.jpg" alt="Swiss">
+                </div>
+              </div>
+              <span class="highlight-label">pondicherry</span>
+            </div>
+            <div class="highlight-item" data-full="assests/blog/beaches.jpg" data-label="More...">
+              <div class="highlight-ring viewed">
+                <div class="highlight-image">
+                  <img src="assests/blog/beaches.jpg" alt="More">
+                </div>
+              </div>
+              <span class="highlight-label">chennai</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- Fitness Section -->
     <section class="section fitness-section" id="fitness">
-      <div class="section-header">
-        <h2 class="section-title">The Fitness Grind</h2>
-        <p class="section-subtitle">Transforming body and mind, one rep at a time</p>
-      </div>
-
-      <div class="fitness-container">
-        <div class="fitness-hero">
-          <div class="fitness-image">
-            <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=600&h=400&fit=crop"
-              alt="Fitness Journey">
+      <div class="fitness-wrapper">
+        <div class="fitness-header">
+          <div class="fitness-label">
+            <span class="label-dot"></span>
+            <span>Fitness Journey</span>
           </div>
-          <div class="fitness-info">
-            <div class="info-badge">TRANSFORMATION</div>
-            <h3>3+ Years of Consistency</h3>
-            <p>From couch to strength. It's not about being perfect, it's about being persistent.</p>
+          <h2 class="fitness-title">Building <span class="accent">Strength</span> & Discipline</h2>
+          <p class="fitness-subtitle">3+ years of consistency. Not about perfection, but persistence.</p>
+        </div>
+
+        <div class="fitness-bento">
+          <div class="bento-item bento-main">
+            <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&h=600&fit=crop" alt="Gym">
+            <div class="bento-overlay">
+              <span class="bento-tag">Daily Grind</span>
+              <h3>Strength Training</h3>
+              <p>Compound movements & progressive overload</p>
+            </div>
+          </div>
+          
+          <div class="bento-item bento-stat">
+            <div class="stat-content">
+              <span class="stat-big">6x</span>
+              <span class="stat-desc">Days / Week</span>
+            </div>
+          </div>
+          
+          <div class="bento-item bento-image">
+            <img src="assests/blog/biking.jpeg" alt="Running">
+            <span class="bento-label">Cardio</span>
+          </div>
+          
+          <div class="bento-item bento-image">
+            <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=400&h=400&fit=crop" alt="Yoga">
+            <span class="bento-label">Flexibility</span>
+          </div>
+          
+          <div class="bento-item bento-stat dark">
+            <div class="stat-content">
+              <span class="stat-big">50+</span>
+              <span class="stat-desc">km Monthly</span>
+            </div>
+          </div>
+          
+          <div class="bento-item bento-quote">
+            <blockquote>"The body achieves what the mind believes."</blockquote>
+          </div>
+          
+          <div class="bento-item bento-image wide">
+            <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=600&h=300&fit=crop" alt="Nutrition">
+            <span class="bento-label">Nutrition</span>
+          </div>
+          
+          <div class="bento-item bento-stat accent">
+            <div class="stat-content">
+              <span class="stat-big">2x</span>
+              <span class="stat-desc">Strength Gained</span>
+            </div>
           </div>
         </div>
 
-        <div class="pillars">
-          <div class="pillar">
-            <div class="pillar-icon">
-              <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=400&h=400&fit=crop"
-                alt="Strength Training">
-            </div>
-            <h4>Strength</h4>
-            <p>Compound movements, progressive overload, muscle building</p>
+        <div class="fitness-pillars">
+          <div class="pillar-card">
+            <div class="pillar-number">01</div>
+            <h4>Consistency</h4>
+            <p>Showing up every day, rain or shine</p>
           </div>
-          <div class="pillar">
-            <div class="pillar-icon">
-              <img src="https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=400&h=400&fit=crop" alt="Cardio">
-            </div>
-            <h4>Cardio</h4>
-            <p>50+ km monthly, trail running, long-distance challenges</p>
+          <div class="pillar-card">
+            <div class="pillar-number">02</div>
+            <h4>Progressive</h4>
+            <p>Always pushing limits, never settling</p>
           </div>
-          <div class="pillar">
-            <div class="pillar-icon">
-              <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=400&h=400&fit=crop"
-                alt="Flexibility">
-            </div>
-            <h4>Flexibility</h4>
-            <p>Yoga, mobility work, injury prevention, recovery</p>
+          <div class="pillar-card">
+            <div class="pillar-number">03</div>
+            <h4>Balance</h4>
+            <p>Rest, recovery, and mindful eating</p>
           </div>
-          <div class="pillar">
-            <div class="pillar-icon">
-              <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=400&h=400&fit=crop"
-                alt="Nutrition">
-            </div>
-            <h4>Nutrition</h4>
-            <p>Mindful eating, balanced macros, sustainable habits</p>
-          </div>
-        </div>
-
-        <div class="stats-grid">
-          <div class="stat-card big">
-            <div class="stat-number">6x</div>
-            <div class="stat-label">Days Per Week</div>
-          </div>
-          <div class="stat-card big">
-            <div class="stat-number">2x</div>
-            <div class="stat-label">Body Strength</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-number">50+</div>
-            <div class="stat-label">km Monthly</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-number">8hrs</div>
-            <div class="stat-label">Sleep Goal</div>
+          <div class="pillar-card">
+            <div class="pillar-number">04</div>
+            <h4>Discipline</h4>
+            <p>When motivation fades, habits remain</p>
           </div>
         </div>
       </div>
@@ -317,69 +399,75 @@
 
     <!-- Photography Section -->
     <section class="section photography-section" id="photography">
-      <div class="section-header">
-        <h2 class="section-title">Through the Lens</h2>
-        <p class="section-subtitle">Capturing the world in color and light</p>
-      </div>
-
-      <div class="photo-showcase">
-        <div class="photo-featured">
-          <div class="photo-bg golden">
-            <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=500&fit=crop"
-              alt="Golden Hour Landscape">
+      <div class="photo-wrapper">
+        <div class="photo-header">
+          <div class="photo-intro">
+            <span class="intro-line"></span>
+            <span class="intro-text">Photography</span>
           </div>
-          <h3>Golden Hour Landscapes</h3>
-          <p>Where light paints the world in gold and amber</p>
-          <span class="photo-count">24 Collections</span>
+          <h2 class="photo-title">Through the <span class="gradient">Lens</span></h2>
+          <p class="photo-subtitle">Capturing moments, colors, and stories in every frame</p>
         </div>
 
-        <div class="photo-grid">
-          <div class="photo-card portrait">
-            <div class="photo-icon">
-              <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=400&h=300&fit=crop"
-                alt="Portraits">
+        <div class="photo-masonry">
+          <div class="masonry-item tall">
+            <img src="assests/blog/sky.JPG" alt="Mountains">
+            <div class="masonry-overlay">
+              <span class="masonry-category">Landscapes</span>
+              <h4>Golden Hour</h4>
             </div>
-            <h4>Portraits</h4>
-            <span class="count">38</span>
           </div>
-          <div class="photo-card nature">
-            <div class="photo-icon">
-              <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=400&h=300&fit=crop" alt="Nature">
+          <div class="masonry-item">
+            <img src="assests/blog/human.jpg" alt="Portrait">
+            <div class="masonry-overlay">
+              <span class="masonry-category">Portraits</span>
+              <h4>Human Stories</h4>
             </div>
-            <h4>Nature</h4>
-            <span class="count">42</span>
           </div>
-          <div class="photo-card architecture">
-            <div class="photo-icon">
-              <img src="https://images.unsplash.com/photo-1479839672679-a46483c0e7c8?w=400&h=300&fit=crop"
-                alt="Architecture">
+          <div class="masonry-item">
+            <img src="assests/blog/night.jpeg" alt="Night">
+            <div class="masonry-overlay">
+              <span class="masonry-category">Night Sky</span>
+              <h4>Star Trails</h4>
             </div>
-            <h4>Architecture</h4>
-            <span class="count">31</span>
           </div>
-          <div class="photo-card nightsky">
-            <div class="photo-icon">
-              <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?w=400&h=300&fit=crop"
-                alt="Night Sky">
+          <div class="masonry-item wide">
+            <img src="assests/blog/urban.jpg"City">
+            <div class="masonry-overlay">
+              <span class="masonry-category">Street</span>
+              <h4>Urban Vibes</h4>
             </div>
-            <h4>Night Sky</h4>
-            <span class="count">18</span>
           </div>
-          <div class="photo-card abstract">
-            <div class="photo-icon">
-              <img src="https://images.unsplash.com/photo-1541701494587-cb58502866ab?w=400&h=300&fit=crop"
-                alt="Abstract">
+          <div class="masonry-item">
+            <img src="assests/blog/beaches.jpg" alt="Beaches">
+            <div class="masonry-overlay">
+              <span class="masonry-category">Beaches</span>
+              <h4>Sunrise shores</h4>
             </div>
-            <h4>Abstract</h4>
-            <span class="count">27</span>
           </div>
-          <div class="photo-card street">
-            <div class="photo-icon">
-              <img src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=400&h=300&fit=crop"
-                alt="Street Photography">
+          <div class="masonry-item">
+            <img src="assests/blog/aesthetics.jpg" alt="Architecture">
+            <div class="masonry-overlay">
+              <span class="masonry-category">Religious</span>
+              <h4>Rituals</h4>
             </div>
-            <h4>Street</h4>
-            <span class="count">35</span>
+          </div>
+        </div>
+
+        <div class="photo-stats-row">
+          <div class="photo-stat-item">
+            <span class="photo-stat-number">1K+</span>
+            <span class="photo-stat-label">Photos Taken</span>
+          </div>
+          <div class="photo-stat-divider"></div>
+          <div class="photo-stat-item">
+            <span class="photo-stat-number">6</span>
+            <span class="photo-stat-label">Categories</span>
+          </div>
+          <div class="photo-stat-divider"></div>
+          <div class="photo-stat-item">
+            <span class="photo-stat-number">3+</span>
+            <span class="photo-stat-label">Years Shooting</span>
           </div>
         </div>
       </div>
@@ -387,111 +475,160 @@
 
     <!-- Articles Section -->
     <section class="section articles-section" id="articles">
-      <div class="section-header">
-        <h2 class="section-title">Latest Articles</h2>
-        <p class="section-subtitle">Thoughts on building, moving, and capturing moments</p>
-      </div>
+      <div class="articles-wrapper">
+        <div class="articles-header">
+          <div class="articles-top">
+            <div>
+              <h2 class="articles-title">Latest <span class="highlight">Articles</span></h2>
+              <p class="articles-subtitle">Thoughts on building, moving, and capturing moments</p>
+            </div>
+            <a href="#" class="view-all-btn">
+              View All
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </a>
+          </div>
+        </div>
 
-      <div class="articles-grid">
-        <article class="article-card">
-          <div class="article-image">
-            <img src="https://images.unsplash.com/photo-1526772662000-3f88f10405ff?w=800&h=600&fit=crop"
-              alt="Slow travel guide">
-          </div>
-          <div class="article-meta">
-            <span class="badge">Travel</span>
-            <span class="dot">•</span>
-            <span class="date">Nov 2024</span>
-          </div>
-          <h3>How to Embrace Slow Travel</h3>
-          <p>Trading checklists for immersion: routes, budgets, and pacing that make every stop matter.</p>
-          <a class="article-link" href="#">Read story →</a>
-        </article>
+        <div class="articles-grid">
+          <article class="article-card featured">
+            <div class="article-image">
+              <img src="https://images.unsplash.com/photo-1526772662000-3f88f10405ff?w=800&h=600&fit=crop" alt="Slow travel guide">
+              <span class="article-badge">Featured</span>
+            </div>
+            <div class="article-content">
+              <div class="article-meta">
+                <span class="category travel">Travel</span>
+                <span class="read-time">5 min read</span>
+              </div>
+              <h3>How to Embrace Slow Travel</h3>
+              <p>Trading checklists for immersion: routes, budgets, and pacing that make every stop matter.</p>
+              <div class="article-footer">
+                <span class="date">Nov 2024</span>
+                <a class="read-more" href="#">Read →</a>
+              </div>
+            </div>
+          </article>
 
-        <article class="article-card">
-          <div class="article-image">
-            <img src="https://images.unsplash.com/photo-1509475826633-fed577a2c71b?w=800&h=600&fit=crop"
-              alt="Training smarter">
-          </div>
-          <div class="article-meta">
-            <span class="badge">Fitness</span>
-            <span class="dot">•</span>
-            <span class="date">Oct 2024</span>
-          </div>
-          <h3>Training Smarter, Not Just Harder</h3>
-          <p>Periodization, recovery, and small habits that keep you consistent without burning out.</p>
-          <a class="article-link" href="#">Read story →</a>
-        </article>
+          <article class="article-card">
+            <div class="article-image">
+              <img src="https://images.unsplash.com/photo-1509475826633-fed577a2c71b?w=800&h=600&fit=crop" alt="Training smarter">
+            </div>
+            <div class="article-content">
+              <div class="article-meta">
+                <span class="category fitness">Fitness</span>
+                <span class="read-time">4 min read</span>
+              </div>
+              <h3>Training Smarter, Not Just Harder</h3>
+              <p>Periodization, recovery, and small habits that keep you consistent.</p>
+              <div class="article-footer">
+                <span class="date">Oct 2024</span>
+                <a class="read-more" href="#">Read →</a>
+              </div>
+            </div>
+          </article>
 
-        <article class="article-card">
-          <div class="article-image">
-            <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=800&h=600&fit=crop"
-              alt="Golden hour tips">
-          </div>
-          <div class="article-meta">
-            <span class="badge">Photography</span>
-            <span class="dot">•</span>
-            <span class="date">Sep 2024</span>
-          </div>
-          <h3>Chasing Golden Hour Light</h3>
-          <p>Timing, framing, and minimal gear to capture warmth without heavy editing.</p>
-          <a class="article-link" href="#">Read story →</a>
-        </article>
+          <article class="article-card">
+            <div class="article-image">
+              <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=800&h=600&fit=crop" alt="Golden hour tips">
+            </div>
+            <div class="article-content">
+              <div class="article-meta">
+                <span class="category photo">Photography</span>
+                <span class="read-time">3 min read</span>
+              </div>
+              <h3>Chasing Golden Hour Light</h3>
+              <p>Timing, framing, and minimal gear to capture warmth.</p>
+              <div class="article-footer">
+                <span class="date">Sep 2024</span>
+                <a class="read-more" href="#">Read →</a>
+              </div>
+            </div>
+          </article>
 
-        <article class="article-card">
-          <div class="article-image">
-            <img src="https://images.unsplash.com/photo-1523475472560-d2df97ec485c?w=800&h=600&fit=crop"
-              alt="Work-travel balance">
-          </div>
-          <div class="article-meta">
-            <span class="badge">Lifestyle</span>
-            <span class="dot">•</span>
-            <span class="date">Aug 2024</span>
-          </div>
-          <h3>Balancing Work and Wander</h3>
-          <p>Routines, connectivity, and boundaries that let you ship code while on the road.</p>
-          <a class="article-link" href="#">Read story →</a>
-        </article>
-      </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="section cta-section">
-      <div class="cta-content">
-        <h2>Let's Connect</h2>
-        <p>Follow my journey, share your thoughts, or just say hi 👋</p>
-        <div class="cta-buttons">
-          <a href="#" class="btn btn-primary">Subscribe for Updates</a>
-          <a href="index.html" class="btn btn-secondary">Back to Portfolio</a>
+          <article class="article-card">
+            <div class="article-image">
+              <img src="https://images.unsplash.com/photo-1523475472560-d2df97ec485c?w=800&h=600&fit=crop" alt="Work-travel balance">
+            </div>
+            <div class="article-content">
+              <div class="article-meta">
+                <span class="category lifestyle">Lifestyle</span>
+                <span class="read-time">6 min read</span>
+              </div>
+              <h3>Balancing Work and Wander</h3>
+              <p>Routines and boundaries that let you ship code on the road.</p>
+              <div class="article-footer">
+                <span class="date">Aug 2024</span>
+                <a class="read-more" href="#">Read →</a>
+              </div>
+            </div>
+          </article>
         </div>
       </div>
     </section>
-  </main>
+
+
 
   <!-- Footer -->
   <footer class="blog-footer">
-    <div class="footer-content">
-      <div class="footer-col">
-        <h5>Explore</h5>
-        <a href="#travel">Travel</a>
-        <a href="#fitness">Fitness</a>
-        <a href="#photography">Photography</a>
+    <div class="footer-wrapper">
+      <div class="footer-main">
+        <div class="footer-brand">
+          <a href="index.html" class="footer-logo">Naitik<span>.</span></a>
+          <p class="footer-tagline">Developer by day, explorer by heart. Documenting life through code, travel, and photography.</p>
+          <div class="footer-social">
+            <a href="https://x.com/namannaitik34" class="social-link" aria-label="Twitter">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+              </svg>
+            </a>
+            <a href="https://www.instagram.com/naman_naitik34" class="social-link" aria-label="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="2" width="20" height="20" rx="5"/>
+                <circle cx="12" cy="12" r="4"/>
+                <circle cx="18" cy="6" r="1.5" fill="currentColor"/>
+              </svg>
+            </a>
+            <a href="https://github.com/namannaitik34" class="social-link" aria-label="GitHub">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+              </svg>
+            </a>
+            <a href="https://www.linkedin.com/in/namannaitik34" class="social-link" aria-label="LinkedIn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+        
+        <div class="footer-links">
+          <div class="footer-col">
+            <h5>Explore</h5>
+            <a href="#travel">Travel Stories</a>
+            <a href="#fitness">Fitness Journey</a>
+            <a href="#photography">Photography</a>
+            <a href="#articles">Articles</a>
+          </div>
+          <div class="footer-col">
+            <h5>Quick Links</h5>
+            <a href="index.html">Portfolio</a>
+            <a href="index.html#about">About Me</a>
+            <a href="index.html#projects">Projects</a>
+            <a href="index.html#contact">Contact</a>
+          </div>
+        </div>
       </div>
-      <div class="footer-col">
-        <h5>Connect</h5>
-        <a href="#">Twitter</a>
-        <a href="#">Instagram</a>
-        <a href="#">GitHub</a>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2025 Naitik. Crafted with ☕ and curiosity.</p>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy</a>
+          <span>•</span>
+          <a href="#">Terms</a>
+        </div>
       </div>
-      <div class="footer-col">
-        <h5>More</h5>
-        <a href="index.html">Portfolio</a>
-        <a href="#">Blog</a>
-        <a href="#">Contact</a>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>&copy; 2025 Naitik. Bold stories, real adventures.</p>
     </div>
   </footer>
 
@@ -543,50 +680,171 @@
       });
     }
 
-    // Stories Navigation
-    const prevBtn = document.querySelector('.story-nav-prev');
-    const nextBtn = document.querySelector('.story-nav-next');
-    const storiesTrack = document.querySelector('.stories-track');
-    const storiesSlider = document.querySelector('.stories-slider');
-    const storyCards = document.querySelectorAll('.story-card');
-
-    if (prevBtn && nextBtn && storiesTrack && storiesSlider && storyCards.length) {
-      let currentIndex = 0;
-      const cardWidth = 135; // Story card width
-      const gap = 24; // Gap between cards (1.5rem = 24px)
-      const scrollAmount = cardWidth + gap;
-
-      function maxIndex() {
-        return storyCards.length - Math.floor(storiesSlider.offsetWidth / scrollAmount);
-      }
-
-      function updateButtons() {
-        const max = maxIndex();
-        prevBtn.style.opacity = currentIndex === 0 ? '0.5' : '1';
-        prevBtn.style.pointerEvents = currentIndex === 0 ? 'none' : 'auto';
-        nextBtn.style.opacity = currentIndex >= max ? '0.5' : '1';
-        nextBtn.style.pointerEvents = currentIndex >= max ? 'none' : 'auto';
-      }
-
-      prevBtn.addEventListener('click', () => {
-        if (currentIndex > 0) {
-          currentIndex--;
-          storiesTrack.style.transform = `translateX(-${currentIndex * scrollAmount}px)`;
-          updateButtons();
+    // Story Highlights - Infinite scroll with drag support
+    const highlightsWrapper = document.querySelector('.highlights-wrapper');
+    const highlightsTrack = document.querySelector('.highlights-track');
+    
+    if (highlightsWrapper && highlightsTrack) {
+      // Duplicate items for infinite scroll
+      const items = highlightsTrack.innerHTML;
+      highlightsTrack.innerHTML = items + items;
+      
+      // Drag to scroll
+      let isDown = false;
+      let startX;
+      let scrollLeft;
+      let isDragging = false;
+      
+      highlightsWrapper.addEventListener('mousedown', (e) => {
+        isDown = true;
+        isDragging = false;
+        highlightsWrapper.style.cursor = 'grabbing';
+        startX = e.pageX - highlightsWrapper.offsetLeft;
+        scrollLeft = highlightsWrapper.scrollLeft;
+      });
+      
+      highlightsWrapper.addEventListener('mouseleave', () => {
+        isDown = false;
+        highlightsWrapper.style.cursor = 'grab';
+      });
+      
+      highlightsWrapper.addEventListener('mouseup', () => {
+        isDown = false;
+        highlightsWrapper.style.cursor = 'grab';
+      });
+      
+      highlightsWrapper.addEventListener('mousemove', (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        isDragging = true;
+        const x = e.pageX - highlightsWrapper.offsetLeft;
+        const walk = (x - startX) * 2;
+        highlightsWrapper.scrollLeft = scrollLeft - walk;
+      });
+      
+      // Touch support
+      highlightsWrapper.addEventListener('touchstart', (e) => {
+        startX = e.touches[0].pageX - highlightsWrapper.offsetLeft;
+        scrollLeft = highlightsWrapper.scrollLeft;
+      }, { passive: true });
+      
+      highlightsWrapper.addEventListener('touchmove', (e) => {
+        const x = e.touches[0].pageX - highlightsWrapper.offsetLeft;
+        const walk = (x - startX) * 2;
+        highlightsWrapper.scrollLeft = scrollLeft - walk;
+      }, { passive: true });
+      
+      // Story Viewer with Navigation
+      const storyViewer = document.getElementById('storyViewer');
+      const storyImage = storyViewer.querySelector('.story-viewer-image');
+      const storyLabel = storyViewer.querySelector('.story-viewer-label');
+      const storyClose = storyViewer.querySelector('.story-close');
+      const storyBackdrop = storyViewer.querySelector('.story-viewer-backdrop');
+      const storyPrev = storyViewer.querySelector('.story-prev');
+      const storyNext = storyViewer.querySelector('.story-next');
+      const progressBar = storyViewer.querySelector('.story-progress-bar');
+      
+      // Build story data from highlight items (using data-full attribute)
+      const highlightItems = document.querySelectorAll('.highlights-track .highlight-item');
+      const stories = [];
+      const seenLabels = new Set();
+      highlightItems.forEach(item => {
+        const label = item.querySelector('.highlight-label')?.textContent || item.dataset.label;
+        if (!seenLabels.has(label)) {
+          seenLabels.add(label);
+          stories.push({
+            src: item.dataset.full,
+            label: label
+          });
         }
       });
-
-      nextBtn.addEventListener('click', () => {
-        const max = maxIndex();
-        if (currentIndex < max) {
-          currentIndex++;
-          storiesTrack.style.transform = `translateX(-${currentIndex * scrollAmount}px)`;
-          updateButtons();
+      
+      let currentStoryIndex = 0;
+      let storyTimeout;
+      
+      function updateNavButtons() {
+        storyPrev.classList.toggle('disabled', currentStoryIndex === 0);
+        storyNext.classList.toggle('disabled', currentStoryIndex === stories.length - 1);
+      }
+      
+      function resetProgress() {
+        progressBar.style.animation = 'none';
+        progressBar.offsetHeight; // Trigger reflow
+        progressBar.style.animation = 'storyProgress 5s linear forwards';
+      }
+      
+      function showStory(index) {
+        if (index < 0 || index >= stories.length) return;
+        currentStoryIndex = index;
+        storyImage.src = stories[index].src;
+        storyLabel.textContent = stories[index].label;
+        updateNavButtons();
+        resetProgress();
+        
+        // Auto advance after 5 seconds
+        clearTimeout(storyTimeout);
+        storyTimeout = setTimeout(() => {
+          if (currentStoryIndex < stories.length - 1) {
+            showStory(currentStoryIndex + 1);
+          } else {
+            closeStory();
+          }
+        }, 5000);
+      }
+      
+      function openStory(index) {
+        storyViewer.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        showStory(index);
+      }
+      
+      function closeStory() {
+        storyViewer.classList.remove('active');
+        document.body.style.overflow = '';
+        clearTimeout(storyTimeout);
+        progressBar.style.animation = 'none';
+      }
+      
+      // Click on highlight items (using event delegation for duplicated items)
+      highlightsTrack.addEventListener('click', (e) => {
+        if (isDragging) {
+          isDragging = false;
+          return;
+        }
+        const item = e.target.closest('.highlight-item');
+        if (item) {
+          const clickedLabel = item.querySelector('.highlight-label')?.textContent || item.dataset.label;
+          const index = stories.findIndex(s => s.label === clickedLabel);
+          if (index !== -1) {
+            openStory(index);
+          }
         }
       });
-
-      window.addEventListener('resize', updateButtons);
-      updateButtons();
+      
+      // Navigation buttons
+      storyPrev.addEventListener('click', () => {
+        if (currentStoryIndex > 0) {
+          showStory(currentStoryIndex - 1);
+        }
+      });
+      
+      storyNext.addEventListener('click', () => {
+        if (currentStoryIndex < stories.length - 1) {
+          showStory(currentStoryIndex + 1);
+        }
+      });
+      
+      storyClose.addEventListener('click', closeStory);
+      storyBackdrop.addEventListener('click', closeStory);
+      
+      // Keyboard navigation
+      document.addEventListener('keydown', (e) => {
+        if (!storyViewer.classList.contains('active')) return;
+        
+        if (e.key === 'Escape') closeStory();
+        if (e.key === 'ArrowLeft' && currentStoryIndex > 0) showStory(currentStoryIndex - 1);
+        if (e.key === 'ArrowRight' && currentStoryIndex < stories.length - 1) showStory(currentStoryIndex + 1);
+      });
     }
   </script>
 </body>
