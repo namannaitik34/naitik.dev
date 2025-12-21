@@ -158,6 +158,17 @@ body {
 }
 
 /* ============================================================
+   CONTAINER STYLES
+   ============================================================ */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* ============================================================
    HERO SECTION
    ============================================================ */
 .hero {
@@ -2336,5 +2347,11 @@ body {
 
   .stats-grid {
     grid-template-columns: 1fr;
+  }
+
+  /* Container mobile styles */
+  .container {
+    padding: 0 1rem;
+    max-width: 100%;
   }
 }
