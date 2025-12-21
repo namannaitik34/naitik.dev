@@ -463,6 +463,10 @@ body {
   animation: scrollPulse 2s ease-in-out infinite;
 }
 
+
+
+
+
 @keyframes scrollPulse {
   0%, 100% { opacity: 1; transform: scaleY(1); }
   50% { opacity: 0.5; transform: scaleY(0.8); }
