@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Naitik Kumar | Online Resume</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+	<style>
+		:root {
+			--bg: #0f1115;
+			--panel: #151820;
+			--text: #e9edf1;
+			--muted: #9aa4af;
+			--accent: #67d4ff;
+			--accent-2: #f1d18c;
+			--border: rgba(255, 255, 255, 0.08);
+			--shadow: 0 18px 40px rgba(0, 0, 0, 0.28);
+		}
+
+		* {
+			box-sizing: border-box;
+			margin: 0;
+			padding: 0;
+		}
+
+		body {
+			font-family: "Manrope", sans-serif;
+			background: radial-gradient(1200px 600px at 10% -10%, rgba(103, 212, 255, 0.18), transparent 60%),
+						radial-gradient(900px 500px at 110% 10%, rgba(241, 209, 140, 0.12), transparent 55%),
+						var(--bg);
+			color: var(--text);
+			line-height: 1.6;
+			padding: 48px 24px;
+		}
+
+		.resume {
+			max-width: 1100px;
+			margin: 0 auto;
+			background: var(--panel);
+			border-radius: 20px;
+			border: 1px solid var(--border);
+			box-shadow: var(--shadow);
+			overflow: hidden;
+		}
+
+		.resume-header {
+			padding: 36px 42px 24px;
+			border-bottom: 1px solid var(--border);
+			display: flex;
+			flex-wrap: wrap;
+			align-items: center;
+			justify-content: space-between;
+			gap: 20px;
+		}
+
+		.name {
+			font-family: "Space Grotesk", sans-serif;
+			font-size: clamp(2rem, 3.5vw, 3rem);
+			font-weight: 700;
+			letter-spacing: -0.5px;
+		}
+
+		.role {
+			color: var(--accent);
+			font-size: 1.05rem;
+			font-weight: 500;
+		}
+
+		.meta {
+			display: flex;
+			gap: 16px;
+			flex-wrap: wrap;
+			color: var(--muted);
+			font-size: 0.95rem;
+		}
+
+		.resume-body {
+			display: grid;
+			grid-template-columns: 1.05fr 2.1fr;
+		}
+
+		.sidebar {
+			padding: 32px 36px 40px;
+			border-right: 1px solid var(--border);
+			background: rgba(10, 12, 16, 0.5);
+		}
+
+		.main {
+			padding: 32px 40px 40px;
+		}
+
+		h2 {
+			font-family: "Space Grotesk", sans-serif;
+			font-size: 1.1rem;
+			letter-spacing: 1.2px;
+			text-transform: uppercase;
+			margin: 28px 0 14px;
+			color: var(--accent-2);
+		}
+
+		.section:first-child h2 {
+			margin-top: 0;
+		}
+
+		.summary {
+			color: var(--muted);
+			font-size: 1rem;
+		}
+
+		.contact-list,
+		.skills-list,
+		.tools-list {
+			list-style: none;
+			display: grid;
+			gap: 10px;
+			color: var(--muted);
+			font-size: 0.95rem;
+		}
+
+		.contact-list a {
+			color: var(--text);
+			text-decoration: none;
+			border-bottom: 1px solid transparent;
+			transition: border-color 0.2s ease;
+		}
+
+		.contact-list a:hover {
+			border-color: var(--accent);
+		}
+
+		.tag-grid {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 10px;
+		}
+
+		.tag {
+			padding: 6px 10px;
+			border-radius: 999px;
+			border: 1px solid var(--border);
+			font-size: 0.85rem;
+			color: var(--muted);
+			background: rgba(255, 255, 255, 0.03);
+		}
+
+		.experience-item {
+			padding: 16px 18px;
+			border-radius: 12px;
+			border: 1px solid var(--border);
+			margin-bottom: 16px;
+			background: rgba(255, 255, 255, 0.02);
+		}
+
+		.experience-header {
+			display: flex;
+			justify-content: space-between;
+			gap: 16px;
+			flex-wrap: wrap;
+		}
+
+		.experience-role {
+			font-weight: 600;
+			font-family: "Space Grotesk", sans-serif;
+			font-size: 1.05rem;
+		}
+
+		.experience-company {
+			color: var(--muted);
+			font-size: 0.95rem;
+		}
+
+		.experience-date {
+			color: var(--muted);
+			font-size: 0.9rem;
+		}
+
+		.experience-tasks {
+			margin-top: 12px;
+			padding-left: 18px;
+			color: var(--muted);
+			font-size: 0.95rem;
+			display: grid;
+			gap: 8px;
+		}
+
+		.projects {
+			display: grid;
+			gap: 12px;
+		}
+
+		.project {
+			padding: 14px 16px;
+			border: 1px solid var(--border);
+			border-radius: 10px;
+			background: rgba(255, 255, 255, 0.02);
+		}
+
+		.project-title {
+			font-weight: 600;
+			margin-bottom: 6px;
+		}
+
+		.project-desc {
+			color: var(--muted);
+			font-size: 0.95rem;
+		}
+
+		@media (max-width: 900px) {
+			.resume-body {
+				grid-template-columns: 1fr;
+			}
+
+			.sidebar {
+				border-right: none;
+				border-bottom: 1px solid var(--border);
+			}
+		}
+
+		@media (max-width: 600px) {
+			body {
+				padding: 24px 16px;
+			}
+
+			.resume-header,
+			.sidebar,
+			.main {
+				padding-left: 20px;
+				padding-right: 20px;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="resume">
+		<header class="resume-header">
+			<div>
+				<div class="name">Naitik Shrivastawa</div>
+				<div class="role">Full-Stack Developer</div>
+			</div>
+			<div class="meta">
+				<span>Open to freelance & remote work</span>
+				<span>Based in India</span>
+			</div>
+		</header>
+
+		<div class="resume-body">
+			<aside class="sidebar">
+				<section class="section">
+					<h2>Contact</h2>
+					<ul class="contact-list">
+						<li>email: <a href="mailto:namannaitik34@gmail.com">namannaitik34@gmail.com</a></li>
+						<li>github: <a href="https://github.com/namannaitik34" target="_blank">github.com/namannaitik34</a></li>
+						<li>linkedin: <a href="https://linkedin.com/in/namannaitik34" target="_blank">linkedin.com/in/namannaitik34</a></li>
+					</ul>
+				</section>
+
+				<section class="section">
+					<h2>Skills</h2>
+					<div class="tag-grid">
+						<span class="tag">TypeScript</span>
+						<span class="tag">React</span>
+						<span class="tag">Next.js</span>
+						<span class="tag">Node.js</span>
+						<span class="tag">REST APIs</span>
+						<span class="tag">MongoDB</span>
+						<span class="tag">PostgreSQL</span>
+						<span class="tag">Python</span>
+						<span class="tag">TensorFlow</span>
+						<span class="tag">PyTorch</span>
+						<span class="tag">scikit-learn</span>
+					</div>
+				</section>
+
+				<section class="section">
+					<h2>Tools</h2>
+					<ul class="tools-list">
+						<li>Vercel, Firebase, Render</li>
+						<li>Git, CI/CD</li>
+						<li>Figma, Jira</li>
+					</ul>
+				</section>
+			</aside>
+
+			<main class="main">
+				<section class="section">
+					<h2>Summary</h2>
+					<p class="summary">
+						Full-stack developer focused on building fast, scalable web products with clean UI, solid architecture, and measurable outcomes. Experienced in shipping production apps, optimizing for SEO, and collaborating directly with clients.
+					</p>
+				</section>
+
+				<section class="section">
+					<h2>Experience</h2>
+
+					<article class="experience-item">
+						<div class="experience-header">
+							<div>
+								<div class="experience-role">Freelancer | Full-Stack Developer</div>
+								<div class="experience-company">Independent</div>
+							</div>
+							<div class="experience-date">March 2023 - Present</div>
+						</div>
+						<ul class="experience-tasks">
+							<li>Built full stack web applications using TypeScript, React, Next.js, and Node.js, delivering fast, SEO-optimized, and scalable solutions.</li>
+							<li>Designed clean, responsive UIs and implemented server-side rendering (SSR) and API routes using Next.js.</li>
+							<li>Developed secure REST APIs and backend services with Node.js and integrated MongoDB/PostgreSQL databases.</li>
+							<li>Deployed applications on Vercel, Firebase, and Render, ensuring smooth CI/CD workflows and uptime.</li>
+							<li>Collaborated directly with clients, translating requirements into user-centric, production-ready applications.</li>
+						</ul>
+					</article>
+
+					<article class="experience-item">
+						<div class="experience-header">
+							<div>
+								<div class="experience-role">Freelance | AI Training (Code Quality & Debugging Focus)</div>
+								<div class="experience-company">Outlier Technology</div>
+							</div>
+							<div class="experience-date">March 2025 - May 2025</div>
+						</div>
+						<ul class="experience-tasks">
+							<li>Evaluated model results using accuracy, precision, recall, and other key metrics.</li>
+							<li>Ran multiple training iterations to optimize performance and reduce errors.</li>
+							<li>Built and tested use-cases using ChatGPT, Gemini, and other generative AI models.</li>
+							<li>Used libraries like TensorFlow, scikit-learn, and PyTorch for model development.</li>
+						</ul>
+					</article>
+
+					<article class="experience-item">
+						<div class="experience-header">
+							<div>
+								<div class="experience-role">Co-Founder | Administrative Assistance</div>
+								<div class="experience-company">Greetree</div>
+							</div>
+							<div class="experience-date">Aug 2023 - Present</div>
+						</div>
+						<ul class="experience-tasks">
+							<li>Led the imaginative direction and branding strategy for the firm, implementing a robust and unified brand across all mediums.</li>
+							<li>Managed the design team around conceptualizing and implementing visually engaging assets, such as digital media, print materials, and marketing campaigns.</li>
+							<li>Worked with cross-functional teams to ensure design solutions meet business objectives and project requirements.</li>
+						</ul>
+					</article>
+				</section>
+
+				<section class="section">
+					<h2>Selected Projects</h2>
+					<div class="projects">
+						<div class="project">
+							<div class="project-title">Mocktopus</div>
+							<div class="project-desc">AI chatbot with personality switching built on React and Node.js.</div>
+						</div>
+						<div class="project">
+							<div class="project-title">DataLens</div>
+							<div class="project-desc">Analytics dashboard with modern data visualization workflows.</div>
+						</div>
+						<div class="project">
+							<div class="project-title">BuildMyCV</div>
+							<div class="project-desc">AI-powered resume builder with smart suggestions and export.</div>
+						</div>
+					</div>
+				</section>
+			</main>
+		</div>
+	</div>
+</body>
+</html>
